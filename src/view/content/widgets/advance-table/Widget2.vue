@@ -55,7 +55,7 @@ export default {
     return {
       list: [
         {
-          title: "Wilson WU",
+          title: "Wilson Wu",
           desc: "CTO",
           svg: "media/svg/avatars/004-boy-1.svg"
         },

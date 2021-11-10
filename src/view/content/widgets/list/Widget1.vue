@@ -1,10 +1,22 @@
 <template>
   <div
-    class="card card-custom card-shadowless gutter-b card-stretch card-shadowless p-0"
+    class="
+      card card-custom card-shadowless
+      gutter-b
+      card-stretch card-shadowless
+      p-0
+    "
   >
     <!--begin::Nav Tabs-->
     <ul
-      class="dashboard-tabs nav nav-pills nav-danger row row-paddingless m-0 p-0 flex-column flex-sm-row"
+      class="
+        dashboard-tabs
+        nav nav-pills nav-danger
+        row row-paddingless
+        m-0
+        p-0
+        flex-column flex-sm-row
+      "
       role="tablist"
     >
       <!--begin::Item-->
@@ -12,9 +24,18 @@
         class="nav-item d-flex col flex-grow-1 flex-shrink-0 mr-3 mb-3 mb-lg-0"
       >
         <a
-          class="nav-link border py-10 d-flex flex-grow-1 rounded flex-column align-items-center"
+          class="
+            nav-link
+            border
+            py-10
+            d-flex
+            flex-grow-1
+            rounded
+            flex-column
+            align-items-center
+          "
           data-toggle="pill"
-          :href="createProjectUrl"
+          :href="createInsuranceProjectUrl"
         >
           <span class="nav-icon py-2 w-auto">
             <span class="svg-icon svg-icon-3x">
@@ -34,9 +55,18 @@
         class="nav-item d-flex col flex-grow-1 flex-shrink-0 mr-3 mb-3 mb-lg-0"
       >
         <a
-          class="nav-link border py-10 d-flex flex-grow-1 rounded flex-column align-items-center"
+          class="
+            nav-link
+            border
+            py-10
+            d-flex
+            flex-grow-1
+            rounded
+            flex-column
+            align-items-center
+          "
           data-toggle="pill"
-          href="#tab_forms_widget_2"
+          :href="createInspectionProjectUrl"
         >
           <span class="nav-icon py-2 w-auto">
             <span class="svg-icon svg-icon-3x">
@@ -57,9 +87,18 @@
         class="nav-item d-flex col flex-grow-1 flex-shrink-0 mr-3 mb-3 mb-lg-0"
       >
         <a
-          class="nav-link  border py-10 d-flex flex-grow-1 rounded flex-column align-items-center"
+          class="
+            nav-link
+            border
+            py-10
+            d-flex
+            flex-grow-1
+            rounded
+            flex-column
+            align-items-center
+          "
           data-toggle="pill"
-          href="#tab_forms_widget_3"
+          :href="createPointRechargeUrl"
         >
           <span class="nav-icon py-2 w-auto">
             <span class="svg-icon svg-icon-3x">
@@ -78,9 +117,18 @@
         class="nav-item d-flex col flex-grow-1 flex-shrink-0 mr-3 mb-3 mb-lg-0"
       >
         <a
-          class="nav-link border py-10 d-flex flex-grow-1 rounded flex-column align-items-center"
+          class="
+            nav-link
+            border
+            py-10
+            d-flex
+            flex-grow-1
+            rounded
+            flex-column
+            align-items-center
+          "
           data-toggle="pill"
-          href="#tab_forms_widget_4"
+          :href="userCenterUrl"
         >
           <span class="nav-icon py-2 w-auto">
             <span class="svg-icon svg-icon-3x">
@@ -99,7 +147,16 @@
       <!--begin::Item-->
       <li class="nav-item d-flex col flex-grow-1 flex-shrink-0 mr-3">
         <a
-          class="nav-link border py-10 d-flex flex-grow-1 rounded flex-column align-items-center"
+          class="
+            nav-link
+            border
+            py-10
+            d-flex
+            flex-grow-1
+            rounded
+            flex-column
+            align-items-center
+          "
           data-toggle="pill"
           href="#tab_forms_widget_5"
         >
@@ -120,7 +177,16 @@
         class="nav-item d-flex col flex-grow-1 flex-shrink-0 mr-0 mb-3 mb-lg-0"
       >
         <a
-          class="nav-link border py-10 d-flex flex-grow-1 rounded flex-column align-items-center"
+          class="
+            nav-link
+            border
+            py-10
+            d-flex
+            flex-grow-1
+            rounded
+            flex-column
+            align-items-center
+          "
           data-toggle="pill"
           href="#tab_forms_widget_5"
         >
@@ -159,40 +225,45 @@ export default {
   name: "widget-1",
   data() {
     return {
-      createProjectUrl:`${window.location.origin}#/custom-wizard/wizard-1`,
+      createInsuranceProjectUrl: `${window.location.origin}#/custom-wizard/wizard-1`,
+      createInspectionProjectUrl: `${window.location.origin}#/custom-wizard/wizard-1`,
+      createPointRechargeUrl: `${window.location.origin}#/custom-wizard/wizard-4`,
+      userCenterUrl:
+        "http://118.25.186.104:8230/#/apps/customers/customers-listing",
+
       list: [
         {
           title: "Top Authors",
           desc: "Mark, Rowling, Esther",
           profit: "+82$",
-          img: "media/svg/misc/006-plurk.svg"
+          img: "media/svg/misc/006-plurk.svg",
         },
         {
           title: "Popular Authors",
           desc: "Randy, Steve, Mike",
           profit: "+280$",
-          img: "media/svg/misc/015-telegram.svg"
+          img: "media/svg/misc/015-telegram.svg",
         },
         {
           title: "New Users",
           desc: "John, Pat, Jimmy",
           profit: "+4500$",
-          img: "media/svg/misc/003-puzzle.svg"
+          img: "media/svg/misc/003-puzzle.svg",
         },
         {
           title: "Active Customers",
           desc: "Sandra, Tim, Louis",
           profit: "+4500$",
-          img: "media/svg/misc/005-bebo.svg"
+          img: "media/svg/misc/005-bebo.svg",
         },
         {
           title: "Bestseller Theme",
           desc: "Sandra, Tim, Louis",
           profit: "+4500$",
-          img: "media/svg/misc/014-kickstarter.svg"
-        }
-      ]
+          img: "media/svg/misc/014-kickstarter.svg",
+        },
+      ],
     };
-  }
+  },
 };
 </script>

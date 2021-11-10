@@ -18,28 +18,28 @@
             >
               <div class="wizard-label">
                 <i class="wizard-icon flaticon-bus-stop"></i>
-                <h3 class="wizard-title">1. Setup Location</h3>
+                <h3 class="wizard-title">1. Import Employee</h3>
               </div>
               <i class="wizard-arrow flaticon2-next"></i>
             </div>
             <div class="wizard-step" data-wizard-type="step">
               <div class="wizard-label">
                 <i class="wizard-icon flaticon-list"></i>
-                <h3 class="wizard-title">2. Enter Details</h3>
+                <h3 class="wizard-title">2. Create Project</h3>
               </div>
               <i class="wizard-arrow flaticon2-next"></i>
             </div>
             <div class="wizard-step" data-wizard-type="step">
               <div class="wizard-label">
                 <i class="wizard-icon flaticon-responsive"></i>
-                <h3 class="wizard-title">3. Select Services</h3>
+                <h3 class="wizard-title">3. Choose Employee</h3>
               </div>
               <i class="wizard-arrow flaticon2-next"></i>
             </div>
             <div class="wizard-step" data-wizard-type="step">
               <div class="wizard-label">
                 <i class="wizard-icon flaticon-truck"></i>
-                <h3 class="wizard-title">4. Delivery Address</h3>
+                <h3 class="wizard-title">4. Distribute Point</h3>
               </div>
               <i class="wizard-arrow flaticon2-next"></i>
             </div>
