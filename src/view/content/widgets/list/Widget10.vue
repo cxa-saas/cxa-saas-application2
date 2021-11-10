@@ -2,7 +2,7 @@
   <div class="card card-custom bg-light-warning gutter-b card-stretch">
     <!--begin::header-->
     <div class="card-header border-0">
-      <h3 class="card-title font-weight-bolder text-warning">Todo</h3>
+      <h3 class="card-title font-weight-bolder text-warning">Coming Project</h3>
       <div class="card-toolbar">
         <Dropdown6></Dropdown6>
       </div>
@@ -56,24 +56,24 @@ export default {
     return {
       list: [
         {
-          title: "Create FireStone Logo",
-          desc: "Due in 2 Days"
+          title: "CXA 2022 Annual Inspection",
+          desc: "Due in 1 year"
         },
         {
-          title: "Stakeholder Meeting",
-          desc: "Due in 3 Weeks"
+          title: "CXA 2022 Annual Insurance",
+          desc: "Due in 1 year"
         },
         {
-          title: "Scoping & Estimations",
-          desc: "Due in 8 Hours"
+          title: "CXA 2021 Annual Benefits",
+          desc: "Due in 1 year"
         },
         {
-          title: "Scoping & Estimations",
-          desc: "Due in 8 Hours"
+          title: "CXA 2022 Annual Inspection",
+          desc: "Due in 2 year"
         },
         {
-          title: "Project Retro",
-          desc: "Due in 1 Year"
+          title: "CXA 2022 Annual Inspection",
+          desc: "Due in 2 Year"
         }
       ]
     };

@@ -4,7 +4,7 @@
   >
     <!--begin::Header-->
     <div class="card-header border-0">
-      <h3 class="card-title font-weight-bolder text-dark">Trends</h3>
+      <h3 class="card-title font-weight-bolder text-dark">Active Employees</h3>
       <div class="card-toolbar">
         <Dropdown5></Dropdown5>
       </div>
@@ -54,34 +54,39 @@ export default {
     return {
       list: [
         {
-          title: "Top Authors",
-          desc: "Mark, Rowling, Esther",
+          title: "Chovy Qiu",
+          desc: "Purchase Insurance",
           profit: "+82$",
-          img: "media/svg/misc/006-plurk.svg"
+          img:"media/svg/avatars/004-boy-1.svg"
+          // img: "media/svg/misc/006-plurk.svg"
         },
         {
-          title: "Popular Authors",
-          desc: "Randy, Steve, Mike",
+          title: "Wilson Wu",
+          desc: "Purchase Inspection",
           profit: "+280$",
-          img: "media/svg/misc/015-telegram.svg"
+          img:"media/svg/avatars/002-girl.svg"
+          // img: "media/svg/misc/015-telegram.svg"
         },
         {
-          title: "New Users",
-          desc: "John, Pat, Jimmy",
+          title: "Jeckie Xue",
+          desc: "Purchase Inspection",
           profit: "+4500$",
-          img: "media/svg/misc/003-puzzle.svg"
+          img:"media/svg/avatars/007-boy-2.svg"
+          // img: "media/svg/misc/003-puzzle.svg"
         },
         {
-          title: "Active Customers",
-          desc: "Sandra, Tim, Louis",
+          title: "Cain Liang",
+          desc: "Purchase Shop Items",
           profit: "+4500$",
-          img: "media/svg/misc/005-bebo.svg"
+          img:"media/svg/avatars/008-boy-3.svg"
+          // img: "media/svg/misc/005-bebo.svg"
         },
         {
-          title: "Bestseller Theme",
-          desc: "Sandra, Tim, Louis",
+          title: "Mike Liu",
+          desc: "Purchase Items",
           profit: "+4500$",
-          img: "media/svg/misc/014-kickstarter.svg"
+          img:"media/svg/avatars/008-boy-3.svg"
+          // img: "media/svg/misc/014-kickstarter.svg"
         }
       ]
     };

@@ -15,13 +15,16 @@
         <ListWidget5></ListWidget5>
       </div>
       <div class="col-xl-4">
-        <AdvancedTableWidget2></AdvancedTableWidget2>
+         <ListWidget11></ListWidget11>
+       
+       
       </div>
     </div>
 
     <div class="row">
       <div class="col-xl-8">
-        <ListWidget3></ListWidget3>
+         <ListWidget8></ListWidget8>
+       
       </div>
       <div class="col-xl-4">
         <ListWidget10></ListWidget10>
@@ -30,7 +33,7 @@
 
     <div class="row">
       <div class="col-xl-4">
-        <ListWidget11></ListWidget11>
+         <ListWidget2></ListWidget2>
       </div>
       <div class="col-xl-8">
         <ListWidget12></ListWidget12>
@@ -39,10 +42,10 @@
 
     <div class="row">
       <div class="col-lg-8">
-        <ListWidget8></ListWidget8>
+        <ListWidget3></ListWidget3>
       </div>
       <div class="col-lg-4">
-        <ListWidget2></ListWidget2>
+        <AdvancedTableWidget2></AdvancedTableWidget2>
       </div>
     </div>
     <!--end::Dashboard-->

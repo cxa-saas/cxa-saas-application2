@@ -14,7 +14,7 @@
         <a
           class="nav-link border py-10 d-flex flex-grow-1 rounded flex-column align-items-center"
           data-toggle="pill"
-          href="#tab_forms_widget_1"
+          :href="createProjectUrl"
         >
           <span class="nav-icon py-2 w-auto">
             <span class="svg-icon svg-icon-3x">
@@ -24,7 +24,7 @@
             </span>
           </span>
           <span class="nav-text font-size-lg py-2 font-weight-bold text-center"
-            >SAAS Application</span
+            >Group Insurance</span
           >
         </a>
       </li>
@@ -47,7 +47,7 @@
           </span>
           <span
             class="nav-text font-size-lg py-2 font-weight-bolder text-center"
-            >Main Categories</span
+            >Group Inspection</span
           >
         </a>
       </li>
@@ -57,7 +57,7 @@
         class="nav-item d-flex col flex-grow-1 flex-shrink-0 mr-3 mb-3 mb-lg-0"
       >
         <a
-          class="nav-link active border py-10 d-flex flex-grow-1 rounded flex-column align-items-center"
+          class="nav-link  border py-10 d-flex flex-grow-1 rounded flex-column align-items-center"
           data-toggle="pill"
           href="#tab_forms_widget_3"
         >
@@ -68,7 +68,7 @@
           </span>
           <span
             class="nav-text font-size-lg py-2 font-weight-bolder text-center"
-            >Video Tutorials</span
+            >Points Recharge</span
           >
         </a>
       </li>
@@ -91,7 +91,7 @@
           </span>
           <span
             class="nav-text font-size-lg py-2 font-weight-bolder text-center"
-            >Sales Statistics</span
+            >Employee Center</span
           >
         </a>
       </li>
@@ -110,7 +110,7 @@
           </span>
           <span
             class="nav-text font-size-lg py-2 font-weight-bolder text-center"
-            >System Security</span
+            >Order Records</span
           >
         </a>
       </li>
@@ -131,7 +131,7 @@
           </span>
           <span
             class="nav-text font-size-lg py-2 font-weight-bolder text-center"
-            >Customer Support</span
+            >Point Distribution</span
           >
         </a>
       </li>
@@ -159,6 +159,7 @@ export default {
   name: "widget-1",
   data() {
     return {
+      createProjectUrl:`${window.location.origin}#/custom-wizard/wizard-1`,
       list: [
         {
           title: "Top Authors",

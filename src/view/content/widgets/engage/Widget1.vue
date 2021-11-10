@@ -6,13 +6,13 @@
       >
         <div class="d-flex flex-column align-items-start flex-grow-1 h-100">
           <div class="p-1 flex-grow-1">
-            <h4 class="text-warning font-weight-bolder">30 Days Free Trial</h4>
+            <h4 class="text-warning font-weight-bolder">Good News</h4>
             <p class="text-dark-50 font-weight-bold mt-3">
-              Pay 0$ for the First Month
+              20% off on first recharge
             </p>
           </div>
           <a href="#" class="btn btn-link btn-link-warning font-weight-bold"
-            >Create Report
+            >Go to recharge
             <span class="svg-icon svg-icon-lg svg-icon-warning">
               <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Arrow-right.svg-->
               <inline-svg src="media/svg/icons/Navigation/Arrow-right.svg" />

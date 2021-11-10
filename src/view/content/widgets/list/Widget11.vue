@@ -2,12 +2,10 @@
   <div class="card card-custom card-stretch gutter-b bg-light-info">
     <!--begin::Header-->
     <div class="card-header border-0">
-      <h3 class="card-title font-weight-bolder text-dark">Authors</h3>
+      <h3 class="card-title font-weight-bolder text-dark">Point Records</h3>
       <div class="card-toolbar">
         <Dropdown4
-          :btnClass="
-            'btn btn-light-primary btn-sm font-weight-bolder dropdown-toggle'
-          "
+          :btnClass="'btn btn-light-primary btn-sm font-weight-bolder dropdown-toggle'"
           :btnText="'August'"
         ></Dropdown4>
       </div>
@@ -33,6 +31,15 @@
             >
             <span class="text-muted">{{ item.desc }}</span>
           </div>
+          <span
+            class="
+              label label-xl label-light label-inline
+              my-lg-0 my-2
+              text-dark-50
+              font-weight-bolder
+            "
+            >{{ item.profit }}</span
+          >
           <!--end::Text-->
           <Dropdown2><i class="ki ki-bold-more-hor"></i></Dropdown2>
         </div>
@@ -50,38 +57,43 @@ export default {
   name: "widget-11",
   components: {
     Dropdown4,
-    Dropdown2
+    Dropdown2,
   },
   data() {
     return {
       list: [
         {
-          name: "Ricky Hunt",
-          desc: "PHP, SQLite, Artisan CLI",
-          svg: "media/svg/avatars/009-boy-4.svg"
+          name: "Wilson Wu",
+          profit: "-82$",
+          desc: "Assign points",
+          svg: "media/svg/avatars/009-boy-4.svg",
         },
         {
-          name: "Anne Clarc",
-          desc: "PHP, SQLite, Artisan CLI",
-          svg: "media/svg/avatars/006-girl-3.svg"
+          name: "Cindy",
+          profit: "+82$",
+          desc: "Recharge Points",
+          svg: "media/svg/avatars/006-girl-3.svg",
         },
         {
-          name: "Kristaps Zumman",
-          desc: "PHP, SQLite, Artisan CLI",
-          svg: "media/svg/avatars/011-boy-5.svg"
+          name: "紫嫣",
+          profit: "-102$",
+          desc: "Create annual plan",
+          svg: "media/svg/avatars/011-boy-5.svg",
         },
         {
-          name: "Randy Trent",
-          desc: "PHP, SQLite, Artisan CLI",
-          svg: "media/svg/avatars/015-boy-6.svg"
+          name: "Angel",
+          profit: "+122$",
+          desc: "Recharge Points",
+          svg: "media/svg/avatars/015-boy-6.svg",
         },
         {
-          name: "Carles Puyol",
-          desc: "Project Manager",
-          svg: "media/svg/avatars/016-boy-7.svg"
-        }
-      ]
+          name: "Cindy",
+          profit: "-22$",
+          desc: "Assign points",
+          svg: "media/svg/avatars/016-boy-7.svg",
+        },
+      ],
     };
-  }
+  },
 };
 </script>

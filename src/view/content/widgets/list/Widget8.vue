@@ -4,10 +4,10 @@
     <div class="card-header border-0 py-5">
       <h3 class="card-title align-items-start flex-column">
         <span class="card-label font-weight-bolder text-dark">
-          Agents Stats
+          Project Progress
         </span>
         <span class="text-muted mt-3 font-weight-bold font-size-sm">
-          More than 400+ new members
+          2021 Annual project schedule
         </span>
       </h3>
       <div class="card-toolbar">
@@ -16,7 +16,7 @@
             <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Add-user.svg-->
             <inline-svg src="media/svg/icons/Communication/Add-user.svg" />
             <!--end::Svg Icon--> </span
-          >Add New Member</a
+          >Add New Project</a
         >
       </div>
     </div>
@@ -40,9 +40,9 @@
                   <span></span>
                 </label>
               </th>
-              <th class="pr-0" style="width: 50px">authors</th>
+              <th class="pr-0" style="width: 50px">Project</th>
               <th style="min-width: 200px"></th>
-              <th style="min-width: 150px">company</th>
+              <th style="min-width: 150px">status</th>
               <th style="min-width: 150px">progress</th>
               <th class="pr-0 text-right" style="min-width: 150px">action</th>
             </tr>
@@ -70,7 +70,13 @@
                 <td class="pl-0">
                   <a
                     href="#"
-                    class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg"
+                    class="
+                      text-dark-75
+                      font-weight-bolder
+                      text-hover-primary
+                      mb-1
+                      font-size-lg
+                    "
                     >{{ item.text1 }}</a
                   >
                   <span
@@ -80,17 +86,28 @@
                 </td>
                 <td>
                   <span
+                    class="label label-lg label-inline"
+                    v-bind:class="`label-light-${item.text3}`"
+                  >
+                    {{ item.text4 }}
+                  </span>
+                  <!-- <span
                     class="text-dark-75 font-weight-bolder d-block font-size-lg"
                     >{{ item.text3 }}</span
                   >
                   <span class="text-muted font-weight-bold">{{
                     item.text4
-                  }}</span>
+                  }}</span> -->
                 </td>
                 <td>
                   <div class="d-flex flex-column w-100 mr-2">
                     <div
-                      class="d-flex align-items-center justify-content-between mb-2"
+                      class="
+                        d-flex
+                        align-items-center
+                        justify-content-between
+                        mb-2
+                      "
                     >
                       <span
                         class="text-muted mr-2 font-size-sm font-weight-bold"
@@ -167,50 +184,50 @@ export default {
     return {
       list: [
         {
-          text0: "media/svg/avatars/001-boy.svg",
-          text1: "Brad Simmons",
-          text2: "HTML, JS, ReactJS",
-          text3: "Intertico",
-          text4: "Web, UI/UX Design",
+          text0: "media/logos/logo-cxa-1.png",
+          text1: "Annual Inspection",
+          text2: "CXA 2021 Annual Inspection",
+          text3: "warning",
+          text4: "In Progress",
           text5: "65%",
-          text6: "danger"
+          text6: "danger",
         },
         {
-          text0: "media/svg/avatars/018-girl-9.svg",
-          text1: "Jessie Clarcson",
-          text2: "C#, ASP.NET, MS SQL",
-          text3: "Agoda",
-          text4: "Houses & Hotels",
-          text5: "83%",
-          text6: "success"
+          text0: "media/logos/logo-cxa-1.png",
+          text1: "Annual Insurance",
+          text2: "CXA 2021 Annual Insurance",
+          text3: "success",
+          text4: "Success",
+          text5: "100%",
+          text6: "success",
         },
         {
-          text0: "media/svg/avatars/047-girl-25.svg",
-          text1: "Lebron Wayde",
-          text2: "PHP, Laravel, VueJS",
-          text3: "RoadGee",
-          text4: "Transportation",
+          text0: "media/logos/logo-cxa-1.png",
+          text1: "Annual Benefits",
+          text2: "CXA 2021 Annual Benefits",
+          text3: "warning",
+          text4: "In Progress",
           text5: "47%",
-          text6: "primary"
+          text6: "primary",
         },
         {
-          text0: "media/svg/avatars/014-girl-7.svg",
-          text1: "Natali Trump",
-          text2: "Python, PostgreSQL, ReactJS",
-          text3: "The Hill",
-          text4: "Insurance",
-          text5: "71%",
-          text6: "danger"
-        }
+          text0: "media/logos/logo-cxa-1.png",
+          text1: "Annual Inspection",
+          text2: "CXA 2019 Annual Inspection",
+          text3: "danger",
+          text4: "Finish",
+          text5: "100%",
+          text6: "danger",
+        },
       ],
-      checked: false
+      checked: false,
     };
   },
   components: {},
   methods: {
     setCheck(checked) {
       this.checked = checked;
-    }
-  }
+    },
+  },
 };
 </script>

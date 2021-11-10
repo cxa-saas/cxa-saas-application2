@@ -4,10 +4,10 @@
     <div class="card-header border-0 pt-5">
       <h3 class="card-title align-items-start flex-column">
         <span class="card-label font-weight-bolder text-dark">
-          New Arrivals
+          Approval List
         </span>
         <span class="text-muted mt-3 font-weight-bold font-size-sm">
-          More than 400+ new members
+          Listed items under approval
         </span>
       </h3>
       <div class="card-toolbar">
@@ -261,46 +261,46 @@ export default {
       day: [
         {
           text0: "media/svg/misc/006-plurk.svg",
-          text1: "Sant Outstanding",
+          text1: "CXA 2021 Annual Inspection",
           text2: "bprow@bnc.cc",
           text3: "$2,000,000",
-          text4: "ReactJs, HTML",
+          text4: "Approval notes",
           text5: "Approved",
           text6: "primary"
         },
         {
           text0: "media/svg/misc/015-telegram.svg",
-          text1: "Application Development",
+          text1: "CXA 2021 Annual Benefits",
           text2: "app@dev.com",
           text3: "$4,600,000",
-          text4: "Python, MySQL",
+          text4: "Approval notes",
           text5: "In Progress",
           text6: "warning"
         },
         {
           text0: "media/svg/misc/003-puzzle.svg",
-          text1: "Payrol Application",
+          text1: "CXA 2022 Annual Benefits",
           text2: "company@dev.com",
           text3: "$560,000",
-          text4: "Laravel, Metronic",
+          text4: "Approval notes",
           text5: "Success",
           text6: "success"
         },
         {
           text0: "media/svg/misc/005-bebo.svg",
-          text1: "HR Management System",
+          text1: "CXA 2019 Annual Inspection",
           text2: "hr@demo.com",
           text3: "$57,000",
-          text4: "AngularJS, C#",
+          text4: "Approval notes",
           text5: "Rejected",
           text6: "danger"
         },
         {
           text0: "media/svg/misc/014-kickstarter.svg",
-          text1: "KTR Mobile Application",
+          text1: "CXA 2020 Annual Inspection",
           text2: "ktr@demo.com",
           text3: "$45,200,000",
-          text4: "ReactJS, Ruby",
+          text4: "Approval notes",
           text5: "In Progress",
           text6: "warning"
         }

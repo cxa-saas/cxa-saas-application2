@@ -3,13 +3,13 @@
   "self": {
     "layout": "default",
     "logo": {
-      "default": "media/logos/logo-letter-1.png",
-      "sticky": "media/logos/logo-letter-1.png"
+      "default": "media/logos/logo-cxa-1.png",
+      "sticky": "media/logos/logo-cxa-1.png"
     }
   },
   "loader": {
     "type": "spinner-logo",
-    "logo": "media/logos/logo-letter-1.png",
+    "logo": "media/logos/logo-cxa-1.png",
     "message": "Please wait..."
   },
   "breakpoints": {

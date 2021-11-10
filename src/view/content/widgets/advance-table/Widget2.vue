@@ -4,7 +4,7 @@
   >
     <!--begin::Header-->
     <div class="card-header border-0">
-      <h3 class="card-title font-weight-bolder text-success">People</h3>
+      <h3 class="card-title font-weight-bolder text-success">Platform Administrator</h3>
       <div class="card-toolbar">
         <Dropdown5></Dropdown5>
       </div>
@@ -55,28 +55,28 @@ export default {
     return {
       list: [
         {
-          title: "Ricky Hunt",
-          desc: "Business Analyst",
+          title: "Wilson WU",
+          desc: "CTO",
           svg: "media/svg/avatars/004-boy-1.svg"
         },
         {
-          title: "Anne Clarc",
-          desc: "Creative Director",
+          title: "Jeckie Xue",
+          desc: "Team Leader",
           svg: "media/svg/avatars/002-girl.svg"
         },
         {
-          title: "Kristaps Zumman",
-          desc: "Lead Developer",
+          title: "Chovy Qiu",
+          desc: "Software Engineer",
           svg: "media/svg/avatars/007-boy-2.svg"
         },
         {
-          title: "Randy Trent",
+          title: "Alvin Li",
           desc: "Backend Developer",
           svg: "media/svg/avatars/008-boy-3.svg"
         },
         {
-          title: "Carles Puyol",
-          desc: "Project Manager",
+          title: "Cain Liang",
+          desc: "Backend Developer",
           svg: "media/svg/avatars/009-boy-4.svg"
         }
       ]

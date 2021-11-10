@@ -4,10 +4,10 @@
     <div class="card-header border-0 pt-5">
       <h3 class="card-title align-items-start flex-column">
         <span class="card-label font-weight-bolder text-dark"
-          >New Arrivals</span
+          >Favorite Benefits</span
         >
         <span class="text-muted mt-3 font-weight-bold font-size-sm"
-          >More than 400+ new members</span
+          >Count the most popular benefits of employees</span
         >
       </h3>
       <div class="card-toolbar">
@@ -126,7 +126,7 @@ export default {
       show: "day",
       month: [
         {
-          title: "Bestseller Theme",
+          title: "Holiday Trading",
           desc: "Amazing Templates",
           desc2: "ReactJS, Ruby",
           users: "354 Users",
@@ -200,37 +200,37 @@ export default {
       ],
       day: [
         {
-          title: "Popular Authors",
-          desc: "Most Successful",
-          desc2: "Python, MySQL",
-          users: "7200 Users",
+          title: "Holiday Trading",
+          desc: "Health Mall",
+          desc2: "14982 Likes",
+          users: "720 Users",
           img: "media/svg/misc/015-telegram.svg"
         },
         {
-          title: "Top Authors",
-          desc: "Successful Fellas",
-          desc2: "ReactJs, HTML",
+          title: "Insurance Package 2019",
+          desc: "CXA Insurance",
+          desc2: "5498 Likes",
           users: "4600 Users",
           img: "media/svg/misc/006-plurk.svg"
         },
         {
-          title: "New Users",
-          desc: "Awesome Users",
-          desc2: "Laravel, Metronic",
+          title: "Inspection Package 2018",
+          desc: "CXA Inspection",
+          desc2: "2498 Likes",
           users: "890 Users",
           img: "media/svg/misc/003-puzzle.svg"
         },
         {
-          title: "Bestseller Theme",
-          desc: "Amazing Templates",
-          desc2: "ReactJS, Ruby",
+          title: "Inspection Package 2020",
+          desc: "CXA Inspection",
+          desc2: "1498 Likes",
           users: "354 Users",
           img: "media/svg/misc/014-kickstarter.svg"
         },
         {
-          title: "Active Customers",
-          desc: "Best Customers",
-          desc2: "AngularJS, C#",
+          title: "Macbook Pro 2020",
+          desc: "Health Mall",
+          desc2: "12498 Likes",
           users: "6370 Users",
           img: "media/svg/misc/005-bebo.svg"
         }

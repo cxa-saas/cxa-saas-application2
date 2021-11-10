@@ -17,7 +17,7 @@
         <div class="d-flex flex-column-auto flex-column pt-lg-40 pt-15">
           <a href="#" class="text-center mb-10">
             <img
-              src="media/logos/logo-letter-1.png"
+              src="media/logos/logo-cxa-1.png"
               class="max-h-70px"
               alt=""
             />
@@ -26,7 +26,7 @@
             class="font-weight-bolder text-center font-size-h4 font-size-h1-lg"
             style="color: #986923;"
           >
-            Discover Amazing Metronic <br />with great build tools
+            Welcome to CXA <br />Asia’s first health and wellness eco-system
           </h3>
         </div>
         <div
@@ -51,7 +51,7 @@
                 <h3
                   class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg"
                 >
-                  Welcome to Metronic
+                  Welcome to CXA
                 </h3>
                 <span class="text-muted font-weight-bold font-size-h4"
                   >New Here?
