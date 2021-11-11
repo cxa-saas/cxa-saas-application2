@@ -227,7 +227,7 @@ export default {
     return {
       createInsuranceProjectUrl: `${window.location.origin}#/custom-wizard/wizard-1`,
       createInspectionProjectUrl: `${window.location.origin}#/custom-wizard/wizard-1`,
-      createPointRechargeUrl: `${window.location.origin}#/custom-wizard/wizard-4`,
+      createPointRechargeUrl: `${window.location.origin}#/customer/point-recharge`,
       userCenterUrl:
         "http://118.25.186.104:8230/#/apps/customers/customers-listing",
 

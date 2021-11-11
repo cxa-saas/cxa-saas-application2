@@ -21,6 +21,29 @@ export default new Router({
           component: () => import("@/view/pages/Builder.vue")
         },
         {
+          path: "/customer",
+          name: "customer",
+          component: () =>
+            import("@/view/pages/customer/Customer.vue"),
+          children: [
+            {
+              path: "get-start",
+              name: "customer-get-start",
+              component: () => import("@/view/pages/customer/GetStart.vue")
+            },
+            {
+              path: "add-enterprise",
+              name: "customer-add-enterprise",
+              component: () => import("@/view/pages/customer/AddEnterprise.vue")
+            },
+            {
+              path: "point-recharge",
+              name: "point-recharge",
+              component: () => import("@/view/pages/customer/PointRecharge.vue")
+            },
+          ]
+        },
+        {
           path: "/vue-bootstrap",
           name: "vue-bootstrap",
           component: () =>

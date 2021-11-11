@@ -41,7 +41,7 @@
     </router-link>
 
     <li class="menu-section">
-      <h4 class="menu-text">Components</h4>
+      <h4 class="menu-text">Companys</h4>
       <i class="menu-icon flaticon-more-v2"></i>
     </li>
 
@@ -53,7 +53,7 @@
     >
       <a href="#" class="menu-link menu-toggle">
         <i class="menu-icon flaticon2-digital-marketing"></i>
-        <span class="menu-text">Vue Bootstrap</span>
+        <span class="menu-text">CXA Group</span>
         <i class="menu-arrow"></i>
       </a>
       <div class="menu-submenu">
@@ -1052,7 +1052,7 @@
     >
       <a href="#" class="menu-link menu-toggle">
         <i class="menu-icon flaticon-web"></i>
-        <span class="menu-text">Vuetify</span>
+        <span class="menu-text">Meida-Plus</span>
         <i class="menu-arrow"></i>
       </a>
       <div class="menu-submenu">
@@ -1598,7 +1598,7 @@
     >
       <a href="#" class="menu-link menu-toggle">
         <i class="menu-icon flaticon2-list-2"></i>
-        <span class="menu-text">Error Pages</span>
+        <span class="menu-text">Order List</span>
         <i class="menu-arrow"></i>
       </a>
       <div class="menu-submenu">
