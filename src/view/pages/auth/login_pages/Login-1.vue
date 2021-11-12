@@ -1,7 +1,12 @@
 <template>
   <div class="d-flex flex-column flex-root">
     <div
-      class="login login-1 d-flex flex-column flex-lg-row flex-column-fluid bg-white"
+      class="
+        login login-1
+        d-flex
+        flex-column flex-lg-row flex-column-fluid
+        bg-white
+      "
       :class="{
         'login-signin-on': this.state == 'signin',
         'login-signup-on': this.state == 'signup',
@@ -12,32 +17,43 @@
       <!--begin::Aside-->
       <div
         class="login-aside d-flex flex-column flex-row-auto"
-        style="background-color: #F2C98A;"
+        style="background-color: #f2c98a"
       >
         <div class="d-flex flex-column-auto flex-column pt-lg-40 pt-15">
           <a href="#" class="text-center mb-10">
-            <img
-              src="media/logos/logo-cxa-1.png"
-              class="max-h-70px"
-              alt=""
-            />
+            <img src="media/logos/logo-cxa-1.png" class="max-h-70px" alt="" />
           </a>
           <h3
             class="font-weight-bolder text-center font-size-h4 font-size-h1-lg"
-            style="color: #986923;"
+            style="color: #986923"
           >
             Welcome to CXA <br />Asia’s first health and wellness eco-system
           </h3>
         </div>
         <div
-          class="aside-img d-flex flex-row-fluid bgi-no-repeat bgi-position-y-bottom bgi-position-x-center"
+          class="
+            aside-img
+            d-flex
+            flex-row-fluid
+            bgi-no-repeat bgi-position-y-bottom bgi-position-x-center
+          "
           :style="{ backgroundImage: `url(${backgroundImage})` }"
         ></div>
       </div>
       <!--begin::Aside-->
       <!--begin::Content-->
       <div
-        class="login-content flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto"
+        class="
+          login-content
+          flex-row-fluid
+          d-flex
+          flex-column
+          justify-content-center
+          position-relative
+          overflow-hidden
+          p-7
+          mx-auto
+        "
       >
         <div class="d-flex flex-column-fluid flex-center">
           <!--begin::Signin-->
@@ -49,7 +65,11 @@
             >
               <div class="pb-13 pt-lg-0 pt-5">
                 <h3
-                  class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg"
+                  class="
+                    font-weight-bolder
+                    text-dark
+                    font-size-h4 font-size-h1-lg
+                  "
                 >
                   Welcome to CXA
                 </h3>
@@ -73,7 +93,13 @@
                   label-for="example-input-1"
                 >
                   <input
-                    class="form-control form-control-solid h-auto py-7 px-6 rounded-lg"
+                    class="
+                      form-control form-control-solid
+                      h-auto
+                      py-7
+                      px-6
+                      rounded-lg
+                    "
                     type="text"
                     name="email"
                     ref="email"
@@ -87,7 +113,12 @@
                     >Password</label
                   >
                   <a
-                    class="text-primary font-size-h6 font-weight-bolder text-hover-primary pt-5"
+                    class="
+                      text-primary
+                      font-size-h6 font-weight-bolder
+                      text-hover-primary
+                      pt-5
+                    "
                     id="kt_login_forgot"
                     @click="showForm('forgot')"
                     >Forgot Password ?</a
@@ -99,7 +130,13 @@
                   label-for="example-input-2"
                 >
                   <input
-                    class="form-control form-control-solid h-auto py-7 px-6 rounded-lg"
+                    class="
+                      form-control form-control-solid
+                      h-auto
+                      py-7
+                      px-6
+                      rounded-lg
+                    "
                     type="password"
                     name="password"
                     ref="password"
@@ -111,13 +148,27 @@
               <div class="pb-lg-0 pb-5">
                 <button
                   ref="kt_login_signin_submit"
-                  class="btn btn-primary font-weight-bolder font-size-h6 px-15 py-4 my-3 mr-3"
+                  class="
+                    btn btn-primary
+                    font-weight-bolder font-size-h6
+                    px-15
+                    py-4
+                    my-3
+                    mr-3
+                  "
                 >
                   Sign In
                 </button>
                 <button
                   type="button"
-                  class="btn btn-light-primary font-weight-bolder px-8 py-4 my-3 font-size-lg"
+                  class="
+                    btn btn-light-primary
+                    font-weight-bolder
+                    px-8
+                    py-4
+                    my-3
+                    font-size-lg
+                  "
                 >
                   <span class="svg-icon svg-icon-md">
                     <inline-svg
@@ -138,7 +189,11 @@
             >
               <div class="pb-13 pt-lg-0 pt-5">
                 <h3
-                  class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg"
+                  class="
+                    font-weight-bolder
+                    text-dark
+                    font-size-h4 font-size-h1-lg
+                  "
                 >
                   Sign Up
                 </h3>
@@ -148,17 +203,31 @@
               </div>
               <div class="form-group">
                 <input
-                  class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                  class="
+                    form-control form-control-solid
+                    h-auto
+                    py-7
+                    px-6
+                    rounded-lg
+                    font-size-h6
+                  "
                   type="text"
-                  placeholder="Fullname"
-                  name="fullname"
-                  ref="fullname"
+                  placeholder="Name"
+                  name="name"
+                  ref="rname"
                   autocomplete="off"
                 />
               </div>
               <div class="form-group">
                 <input
-                  class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                  class="
+                    form-control form-control-solid
+                    h-auto
+                    py-7
+                    px-6
+                    rounded-lg
+                    font-size-h6
+                  "
                   type="email"
                   placeholder="Email"
                   name="email"
@@ -168,7 +237,14 @@
               </div>
               <div class="form-group">
                 <input
-                  class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                  class="
+                    form-control form-control-solid
+                    h-auto
+                    py-7
+                    px-6
+                    rounded-lg
+                    font-size-h6
+                  "
                   type="password"
                   placeholder="Password"
                   name="password"
@@ -178,7 +254,14 @@
               </div>
               <div class="form-group">
                 <input
-                  class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                  class="
+                    form-control form-control-solid
+                    h-auto
+                    py-7
+                    px-6
+                    rounded-lg
+                    font-size-h6
+                  "
                   type="password"
                   placeholder="Confirm password"
                   name="cpassword"
@@ -197,15 +280,28 @@
               <div class="form-group d-flex flex-wrap pb-lg-0 pb-3">
                 <button
                   ref="kt_login_signup_submit"
-                  class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-4"
-                  style="width:150px;"
+                  class="
+                    btn btn-primary
+                    font-weight-bolder font-size-h6
+                    px-8
+                    py-4
+                    my-3
+                    mr-4
+                  "
+                  style="width: 150px"
                 >
                   Submit
                 </button>
                 <button
                   type="button"
                   id="kt_login_signup_cancel"
-                  class="btn btn-light-primary font-weight-bolder font-size-h6 px-8 py-4 my-3"
+                  class="
+                    btn btn-light-primary
+                    font-weight-bolder font-size-h6
+                    px-8
+                    py-4
+                    my-3
+                  "
                   @click="showForm('signin')"
                 >
                   Cancel
@@ -225,7 +321,11 @@
             >
               <div class="pb-13 pt-lg-0 pt-5">
                 <h3
-                  class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg"
+                  class="
+                    font-weight-bolder
+                    text-dark
+                    font-size-h4 font-size-h1-lg
+                  "
                 >
                   Forgotten Password ?
                 </h3>
@@ -235,7 +335,14 @@
               </div>
               <div class="form-group">
                 <input
-                  class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                  class="
+                    form-control form-control-solid
+                    h-auto
+                    py-7
+                    px-6
+                    rounded-lg
+                    font-size-h6
+                  "
                   type="email"
                   placeholder="Email"
                   name="email"
@@ -246,14 +353,27 @@
                 <button
                   type="button"
                   id="kt_login_forgot_submit"
-                  class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-4"
+                  class="
+                    btn btn-primary
+                    font-weight-bolder font-size-h6
+                    px-8
+                    py-4
+                    my-3
+                    mr-4
+                  "
                 >
                   Submit
                 </button>
                 <button
                   type="button"
                   id="kt_login_forgot_cancel"
-                  class="btn btn-light-primary font-weight-bolder font-size-h6 px-8 py-4 my-3"
+                  class="
+                    btn btn-light-primary
+                    font-weight-bolder font-size-h6
+                    px-8
+                    py-4
+                    my-3
+                  "
                   @click="showForm('signin')"
                 >
                   Cancel
@@ -265,7 +385,12 @@
         </div>
         <!--begin::Content footer-->
         <div
-          class="d-flex justify-content-lg-start justify-content-center align-items-end py-7 py-lg-0"
+          class="
+            d-flex
+            justify-content-lg-start justify-content-center
+            align-items-end
+            py-7 py-lg-0
+          "
         >
           <a href="#" class="text-primary font-weight-bolder font-size-h5"
             >Terms</a
@@ -357,7 +482,7 @@ export default {
 
     this.fv1 = formValidation(signup_form, {
       fields: {
-        fullname: {
+        name: {
           validators: {
             notEmpty: {
               message: "Full name is required"
@@ -446,8 +571,16 @@ export default {
         this.$store
           .dispatch(LOGIN, { email, password })
           // go to which page after successfully login
-          .then(() => this.$router.push({ name: "dashboard" }))
-          .catch(() => {});
+          .then(redirect_url => this.$router.push({ name: redirect_url }))
+          .catch(response => {
+            Swal.fire({
+              title: "Login Failed",
+              text: response,
+              icon: "error",
+              confirmButtonClass: "btn btn-secondary",
+              heightAuto: false
+            });
+          });
 
         submitButton.classList.remove(
           "spinner",
@@ -459,7 +592,7 @@ export default {
 
     this.fv.on("core.form.invalid", () => {
       Swal.fire({
-        title: "",
+        title: "Login Failed",
         text: "Please, provide correct data!",
         icon: "error",
         confirmButtonClass: "btn btn-secondary",
@@ -468,6 +601,7 @@ export default {
     });
 
     this.fv1.on("core.form.valid", () => {
+      const name = this.$refs.rname.value;
       const email = this.$refs.remail.value;
       const password = this.$refs.rpassword.value;
 
@@ -483,6 +617,7 @@ export default {
         // send register request
         this.$store
           .dispatch(REGISTER, {
+            name: name,
             email: email,
             password: password
           })

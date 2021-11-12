@@ -33,7 +33,7 @@ import "@mdi/font/css/materialdesignicons.css";
 ApiService.init();
 
 // Remove this to disable mock API
-MockService.init();
+// MockService.init();
 
 router.beforeEach((to, from, next) => {
   // Ensure we checked auth before each page load.

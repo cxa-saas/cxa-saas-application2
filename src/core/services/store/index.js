@@ -2,6 +2,8 @@ import Vue from "vue";
 import Vuex from "vuex";
 
 import auth from "./auth.module";
+import enterprise from "./enterprise.module";
+
 import htmlClass from "./htmlclass.module";
 import config from "./config.module";
 import breadcrumbs from "./breadcrumbs.module";
@@ -15,6 +17,7 @@ export default new Vuex.Store({
     htmlClass,
     config,
     breadcrumbs,
-    profile
+    profile,
+    enterprise
   }
 });

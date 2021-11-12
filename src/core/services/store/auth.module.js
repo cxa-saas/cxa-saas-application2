@@ -13,11 +13,12 @@ export const PURGE_AUTH = "logOut";
 export const SET_AUTH = "setUser";
 export const SET_PASSWORD = "setPassword";
 export const SET_ERROR = "setError";
-
+export const SET_ENTERPRISE_LIST = "setEnterpriseList";
 const state = {
   errors: null,
   user: {},
-  isAuthenticated: !!JwtService.getToken()
+  isAuthenticated: !!JwtService.getToken(),
+  enterpriseList: []
 };
 
 const getters = {
@@ -31,15 +32,28 @@ const getters = {
 
 const actions = {
   [LOGIN](context, credentials) {
-    return new Promise(resolve => {
-      ApiService.post("login", credentials)
-        .then(({ data }) => {
-          // console.log("Here what post returns", data);
-          context.commit(SET_AUTH, data);
-          resolve(data);
+    return new Promise((resolve, reject) => {
+      ApiService.post("/admin/login", credentials)
+        .then(response => {
+          if (response.data && response.data.code == 200) {
+            context.commit(SET_AUTH, response.data.data.user);
+            context.commit(
+              SET_ENTERPRISE_LIST,
+              response.data.data.enterpriseList
+            );
+            if (context.state.enterpriseList.length > 0) {
+              resolve(`dashbord`);
+            } else {
+              resolve(`customer-get-start`);
+            }
+          } else {
+            context.commit(SET_ERROR, response.data.msg);
+            reject(response.data.msg);
+          }
         })
-        .catch(({ response }) => {
-          context.commit(SET_ERROR, response.data.errors);
+        .catch(() => {
+          context.commit(SET_ERROR, "unknown error");
+          reject("unknown error");
         });
     });
   },
@@ -48,7 +62,7 @@ const actions = {
   },
   [REGISTER](context, credentials) {
     return new Promise(resolve => {
-      ApiService.post("login", credentials)
+      ApiService.post("/administrator/add", credentials)
         .then(({ data }) => {
           context.commit(SET_AUTH, data);
           resolve(data);
@@ -61,7 +75,7 @@ const actions = {
   [VERIFY_AUTH](context) {
     if (JwtService.getToken()) {
       ApiService.setHeader();
-      ApiService.get("verify")
+      ApiService.post("verify")
         .then(({ data }) => {
           context.commit(SET_AUTH, data);
         })
@@ -94,6 +108,9 @@ const mutations = {
   },
   [SET_PASSWORD](state, password) {
     state.user.password = password;
+  },
+  [SET_ENTERPRISE_LIST](state, enterpriseList) {
+    state.user.enterpriseList = enterpriseList;
   },
   [PURGE_AUTH](state) {
     state.isAuthenticated = false;

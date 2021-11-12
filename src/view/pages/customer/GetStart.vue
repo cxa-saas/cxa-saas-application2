@@ -47,7 +47,7 @@ export default {
       description:
         "There are no organization added yet. <br/>Kickstart your organization by adding a your first organization",
       image: "media/svg/illustrations/2.png",
-      buttonText: "Add Customer",
+      buttonText: "Add Origanization",
     };
   },
   props: {},
