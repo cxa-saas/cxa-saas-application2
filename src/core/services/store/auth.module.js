@@ -7,7 +7,8 @@ export const LOGIN = "login";
 export const LOGOUT = "logout";
 export const REGISTER = "register";
 export const UPDATE_PASSWORD = "updateUser";
-
+export const SUBMIT_ENTERPRISE = "submitEnterprise";
+export const FETCH_ENTERPRISE_LIST = "fetchEnterpriseList";
 // mutation types
 export const PURGE_AUTH = "logOut";
 export const SET_AUTH = "setUser";
@@ -18,7 +19,6 @@ const state = {
   errors: null,
   user: {},
   isAuthenticated: !!JwtService.getToken(),
-  enterpriseList: []
 };
 
 const getters = {
@@ -27,6 +27,9 @@ const getters = {
   },
   isAuthenticated(state) {
     return state.isAuthenticated;
+  },
+  enterpriseList(state) {
+    return state.enterpriseList;
   }
 };
 
@@ -42,7 +45,7 @@ const actions = {
               response.data.data.enterpriseList
             );
             if (context.state.enterpriseList.length > 0) {
-              resolve(`dashbord`);
+              resolve(`dashboard`);
             } else {
               resolve(`customer-get-start`);
             }
@@ -76,11 +79,15 @@ const actions = {
     if (JwtService.getToken()) {
       ApiService.setHeader();
       ApiService.post("verify")
-        .then(({ data }) => {
-          context.commit(SET_AUTH, data);
+        .then(response => {
+          context.commit(SET_AUTH, response.data.data.user.data);
+          context.commit(
+            SET_ENTERPRISE_LIST,
+            response.data.data.enterpriseList
+          );
         })
-        .catch(({ response }) => {
-          context.commit(SET_ERROR, response.data.errors);
+        .catch(error => {
+          context.commit(SET_ERROR, error);
         });
     } else {
       context.commit(PURGE_AUTH);
@@ -92,6 +99,46 @@ const actions = {
     return ApiService.put("password", password).then(({ data }) => {
       context.commit(SET_PASSWORD, data);
       return data;
+    });
+  },
+  [SUBMIT_ENTERPRISE](context, payload) {
+    return new Promise((resolve, reject) => {
+      ApiService.post("/enterprise/add", payload)
+        .then(response => {
+          // if (response.data && response.code == 200) {
+          if (response) {
+            context.dispatch(FETCH_ENTERPRISE_LIST, context.state.user.email);
+            resolve();
+          } else {
+            context.commit(SET_ERROR, response.data.msg);
+            reject(response.data.msg);
+          }
+        })
+        .catch(() => {
+          context.commit(SET_ERROR, "unknown error");
+          reject("unknown error");
+        });
+    });
+  },
+  [FETCH_ENTERPRISE_LIST](context, email) {
+    return new Promise((resolve, reject) => {
+      ApiService.query("/enterprise/list", { params: { email } })
+        .then(response => {
+          if (response.data && response.data.code == 200) {
+            context.commit(
+              SET_ENTERPRISE_LIST,
+              response.data.data.enterpriseList
+            );
+            resolve(response.data.data.enterpriseList);
+          } else {
+            context.commit(SET_ERROR, response.data.msg);
+            reject(response.data.msg);
+          }
+        })
+        .catch(() => {
+          context.commit(SET_ERROR, "unknown error");
+          reject("unknown error");
+        });
     });
   }
 };
@@ -110,7 +157,7 @@ const mutations = {
     state.user.password = password;
   },
   [SET_ENTERPRISE_LIST](state, enterpriseList) {
-    state.user.enterpriseList = enterpriseList;
+    state.enterpriseList = enterpriseList;
   },
   [PURGE_AUTH](state) {
     state.isAuthenticated = false;

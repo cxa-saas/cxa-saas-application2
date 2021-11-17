@@ -29,7 +29,7 @@
                 <div class="wizard-number">2</div>
                 <div class="wizard-label">
                   <div class="wizard-title">Your Address(Optional)</div>
-                  <div class="wizard-desc">Setup Your Address</div>
+                  <div class="wizard-desc">Setup Your Bill Address</div>
                 </div>
               </div>
             </div>
@@ -74,14 +74,30 @@
                     <div class="form-group">
                       <label>Recharge Amount</label>
                       <input
+                        v-model="form.rechargeAmount"
                         type="text"
                         class="form-control form-control-solid form-control-lg"
                         name="fname"
                         placeholder="First Name"
-                        value="John"
                       />
                       <span class="form-text text-muted"
                         >Please enter your recharge amount.</span
+                      >
+                    </div>
+                    <div class="form-group">
+                      <label>Recharge Enterprise</label>
+                      <select
+                        v-model="form.enterpriseId"
+                        name="preferreddelivery"
+                        class="form-control form-control-solid form-control-lg"
+                      >
+                        <option value="1" selected>CXA Group</option>
+                        <option value="2">Media Plus</option>
+                        <option value="3">保新</option>
+                      </select>
+                      <span class="form-text text-muted"
+                        >Please select which enterprise your need recharge
+                        .</span
                       >
                     </div>
                   </div>
@@ -93,26 +109,13 @@
                       Setup Your Address
                     </div>
                     <div class="form-group">
-                      <label>Address Line 1</label>
+                      <label>Address Line</label>
                       <input
                         type="text"
+                        v-model="form.address"
                         class="form-control form-control-solid form-control-lg"
                         name="address1"
-                        placeholder="Address Line 1"
-                        value="Address Line 1"
-                      />
-                      <span class="form-text text-muted"
-                        >Please enter your Address.</span
-                      >
-                    </div>
-                    <div class="form-group">
-                      <label>Address Line 2</label>
-                      <input
-                        type="text"
-                        class="form-control form-control-solid form-control-lg"
-                        name="address2"
-                        placeholder="Address Line 2"
-                        value="Address Line 2"
+                        placeholder="Address"
                       />
                       <span class="form-text text-muted"
                         >Please enter your Address.</span
@@ -483,6 +486,19 @@
                         </div>
                       </div>
                     </div>
+                    <div class="form-group">
+                      <label>Remark</label>
+                      <input
+                        type="text"
+                        v-model="form.remark"
+                        class="form-control form-control-solid form-control-lg"
+                        name="remark"
+                        placeholder="pay remark"
+                      />
+                      <span class="form-text text-muted"
+                        >Please enter your remark.</span
+                      >
+                    </div>
                   </div>
                   <!--end: Wizard Step 2-->
 
@@ -495,11 +511,11 @@
                     <div class="row">
                       <b-form-group>
                         <b-form-radio-group
-                          buttons=true
+                          buttons="true"
                           button-variant="outline-primary"
                           size="large"
                           id="radio-group-1"
-                          v-model="selected"
+                          v-model="form.payType"
                           :options="options"
                           name="radio-options"
                         ></b-form-radio-group>
@@ -507,42 +523,54 @@
                     </div>
                   </div>
                   <!--end: Wizard Step 3-->
-
                   <!--begin: Wizard Step 4-->
                   <div class="pb-5" data-wizard-type="step-content">
                     <div class="mb-10 font-weight-bold text-dark">
-                      Review your Details and Submit
+                      Choose Your Payment Details
                     </div>
-                    <div class="border-bottom mb-5 pb-5">
-                      <div class="font-weight-bold mb-3">
-                        Your Account Details:
-                      </div>
-                      <div class="line-height-md">
-                        John Wick
-                        <br />
-                        Phone: +61412345678 <br />
-                        Email: johnwick@reeves.com
-                      </div>
+
+                    <div class="form-group">
+                      <label>Recharge Amount</label>
+                      <input
+                        v-model="form.rechargeAmount"
+                        type="text"
+                        disabled
+                        class="form-control form-control-solid form-control-lg"
+                      />
                     </div>
-                    <div class="border-bottom mb-5 pb-5">
-                      <div class="font-weight-bold mb-3">
-                        Your Address Details:
-                      </div>
-                      <div class="line-height-md">
-                        Address Line 1
-                        <br />
-                        Address Line 2 <br />
-                        Melbourne 3000, VIC, Australia
-                      </div>
+                    <div class="form-group">
+                      <label>Recharge Enterprise</label>
+                      <select
+                        v-model="form.enterpriseId"
+                        disabled
+                        class="form-control form-control-solid form-control-lg"
+                      >
+                        <option value="1" selected>CXA Group</option>
+                        <option value="2">Media Plus</option>
+                        <option value="3">保新</option>
+                      </select>
                     </div>
-                    <div class="mb-5">
-                      <div class="font-weight-bold mb-3">Payment Details:</div>
-                      <div class="line-height-md">
-                        Card Number: xxxx xxxx xxxx 1111
-                        <br />
-                        Card Name: John Wick <br />
-                        Card Expiry: 01/21
-                      </div>
+                    <div class="form-group">
+                      <label>Remark</label>
+                      <input
+                        v-model="form.remark"
+                        type="text"
+                        disabled
+                        class="form-control form-control-solid form-control-lg"
+                      />
+                    </div>
+                    <div class="row">
+                      <b-form-group>
+                        <b-form-radio-group
+                          buttons="true"
+                          button-variant="outline-primary"
+                          size="large"
+                          id="radio-group-1"
+                          v-model="form.payType"
+                          :options="options"
+                          name="radio-options"
+                        ></b-form-radio-group>
+                      </b-form-group>
                     </div>
                   </div>
                   <!--end: Wizard Step 4-->
@@ -619,50 +647,67 @@ export default {
   name: "Wizard-4",
   data() {
     return {
-      selected: "first",
+      form: {
+        // adminId: this.$store.state.auth.user.adminId,
+        enterpriseId: 2,
+        rechargeAmount: 200,
+        payType: 1,
+        remark: "",
+        address: ""
+      },
       options: [
-        { text: "AliPay", value: "first" },
-        { text: "Wechat Pay", value: "second" },
-        { text: "Apple Pay", value: "third", disabled: false },
-        { text: "Master Card Pay", value: { fourth: 4 } },
-      ],
+        { text: "AliPay", value: 1 },
+        { text: "Wechat Pay", value: 2 },
+        { text: "Apple Pay", value: 3 },
+        { text: "Master Card Pay", value: 4 }
+      ]
     };
   },
   mounted() {
     this.$store.dispatch(SET_BREADCRUMB, [
       { title: "Wizard", route: "wizard-1" },
-      { title: "Wizard-4" },
+      { title: "Wizard-4" }
     ]);
 
     // Initialize form wizard
     const wizard = new KTWizard("kt_wizard_v4", {
       startStep: 1, // initial active step number
-      clickableSteps: true, // allow step clicking
+      clickableSteps: true // allow step clicking
     });
 
     // Validation before going to next page
-    wizard.on("beforeNext", function (/*wizardObj*/) {
+    wizard.on("beforeNext", function(/*wizardObj*/) {
       // validate the form and use below function to stop the wizard's step
       // wizardObj.stop();
     });
 
     // Change event
-    wizard.on("change", function (/*wizardObj*/) {
+    wizard.on("change", function(/*wizardObj*/) {
       setTimeout(() => {
         KTUtil.scrollTop();
       }, 500);
     });
   },
   methods: {
-    submit: function (e) {
+    submit: async function(e) {
       e.preventDefault();
-      Swal.fire({
-        title: "",
-        text: "The application has been successfully submitted!",
-        icon: "success",
-        confirmButtonClass: "btn btn-secondary",
-      });
-    },
-  },
+      try {
+        const result = await this.$store.dispatch("rechargePoint", this.form);
+        Swal.fire({
+          title: "Recharge Success!",
+          text: result,
+          icon: "success",
+          confirmButtonClass: "btn btn-secondary"
+        });
+      } catch (err) {
+        Swal.fire({
+          title: "Recharge Failed",
+          text: err,
+          icon: "dange",
+          confirmButtonClass: "btn btn-secondary"
+        });
+      }
+    }
+  }
 };
 </script>

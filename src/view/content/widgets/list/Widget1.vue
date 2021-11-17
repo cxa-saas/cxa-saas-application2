@@ -35,49 +35,18 @@
             align-items-center
           "
           data-toggle="pill"
-          :href="createInsuranceProjectUrl"
+          :href="userCenterUrl"
         >
           <span class="nav-icon py-2 w-auto">
             <span class="svg-icon svg-icon-3x">
-              <!--begin::Svg Icon | path:assets/media/svg/icons/Home/Library.svg-->
-              <inline-svg src="media/svg/icons/Home/Library.svg" />
-              <!--end::Svg Icon-->
-            </span>
-          </span>
-          <span class="nav-text font-size-lg py-2 font-weight-bold text-center"
-            >Group Insurance</span
-          >
-        </a>
-      </li>
-      <!--end::Item-->
-      <!--begin::Item-->
-      <li
-        class="nav-item d-flex col flex-grow-1 flex-shrink-0 mr-3 mb-3 mb-lg-0"
-      >
-        <a
-          class="
-            nav-link
-            border
-            py-10
-            d-flex
-            flex-grow-1
-            rounded
-            flex-column
-            align-items-center
-          "
-          data-toggle="pill"
-          :href="createInspectionProjectUrl"
-        >
-          <span class="nav-icon py-2 w-auto">
-            <span class="svg-icon svg-icon-3x">
-              <!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
-              <inline-svg src="media/svg/icons/Layout/Layout-4-blocks.svg" />
+              <!--begin::Svg Icon | path:assets/media/svg/icons/Media/Equalizer.svg-->
+              <inline-svg src="media/svg/icons/Media/Equalizer.svg" />
               <!--end::Svg Icon-->
             </span>
           </span>
           <span
             class="nav-text font-size-lg py-2 font-weight-bolder text-center"
-            >Group Inspection</span
+            >Employee Center</span
           >
         </a>
       </li>
@@ -128,22 +97,54 @@
             align-items-center
           "
           data-toggle="pill"
-          :href="userCenterUrl"
+          :href="createInsuranceProjectUrl"
         >
           <span class="nav-icon py-2 w-auto">
             <span class="svg-icon svg-icon-3x">
-              <!--begin::Svg Icon | path:assets/media/svg/icons/Media/Equalizer.svg-->
-              <inline-svg src="media/svg/icons/Media/Equalizer.svg" />
+              <!--begin::Svg Icon | path:assets/media/svg/icons/Home/Library.svg-->
+              <inline-svg src="media/svg/icons/Home/Library.svg" />
+              <!--end::Svg Icon-->
+            </span>
+          </span>
+          <span class="nav-text font-size-lg py-2 font-weight-bold text-center"
+            >Group Insurance</span
+          >
+        </a>
+      </li>
+      <!--end::Item-->
+      <!--begin::Item-->
+      <li
+        class="nav-item d-flex col flex-grow-1 flex-shrink-0 mr-3 mb-3 mb-lg-0"
+      >
+        <a
+          class="
+            nav-link
+            border
+            py-10
+            d-flex
+            flex-grow-1
+            rounded
+            flex-column
+            align-items-center
+          "
+          data-toggle="pill"
+          :href="createInspectionProjectUrl"
+        >
+          <span class="nav-icon py-2 w-auto">
+            <span class="svg-icon svg-icon-3x">
+              <!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
+              <inline-svg src="media/svg/icons/Layout/Layout-4-blocks.svg" />
               <!--end::Svg Icon-->
             </span>
           </span>
           <span
             class="nav-text font-size-lg py-2 font-weight-bolder text-center"
-            >Employee Center</span
+            >Group Inspection</span
           >
         </a>
       </li>
       <!--end::Item-->
+
       <!--begin::Item-->
       <li class="nav-item d-flex col flex-grow-1 flex-shrink-0 mr-3">
         <a
@@ -158,7 +159,7 @@
             align-items-center
           "
           data-toggle="pill"
-          href="#tab_forms_widget_5"
+          :href="projectCenterUrl"
         >
           <span class="nav-icon py-2 w-auto">
             <span class="svg-icon svg-icon-3x">
@@ -167,7 +168,7 @@
           </span>
           <span
             class="nav-text font-size-lg py-2 font-weight-bolder text-center"
-            >Order Records</span
+            >Project Center</span
           >
         </a>
       </li>
@@ -188,7 +189,7 @@
             align-items-center
           "
           data-toggle="pill"
-          href="#tab_forms_widget_5"
+          :href="employeeOrderUrl"
         >
           <span class="nav-icon py-2 w-auto">
             <span class="svg-icon svg-icon-3x">
@@ -197,7 +198,7 @@
           </span>
           <span
             class="nav-text font-size-lg py-2 font-weight-bolder text-center"
-            >Point Distribution</span
+            >Employee Order</span
           >
         </a>
       </li>
@@ -228,8 +229,9 @@ export default {
       createInsuranceProjectUrl: `${window.location.origin}#/custom-wizard/wizard-1`,
       createInspectionProjectUrl: `${window.location.origin}#/custom-wizard/wizard-1`,
       createPointRechargeUrl: `${window.location.origin}#/customer/point-recharge`,
-      userCenterUrl:
-        "http://118.25.186.104:8230/#/apps/customers/customers-listing",
+      userCenterUrl: `${window.location.origin}#/customer/employee-list`,
+      projectCenterUrl: `${window.location.origin}#/customer/project-center`,
+      employeeOrderUrl: `${window.location.origin}#/customer/order-center`,
 
       list: [
         {

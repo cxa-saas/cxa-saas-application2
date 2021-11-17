@@ -18,7 +18,7 @@
             >
               <div class="wizard-label">
                 <i class="wizard-icon flaticon-bus-stop"></i>
-                <h3 class="wizard-title">1. Import Employee</h3>
+                <h3 class="wizard-title">1. Choose Employee</h3>
               </div>
               <i class="wizard-arrow flaticon2-next"></i>
             </div>

@@ -47,16 +47,16 @@ export default {
       description:
         "There are no organization added yet. <br/>Kickstart your organization by adding a your first organization",
       image: "media/svg/illustrations/2.png",
-      buttonText: "Add Origanization",
+      buttonText: "Add Origanization"
     };
   },
   props: {},
   components: {},
-  methods:{
-  addEnterprise(){
-    this.$router.push({name:"customer-add-enterprise"});
+  mounted() {},
+  methods: {
+    addEnterprise() {
+      this.$router.push({ name: "customer-add-enterprise" });
+    }
   }
-  }
-
 };
 </script>

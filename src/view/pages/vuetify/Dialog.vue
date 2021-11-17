@@ -468,15 +468,13 @@
                       </v-list>
                     </v-card-text>
 
-                    <div style="flex: 1 1 auto;"></div>
+                    <div style="flex: 1 1 auto"></div>
                   </v-card>
                 </v-dialog>
 
                 <v-dialog v-model="code7.dialog2" max-width="500px">
                   <v-card>
-                    <v-card-title>
-                      Dialog 2
-                    </v-card-title>
+                    <v-card-title> Dialog 2 </v-card-title>
                     <v-card-text>
                       <v-btn
                         color="primary"
@@ -561,7 +559,7 @@
                 <v-card>
                   <v-card-title>Select Country</v-card-title>
                   <v-divider></v-divider>
-                  <v-card-text style="height: 300px;">
+                  <v-card-text style="height: 300px">
                     <v-radio-group v-model="code2.dialogm1" column>
                       <v-radio label="Bahamas, The" value="bahamas"></v-radio>
                       <v-radio label="Bahrain" value="bahrain"></v-radio>
@@ -676,7 +674,7 @@
                               'Reading',
                               'Writing',
                               'Coding',
-                              'Basejump'
+                              'Basejump',
                             ]"
                             label="Interests"
                             multiple
@@ -877,7 +875,7 @@ export default {
     }
   },
 }`,
-        dialog: false
+        dialog: false,
       },
 
       code2: {
@@ -928,7 +926,7 @@ export default {
   },
 }`,
         dialogm1: "",
-        dialog: false
+        dialog: false,
       },
 
       code3: {
@@ -1099,7 +1097,7 @@ export default {
     }
   },
 }`,
-        dialog: false
+        dialog: false,
       },
 
       code4: {
@@ -1166,7 +1164,7 @@ export default {
     dialog: false,
   }),
 }`,
-        dialog: false
+        dialog: false,
       },
 
       code5: {
@@ -1215,7 +1213,7 @@ export default {
       setTimeout(() => (this.dialog = false), 4000)
     },
   },
-}`
+}`,
       },
       code5Dialog: false,
 
@@ -1298,7 +1296,7 @@ export default {
         dialog: false,
         notifications: false,
         sound: true,
-        widgets: false
+        widgets: false,
       },
 
       code7: {
@@ -1602,17 +1600,17 @@ export default {
         widgets: false,
         items: [
           {
-            title: "Click Me"
+            title: "Click Me",
           },
           {
-            title: "Click Me"
+            title: "Click Me",
           },
           {
-            title: "Click Me"
+            title: "Click Me",
           },
           {
-            title: "Click Me 2"
-          }
+            title: "Click Me 2",
+          },
         ],
         select: [
           { text: "State 1" },
@@ -1621,18 +1619,18 @@ export default {
           { text: "State 4" },
           { text: "State 5" },
           { text: "State 6" },
-          { text: "State 7" }
-        ]
-      }
+          { text: "State 7" },
+        ],
+      },
     };
   },
   components: {
-    KTCodePreview
+    KTCodePreview,
   },
   mounted() {
     this.$store.dispatch(SET_BREADCRUMB, [
       { title: "Vuetify", route: "alerts" },
-      { title: "Dialog" }
+      { title: "Dialog" },
     ]);
   },
 
@@ -1641,7 +1639,7 @@ export default {
       if (!val) return;
 
       setTimeout(() => (this.code5Dialog = false), 4000);
-    }
-  }
+    },
+  },
 };
 </script>

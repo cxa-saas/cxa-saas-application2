@@ -7,7 +7,7 @@ export default new Router({
   routes: [
     {
       path: "/",
-      redirect: "/customer/get-start",
+      redirect: "/dashboard",
       component: () => import("@/view/layout/Layout"),
       children: [
         {
@@ -40,6 +40,21 @@ export default new Router({
               path: "point-recharge",
               name: "point-recharge",
               component: () => import("@/view/pages/customer/PointRecharge.vue")
+            },
+            {
+              path: "employee-list",
+              name: "employee-list",
+              component: () => import("@/view/pages/customer/EmployeeList.vue")
+            },
+            {
+              path: "order-center",
+              name: "order-center",
+              component: () => import("@/view/pages/customer/OrderCenter.vue")
+            },
+            {
+              path: "project-center",
+              name: "project-center",
+              component: () => import("@/view/pages/customer/ProjectCenter.vue")
             },
           ]
         },

@@ -434,8 +434,8 @@ export default {
       state: "signin",
       // Remove this dummy login info
       form: {
-        email: "admin@demo.com",
-        password: "demo"
+        email: "",
+        password: ""
       }
     };
   },
@@ -559,7 +559,7 @@ export default {
       var password = this.form.password;
 
       // clear existing errors
-      this.$store.dispatch(LOGOUT);
+      this.$store.dispatch(LOGIN);
 
       // set spinner to submit button
       const submitButton = this.$refs["kt_login_signin_submit"];

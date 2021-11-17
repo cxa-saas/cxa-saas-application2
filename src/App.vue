@@ -1,5 +1,9 @@
 <template>
-  <router-view></router-view>
+   <v-app>
+    <transition>
+      <router-view></router-view>
+    </transition>
+  </v-app>
 </template>
 
 <style lang="scss">

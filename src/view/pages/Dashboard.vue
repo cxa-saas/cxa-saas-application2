@@ -15,16 +15,13 @@
         <ListWidget5></ListWidget5>
       </div>
       <div class="col-xl-4">
-         <ListWidget11></ListWidget11>
-       
-       
+        <ListWidget11></ListWidget11>
       </div>
     </div>
 
     <div class="row">
       <div class="col-xl-8">
-         <ListWidget8></ListWidget8>
-       
+        <ListWidget8></ListWidget8>
       </div>
       <div class="col-xl-4">
         <ListWidget10></ListWidget10>
@@ -33,7 +30,7 @@
 
     <div class="row">
       <div class="col-xl-4">
-         <ListWidget2></ListWidget2>
+        <ListWidget2></ListWidget2>
       </div>
       <div class="col-xl-8">
         <ListWidget12></ListWidget12>
@@ -79,8 +76,14 @@ export default {
     ListWidget11,
     ListWidget12
   },
+  data() {
+    return {};
+  },
   mounted() {
     this.$store.dispatch(SET_BREADCRUMB, [{ title: "Dashboard" }]);
+    if (this.$store.state.auth.enterpriseList.length == 0) {
+      this.$router.push({ name: "customer-get-start" });
+    }
   },
   methods: {
     setActiveTab1(event) {

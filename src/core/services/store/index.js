@@ -3,6 +3,7 @@ import Vuex from "vuex";
 
 import auth from "./auth.module";
 import enterprise from "./enterprise.module";
+import employee from "./employee.module";
 
 import htmlClass from "./htmlclass.module";
 import config from "./config.module";
@@ -18,6 +19,7 @@ export default new Vuex.Store({
     config,
     breadcrumbs,
     profile,
-    enterprise
+    enterprise,
+    employee
   }
 });
