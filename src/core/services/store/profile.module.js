@@ -58,7 +58,7 @@ const actions = {
   },
   [TEST]() {
     // ApiService.get("test").then(data => {
-      // console.log(data.data);
+    // console.log(data.data);
     // });
   }
 };

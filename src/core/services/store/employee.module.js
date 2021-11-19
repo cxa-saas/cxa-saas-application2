@@ -21,10 +21,12 @@ const getters = {
 };
 
 const actions = {
-  [FETCH_EMPLOYEE_LIST](context, enterpriseId) {
+  [FETCH_EMPLOYEE_LIST](context, payload) {
+    console.log(444)
+     console.log(payload)
     return new Promise((resolve, reject) => {
       ApiService.query("/member/list", {
-        params: { enterpriseId }
+        params: { enterpriseId: payload.enterpriseId }
       })
         .then(response => {
           if (response.data.code == 200) {
@@ -39,12 +41,17 @@ const actions = {
         });
     });
   },
-  [SUBMIT_EMPLOYEE_LIST](context, formData) {
+  [SUBMIT_EMPLOYEE_LIST](context, payload) {
     return new Promise((resolve, reject) => {
-      ApiService.post("/employee/create", formData)
+      ApiService.post("/member/add", {
+        user_list: payload.employeeList,
+        enterpriseId: context.rootState.enterprise.currentEnterpriseId
+      })
         .then(response => {
           if (response.data.code == 200) {
-            context.dispatch(FETCH_EMPLOYEE_LIST, formData.enterpriseId);
+            context.dispatch(FETCH_EMPLOYEE_LIST, {
+              enterpriseId: context.rootState.enterprise.currentEnterpriseId
+            });
             resolve(response.data.msg);
           } else {
             context.commit(SET_ERROR, response.data.msg);
@@ -61,7 +68,9 @@ const actions = {
       ApiService.post("/employee/update", formData)
         .then(response => {
           if (response.data.code == 200) {
-            context.dispatch(FETCH_EMPLOYEE_LIST, formData.enterpriseId);
+            context.dispatch(FETCH_EMPLOYEE_LIST, {
+              enterpriseId: formData.enterpriseId
+            });
             resolve(response.data.msg);
           } else {
             context.commit(SET_ERROR, response.data.msg);
@@ -80,7 +89,7 @@ const mutations = {
     state.errors = error;
   },
   [SET_EMPLOYEE_LIST](state, employees) {
-    console.log(employees)
+    console.log(employees);
     state.employees = employees;
   }
 };

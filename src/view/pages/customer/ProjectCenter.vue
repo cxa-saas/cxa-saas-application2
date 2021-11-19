@@ -1,5 +1,4 @@
 <template>
-  <!--begin::Profile 4-->
   <div class="d-flex flex-row">
     <!--begin::Aside-->
     <div
@@ -7,136 +6,391 @@
       id="kt_profile_aside"
     >
       <!--begin::Card-->
-      <div class="card card-custom gutter-b">
+      <div class="card card-custom">
         <!--begin::Body-->
-        <div class="card-body pt-4">
-          <!--begin::Toolbar-->
-          <div class="d-flex justify-content-end">
-            <Dropdown3></Dropdown3>
-          </div>
-          <!--end::Toolbar-->
-
+        <div class="card-body pt-15">
           <!--begin::User-->
-          <div class="d-flex align-items-center">
-            <div
-              class="symbol symbol-60 symbol-xxl-100 mr-5 align-self-start align-self-xxl-center"
-            >
+          <div class="text-center mb-10">
+            <div class="symbol symbol-60 symbol-circle symbol-xl-90">
               <div
                 class="symbol-label"
                 :style="{
-                  backgroundImage: `url(${currentUserPhoto})`
+                  backgroundImage: `url(${currentUserPhoto})`,
                 }"
               ></div>
-              <i class="symbol-badge bg-success"></i>
+              <i class="symbol-badge symbol-badge-bottom bg-success"></i>
             </div>
-            <div>
-              <a
-                href="#"
-                class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary"
-              >
-                James Jones
-              </a>
-              <div class="text-muted">
-                Application Developer
-              </div>
-              <div class="mt-2">
-                <a
-                  href="#"
-                  class="btn btn-sm btn-primary font-weight-bold mr-2 py-2 px-3 px-xxl-5 my-1"
-                  >Chat</a
-                >
-                <a
-                  href="#"
-                  class="btn btn-sm btn-success font-weight-bold py-2 px-3 px-xxl-5 my-1"
-                  >Follow</a
-                >
-              </div>
-            </div>
+
+            <h4 class="font-weight-bold my-2">James Jones</h4>
+            <div class="text-muted mb-2">Application Developer</div>
+            <span
+              class="
+                label label-light-warning label-inline
+                font-weight-bold
+                label-lg
+              "
+              >Active</span
+            >
           </div>
           <!--end::User-->
 
           <!--begin::Contact-->
-          <div class="pt-8 pb-6">
-            <div class="d-flex align-items-center justify-content-between mb-2">
-              <span class="font-weight-bold mr-2">Email:</span>
-              <a href="#" class="text-muted text-hover-primary"
-                >matt@fifestudios.com</a
-              >
-            </div>
-            <div class="d-flex align-items-center justify-content-between mb-2">
-              <span class="font-weight-bold mr-2">Phone:</span>
-              <span class="text-muted">44(76)34254578</span>
-            </div>
-            <div class="d-flex align-items-center justify-content-between">
-              <span class="font-weight-bold mr-2">Location:</span>
-              <span class="text-muted">Melbourne</span>
-            </div>
+          <div class="mb-10 text-center">
+            <a href="#" class="btn btn-icon btn-circle btn-light-facebook mr-2">
+              <i class="socicon-facebook"></i>
+            </a>
+            <a href="#" class="btn btn-icon btn-circle btn-light-twitter mr-2">
+              <i class="socicon-twitter"></i>
+            </a>
+            <a href="#" class="btn btn-icon btn-circle btn-light-google">
+              <i class="socicon-google"></i>
+            </a>
           </div>
           <!--end::Contact-->
 
-          <!--begin::Contact-->
-          <div class="pb-6">
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical.
-          </div>
-          <!--end::Contact-->
-
-          <a
-            href="#"
-            class="btn btn-light-success font-weight-bold py-3 px-6 mb-2 text-center btn-block"
+          <!--begin::Nav-->
+          <div
+            class="navi navi-bold navi-hover navi-active navi-link-rounded"
+            role="tablist"
           >
-            Profile Overview
-          </a>
+            <div class="navi-item mb-2">
+              <a
+                class="
+                  btn btn-hover-light-primary
+                  font-weight-bold
+                  py-3
+                  px-6
+                  mb-2
+                  text-center
+                  btn-block
+                  active
+                "
+                @click="setActiveTab"
+                style="cursor: pointer"
+                data-tab="0"
+                data-toggle="tab"
+                role="tab"
+              >
+                Group Inspection
+              </a>
+              <a
+                class="
+                  btn btn-hover-light-primary
+                  font-weight-bold
+                  py-3
+                  px-6
+                  mb-2
+                  text-center
+                  btn-block
+                "
+                @click="setActiveTab"
+                style="cursor: pointer"
+                data-tab="1"
+                data-toggle="tab"
+                role="tab"
+              >
+                Group Insurance
+              </a>
+              <a
+                class="
+                  btn btn-hover-light-primary
+                  font-weight-bold
+                  py-3
+                  px-6
+                  mb-2
+                  text-center
+                  btn-block
+                "
+                @click="setActiveTab"
+                style="cursor: pointer"
+                data-tab="2"
+                data-toggle="tab"
+                role="tab"
+              >
+                Benefits
+              </a>
+              <a
+                class="
+                  btn btn-hover-light-primary
+                  font-weight-bold
+                  py-3
+                  px-6
+                  mb-2
+                  text-center
+                  btn-block
+                "
+                @click="setActiveTab"
+                style="cursor: pointer"
+                data-tab="1"
+                data-toggle="tab"
+                role="tab"
+              >
+                Group Insurance
+              </a>
+              <a
+                class="
+                  btn btn-hover-light-primary
+                  font-weight-bold
+                  py-3
+                  px-6
+                  mb-2
+                  text-center
+                  btn-block
+                "
+                @click="setActiveTab"
+                style="cursor: pointer"
+                data-tab="1"
+                data-toggle="tab"
+                role="tab"
+              >
+              </a>
+              <a
+                class="
+                  btn btn-hover-light-primary
+                  font-weight-bold
+                  py-3
+                  px-6
+                  mb-2
+                  text-center
+                  btn-block
+                "
+                @click="setActiveTab"
+                style="cursor: pointer"
+                data-tab="1"
+                data-toggle="tab"
+                role="tab"
+              >
+              </a>
+              <a
+                class="
+                  btn btn-hover-light-primary
+                  font-weight-bold
+                  py-3
+                  px-6
+                  mb-2
+                  text-center
+                  btn-block
+                "
+                @click="setActiveTab"
+                style="cursor: pointer"
+                data-tab="1"
+                data-toggle="tab"
+                role="tab"
+              >
+              </a>
+              <a
+                class="
+                  btn btn-hover-light-primary
+                  font-weight-bold
+                  py-3
+                  px-6
+                  mb-2
+                  text-center
+                  btn-block
+                "
+                @click="setActiveTab"
+                style="cursor: pointer"
+                data-tab="1"
+                data-toggle="tab"
+                role="tab"
+              >
+              </a>
+              <a
+                class="
+                  btn btn-hover-light-primary
+                  font-weight-bold
+                  py-3
+                  px-6
+                  mb-2
+                  text-center
+                  btn-block
+                "
+                @click="setActiveTab"
+                style="cursor: pointer"
+                data-tab="1"
+                data-toggle="tab"
+                role="tab"
+              >
+              </a>
+              <a
+                class="
+                  btn btn-hover-light-primary
+                  font-weight-bold
+                  py-3
+                  px-6
+                  mb-2
+                  text-center
+                  btn-block
+                "
+                @click="setActiveTab"
+                style="cursor: pointer"
+                data-tab="1"
+                data-toggle="tab"
+                role="tab"
+              >
+              </a>
+              <a
+                class="
+                  btn btn-hover-light-primary
+                  font-weight-bold
+                  py-3
+                  px-6
+                  mb-2
+                  text-center
+                  btn-block
+                "
+                @click="setActiveTab"
+                style="cursor: pointer"
+                data-tab="1"
+                data-toggle="tab"
+                role="tab"
+              >
+              </a>
+              <a
+                class="
+                  btn btn-hover-light-primary
+                  font-weight-bold
+                  py-3
+                  px-6
+                  mb-2
+                  text-center
+                  btn-block
+                "
+                @click="setActiveTab"
+                style="cursor: pointer"
+                data-tab="1"
+                data-toggle="tab"
+                role="tab"
+              >
+              </a>
+              <a
+                class="
+                  btn btn-hover-light-primary
+                  font-weight-bold
+                  py-3
+                  px-6
+                  mb-2
+                  text-center
+                  btn-block
+                "
+                @click="setActiveTab"
+                style="cursor: pointer"
+                data-tab="1"
+                data-toggle="tab"
+                role="tab"
+              >
+              </a>
+              <a
+                class="
+                  btn btn-hover-light-primary
+                  font-weight-bold
+                  py-3
+                  px-6
+                  mb-2
+                  text-center
+                  btn-block
+                "
+                @click="setActiveTab"
+                style="cursor: pointer"
+                data-tab="1"
+                data-toggle="tab"
+                role="tab"
+              >
+              </a>
+              <a
+                class="
+                  btn btn-hover-light-primary
+                  font-weight-bold
+                  py-3
+                  px-6
+                  mb-2
+                  text-center
+                  btn-block
+                "
+                @click="setActiveTab"
+                style="cursor: pointer"
+                data-tab="1"
+                data-toggle="tab"
+                role="tab"
+              >
+              </a>
+            </div>
+          </div>
+          <!--end::Nav-->
         </div>
         <!--end::Body-->
       </div>
       <!--end::Card-->
-      <Widget13></Widget13>
     </div>
     <!--end::Aside-->
 
     <!--begin::Content-->
     <div class="flex-row-fluid ml-lg-8">
-      <!--begin::Row-->
-      <div class="row">
-        <div class="col-lg-6">
-          <Widget1></Widget1>
-        </div>
-        <div class="col-lg-6">
-          <Widget14></Widget14>
-        </div>
-      </div>
-      <!--end::Row-->
-      <Widget2></Widget2>
+      <b-tabs class="hide-tabs" v-model="tabIndex">
+        <b-tab active>
+          <!--begin::Row-->
+          <div class="row">
+            <div class="col-lg-6">
+              <Widget14></Widget14>
+            </div>
+            <div class="col-lg-6">
+              <Widget1></Widget1>
+            </div>
+          </div>
+          <!--end::Row-->
+          <Widget2></Widget2>
+        </b-tab>
+      </b-tabs>
     </div>
     <!--end::Content-->
   </div>
-  <!--end::Profile 4-->
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 import { SET_BREADCRUMB } from "@/core/services/store/breadcrumbs.module";
-import Dropdown3 from "@/view/content/dropdown/Dropdown3";
-import Widget1 from "@/view/pages/profile/profile-comp-4/Widget1";
-import Widget2 from "@/view/pages/profile/profile-comp-4/Widget2";
-import Widget13 from "@/view/pages/profile/profile-comp-4/Widget13";
-import Widget14 from "@/view/pages/profile/profile-comp-4/Widget14";
+import Widget1 from "@/view/pages/profile/profile-comp-2/Widget1";
+import Widget2 from "@/view/pages/profile/profile-comp-2/Widget2";
+import Widget14 from "@/view/pages/profile/profile-comp-2/Widget14";
 
 export default {
-  name: "Profile-4.vue",
+  name: "Profile-2",
+  data() {
+    return {
+      tabIndex: 0,
+    };
+  },
   components: {
-    Dropdown3,
     Widget1,
     Widget2,
-    Widget13,
-    Widget14
+    Widget14,
   },
   mounted() {
     this.$store.dispatch(SET_BREADCRUMB, [{ title: "Profile 2" }]);
   },
+  methods: {
+    /**
+     * Set current active on click
+     * @param event
+     */
+    setActiveTab(event) {
+      let target = event.target;
+      const tab = target.closest('[role="tablist"]');
+      const links = tab.querySelectorAll('[data-toggle="tab"]');
+      // remove active tab links
+      for (let i = 0; i < links.length; i++) {
+        links[i].classList.remove("active");
+      }
+
+      // set clicked tab index to bootstrap tab
+      this.tabIndex = parseInt(target.getAttribute("data-tab"));
+
+      // set current active tab
+      target.classList.add("active");
+    },
+  },
   computed: {
-    ...mapGetters(["currentUserPhoto"])
-  }
+    ...mapGetters(["currentUserPhoto"]),
+  },
 };
 </script>

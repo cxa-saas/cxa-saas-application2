@@ -16,7 +16,13 @@
     >
       <!--begin::Header-->
       <div
-        class="offcanvas-header d-flex align-items-center justify-content-between pb-5"
+        class="
+          offcanvas-header
+          d-flex
+          align-items-center
+          justify-content-between
+          pb-5
+        "
       >
         <h3 class="font-weight-bold m-0">
           User Profile
@@ -35,7 +41,7 @@
       <!--begin::Content-->
       <perfect-scrollbar
         class="offcanvas-content pr-5 mr-n5 scroll"
-        style="max-height: 90vh; position: relative;"
+        style="max-height: 90vh; position: relative"
       >
         <!--begin::Header-->
         <div class="d-flex align-items-center mt-5">
@@ -46,9 +52,12 @@
           <div class="d-flex flex-column">
             <a
               href="#"
-              class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary"
+              class="
+                font-weight-bold font-size-h5
+                text-dark-75 text-hover-primary
+              "
             >
-              James Jones
+             {{this.currentUser.name}}
             </a>
             <div class="text-muted mt-1">Application Developer</div>
             <div class="navi mt-2">
@@ -64,7 +73,7 @@
                     </span>
                   </span>
                   <span class="navi-text text-muted text-hover-primary">
-                    jm@softplus.com
+                    {{this.currentUser.email}}
                   </span>
                 </span>
               </a>
@@ -102,7 +111,10 @@
                 <div class="text-muted">
                   Account settings and more
                   <span
-                    class="label label-light-danger label-inline font-weight-bold"
+                    class="
+                      label label-light-danger label-inline
+                      font-weight-bold
+                    "
                   >
                     update
                   </span>
@@ -213,7 +225,12 @@
               <div class="d-flex flex-column flex-grow-1 mr-2">
                 <a
                   href="#"
-                  class="font-weight-normal text-dark-75 text-hover-primary font-size-lg mb-1"
+                  class="
+                    font-weight-normal
+                    text-dark-75 text-hover-primary
+                    font-size-lg
+                    mb-1
+                  "
                 >
                   {{ item.title }}
                 </a>
@@ -248,6 +265,7 @@
 import { LOGOUT } from "@/core/services/store/auth.module";
 import KTLayoutQuickUser from "@/assets/js/layout/extended/quick-user.js";
 import KTOffcanvas from "@/assets/js/components/offcanvas.js";
+import { mapGetters } from "vuex";
 
 export default {
   name: "KTQuickUser",
@@ -259,35 +277,37 @@ export default {
           desc: "Due in 2 Days",
           alt: "+28%",
           svg: "media/svg/icons/Home/Library.svg",
-          type: "warning"
+          type: "warning",
         },
         {
           title: "Would be to people",
           desc: "Due in 2 Days",
           alt: "+50%",
           svg: "media/svg/icons/Communication/Write.svg",
-          type: "success"
+          type: "success",
         },
         {
           title: "Purpose would be to persuade",
           desc: "Due in 2 Days",
           alt: "-27%",
           svg: "media/svg/icons/Communication/Group-chat.svg",
-          type: "danger"
+          type: "danger",
         },
         {
           title: "The best product",
           desc: "Due in 2 Days",
           alt: "+8%",
           svg: "media/svg/icons/General/Attachment2.svg",
-          type: "info"
-        }
-      ]
+          type: "info",
+        },
+      ],
     };
   },
   mounted() {
     // Init Quick User Panel
     KTLayoutQuickUser.init(this.$refs["kt_quick_user"]);
+    console.log(1234)
+    console.log(this.currentUser)
   },
   methods: {
     onLogout() {
@@ -297,12 +317,13 @@ export default {
     },
     closeOffcanvas() {
       new KTOffcanvas(KTLayoutQuickUser.getElement()).hide();
-    }
+    },
   },
   computed: {
     picture() {
       return process.env.BASE_URL + "media/users/300_21.jpg";
-    }
-  }
+    },
+    ...mapGetters(["currentUser"]),
+  },
 };
 </script>

@@ -46,7 +46,7 @@
           </span>
           <span
             class="nav-text font-size-lg py-2 font-weight-bolder text-center"
-            >Employee Center</span
+            >Company Manage</span
           >
         </a>
       </li>

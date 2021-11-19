@@ -282,6 +282,14 @@
       </div>
     </div>
     <!--end::Card-->
+    <div class="row">
+      <div class="col-lg-8">
+        <PointDistributeContent></PointDistributeContent>
+      </div>
+      <div class="col-lg-4">
+        <ListWidget11></ListWidget11>
+      </div>
+    </div>
 
     <!--begin::Row-->
     <div class="row">
@@ -302,15 +310,6 @@
         <!-- <Widget15></Widget15> -->
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-8">
-        <PointDistributeContent></PointDistributeContent>
-      </div>
-      <div class="col-lg-4">
-        <ListWidget11></ListWidget11>
-      </div>
-    </div>
-
   </div>
 </template>
 
@@ -336,11 +335,10 @@ export default {
     // Widget15,
     ListWidget11,
     EmployeeCharts,
-    PointDistributeContent,
-    
+    PointDistributeContent
   },
   computed: {
-    ...mapGetters(["currentEnterpriseInfo"]),
+    ...mapGetters(["currentEnterpriseInfo"])
   },
   data() {
     return {};
@@ -348,13 +346,14 @@ export default {
   mounted() {
     this.$store.dispatch(SET_BREADCRUMB, [{ title: "Profile 3" }]);
     this.$store.dispatch(FETCH_ENTERPRISE_DETAIL, {
-      email: "3539248721@qq.com",
-      enterpriseId: 1002,
+      email: this.$store.state.auth.user.email,
+      enterpriseId: this.$store.state.enterprise.currentEnterpriseId
     });
+    console.log(888)
+    console.log(this.$store)
     this.$store.dispatch(FETCH_EMPLOYEE_LIST, {
-      email: "3539248721@qq.com",
-      enterpriseId: 1002,
+      enterpriseId: this.$store.state.enterprise.currentEnterpriseId
     });
-  },
+  }
 };
 </script>

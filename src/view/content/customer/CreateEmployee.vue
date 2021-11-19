@@ -1,7 +1,7 @@
 <template>
   <!--begin::Card-->
   <div class="text-center">
-    <v-dialog v-model="dialog" width="auto">
+    <v-dialog v-model="dialog.createDialog" width="auto">
       <template v-slot:activator="{ on, attrs }">
         <a
           href="#"
@@ -128,30 +128,177 @@
             </div>
             <div class="form-group row">
               <label class="col-xl-3 col-lg-3 col-form-label text-right"
-                >First Name</label
+                >Name</label
               >
               <div class="col-lg-9 col-xl-6">
                 <input
                   ref="name"
                   class="form-control form-control-lg form-control-solid"
                   type="text"
-                  v-bind:value="currentUserPersonalInfo.name"
+                  v-model="form.name"
+                />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-xl-3 col-lg-3 col-form-label text-right"
+                >Birthday</label
+              >
+              <div class="col-lg-9 col-xl-6">
+                <v-dialog
+                  ref="dialog2"
+                  v-model="dialog.birthdayDialog"
+                  :return-value.sync="date"
+                  persistent
+                  width="290px"
+                >
+                  <template v-slot:activator="{ on, attrs }">
+                    <input
+                      v-model="form.birthday"
+                      class="form-control form-control-lg form-control-solid"
+                      label="Picker in dialog"
+                      prepend-icon="mdi-calendar"
+                      readonly
+                      v-bind="attrs"
+                      v-on="on"
+                    />
+                  </template>
+                  <v-date-picker v-model="form.birthday" scrollable>
+                    <v-spacer></v-spacer>
+                    <v-btn
+                      text
+                      color="primary"
+                      @click="dialog.birthdayDialog = false"
+                    >
+                      OK
+                    </v-btn>
+                  </v-date-picker>
+                </v-dialog>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-xl-3 col-lg-3 col-form-label text-right"
+                >Employee Number</label
+              >
+              <div class="col-lg-9 col-xl-6">
+                <input
+                  ref="name"
+                  class="form-control form-control-lg form-control-solid"
+                  type="text"
+                  v-model="form.code"
                 />
               </div>
             </div>
             <div class="form-group row">
               <label class="col-xl-3 col-lg-3 col-form-label text-right"
-                >Last Name</label
+                >ID Card</label
               >
               <div class="col-lg-9 col-xl-6">
                 <input
                   ref="surname"
                   class="form-control form-control-lg form-control-solid"
                   type="text"
-                  v-bind:value="currentUserPersonalInfo.surname"
+                  v-bind:value="form.certificateNo"
                 />
               </div>
             </div>
+            <div class="form-group row">
+              <label class="col-xl-3 col-lg-3 col-form-label text-right"
+                >ID Type</label
+              >
+              <div class="col-lg-9 col-xl-6">
+                <select
+                  v-model="form.certificateType"
+                  class="form-control form-control-solid form-control-lg"
+                >
+                  <option value="1">ID Card</option>
+                  <option value="2">Passport</option>
+                  <option value="3">保新</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-xl-3 col-lg-3 col-form-label text-right"
+                >Status</label
+              >
+              <div class="col-lg-9 col-xl-6">
+                <select
+                  v-model="form.certificateType"
+                  class="form-control form-control-solid form-control-lg"
+                >
+                  <option value="1">Pending</option>
+                  <option value="2">On-the-job</option>
+                  <option value="3">Resign</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-xl-3 col-lg-3 col-form-label text-right"
+                >Gender</label
+              >
+              <div class="col-lg-9 col-xl-6">
+                <select
+                  v-model="form.certificateType"
+                  class="form-control form-control-solid form-control-lg"
+                >
+                  <option value="1">Male</option>
+                  <option value="2">Female</option>
+                  <option value="3">Secret</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-xl-3 col-lg-3 col-form-label text-right"
+                >Marital Status</label
+              >
+              <div class="col-lg-9 col-xl-6">
+                <select
+                  v-model="form.certificateType"
+                  class="form-control form-control-solid form-control-lg"
+                >
+                  <option value="1">Unmarried</option>
+                  <option value="2">Married</option>
+                  <option value="3">Secret</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-xl-3 col-lg-3 col-form-label text-right"
+                >Entry Date</label
+              >
+              <div class="col-lg-9 col-xl-6">
+                <v-dialog
+                  v-model="dialog.entryDayDialog"
+                  persistent
+                  width="290px"
+                >
+                  <template v-slot:activator="{ on, attrs }">
+                    <input
+                      v-model="form.entrytime"
+                      class="form-control form-control-lg form-control-solid"
+                      label="Picker in dialog"
+                      prepend-icon="mdi-calendar"
+                      v-bind="attrs"
+                      v-on="on"
+                    />
+                  </template>
+                  <v-date-picker v-model="form.entrytime" scrollable>
+                    <v-spacer></v-spacer>
+
+                    <v-btn
+                      text
+                      color="primary"
+                      @click="dialog.entryDayDialog = false"
+                    >
+                      OK
+                    </v-btn>
+                  </v-date-picker>
+                </v-dialog>
+              </div>
+            </div>
+
             <div class="form-group row">
               <label class="col-xl-3 col-lg-3 col-form-label text-right"
                 >Company Name</label
@@ -161,7 +308,7 @@
                   ref="company_name"
                   class="form-control form-control-lg form-control-solid"
                   type="text"
-                  v-bind:value="currentUserPersonalInfo.company_name"
+                  v-model="form.tenantName"
                 />
                 <span class="form-text text-muted"
                   >If you want your invoices addressed to a company. Leave blank
@@ -191,7 +338,7 @@
                     type="text"
                     class="form-control form-control-lg form-control-solid"
                     placeholder="Phone"
-                    v-bind:value="currentUserPersonalInfo.phone"
+                    v-model="form.mobile"
                   />
                 </div>
                 <span class="form-text text-muted"
@@ -215,12 +362,12 @@
                     type="text"
                     class="form-control form-control-lg form-control-solid"
                     placeholder="Email"
-                    v-bind:value="currentUserPersonalInfo.email"
+                    v-model="form.email"
                   />
                 </div>
               </div>
             </div>
-            <div class="form-group row">
+            <!-- <div class="form-group row">
               <label class="col-xl-3 col-lg-3 col-form-label text-right"
                 >Company Site</label
               >
@@ -238,7 +385,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
           <!--end::Body-->
         </form>
@@ -250,47 +397,85 @@
 
 <script>
 import { mapGetters } from "vuex";
-import { UPDATE_PERSONAL_INFO } from "@/core/services/store/profile.module";
+// import { UPDATE_PERSONAL_INFO } from "@/core/services/store/profile.module";
+import { SUBMIT_EMPLOYEE_LIST } from "@/core/services/store/employee.module";
 
 export default {
   name: "PersonalInformation",
   data() {
     return {
+      form: {
+        avatar: "media/users/100_1.jpg",
+        tenantId: 19,
+        tenantName: "XXX公司",
+        eid: "1457960784107048961",
+        code: "12312341231",
+        name: "赵六",
+        status: 1,
+        certificateType: 1,
+        certificateNo: "53042119900803161X",
+        birthday: "1990-01-01",
+        sex: 1,
+        maritalStatus: 3,
+        entrytime: "2021-01-01 21:22:00",
+        type: 1,
+        email: "131231231@qq.com",
+        mobile: "15951895115",
+        deptId: 1,
+        deptName: "北京分部",
+        location: "北京",
+        point: 200,
+        grade: "Devops",
+        class: "success",
+      },
+      dialog: {
+        entryDayDialog: false,
+        birthdayDialog: false,
+        createDialog: false,
+      },
       default_photo: "media/users/blank.png",
       current_photo: null,
-      dialog: false,
     };
   },
   mounted() {
     this.current_photo = this.currentUserPersonalInfo.photo;
   },
   methods: {
+    savebirthday(date) {
+      this.form.birthday = date;
+      this.dialog.birthdayDialog = false;
+    },
     save() {
-      var name = this.$refs.name.value;
-      var surname = this.$refs.surname.value;
-      var company_name = this.$refs.company_name.value;
-      var phone = this.$refs.phone.value;
-      var email = this.$refs.email.value;
-      var company_site = this.$refs.company_site.value;
-      var photo = this.photo;
+      // var name = this.$refs.name.value;
+      // var surname = this.$refs.surname.value;
+      // var company_name = this.$refs.company_name.value;
+      // var phone = this.$refs.phone.value;
+      // var email = this.$refs.email.value;
+      // var company_site = this.$refs.company_site.value;
+      // var photo = this.photo;
 
       // set spinner to submit button
       const submitButton = this.$refs["kt_save_changes"];
       submitButton.classList.add("spinner", "spinner-light", "spinner-right");
 
       // dummy delay
-      setTimeout(() => {
+      setTimeout(async() => {
         // send update request
-        this.$store.dispatch(UPDATE_PERSONAL_INFO, {
-          name,
-          surname,
-          company_name,
-          phone,
-          email,
-          company_site,
-          photo,
+        // this.$store.dispatch(UPDATE_PERSONAL_INFO, {
+        //   name,
+        //   surname,
+        //   company_name,
+        //   phone,
+        //   email,
+        //   company_site,
+        //   photo
+        // });
+        const result = await this.$store.dispatch(SUBMIT_EMPLOYEE_LIST, {
+          employeeList: [this.form]
         });
-
+        console.log(result)
+        this.dialog.createDialog = false
+       
         submitButton.classList.remove(
           "spinner",
           "spinner-light",
@@ -298,7 +483,9 @@ export default {
         );
       }, 2000);
     },
+
     cancel() {
+      this.dialog = false;
       this.$refs.name.value = this.currentUserPersonalInfo.name;
       this.$refs.surname.value = this.currentUserPersonalInfo.surname;
       this.$refs.company_name.value = this.currentUserPersonalInfo.company_name;

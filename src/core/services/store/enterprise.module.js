@@ -14,7 +14,7 @@ export const SET_ORDER = "setOrder";
 
 const state = {
   errors: {},
-  currentEnterpriseId: 1,
+  currentEnterpriseId: 19,
   orderId: "",
   enterpriseDetail: {
     currentEnterPhoto: "media/logos/logo-cxa-1.png",

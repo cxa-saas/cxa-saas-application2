@@ -5,7 +5,7 @@
     <div class="card-header border-0 pt-5">
       <h3 class="card-title align-items-start flex-column">
         <span class="card-label font-weight-bolder text-dark">
-          Employee List
+          Distrubution List
         </span>
         <span class="text-muted mt-3 font-weight-bold font-size-sm">
           More than 400+ employees
@@ -20,14 +20,13 @@
             text-uppercase
             mr-3
           "
-          >Import</a
+          >Distribute</a
         >
-        <!-- <a
+        <a
           href="#"
           class="btn btn-sm btn-info font-weight-bolder text-uppercase"
           >Create</a
-        > -->
-        <create-employee></create-employee>
+        >
 
         <!--begin::Desktop Search-->
         <div
@@ -132,17 +131,8 @@
         <table class="table table-borderless table-vertical-center">
           <thead>
             <tr>
-              <th class="pl-0" style="width: 50px">
-                <label class="checkbox checkbox-lg checkbox-single">
-                  <input
-                    type="checkbox"
-                    @input="setCheck($event.target.checked)"
-                  />
-                  <span></span>
-                </label>
-              </th>
               <th class="p-0" style="width: 50px">Avatar</th>
-              <th class="p-0" style="min-width: 110px">Name</th>
+              <th class="p-0" style="min-width: 200px">Name</th>
               <th class="p-0" style="min-width: 100px">Point Balance</th>
               <th class="p-0" style="min-width: 125px">Grade</th>
               <th class="p-0" style="min-width: 110px">Status</th>
@@ -152,12 +142,6 @@
           <tbody>
             <template v-for="(item, i) in dataToShow">
               <tr v-bind:key="i">
-                <td class="pl-0">
-                  <label class="checkbox checkbox-lg checkbox-single">
-                    <input type="checkbox" value="1" :checked="checked" />
-                    <span></span>
-                  </label>
-                </td>
                 <td class="pl-0 py-4">
                   <div class="symbol symbol-50 symbol-light mr-1">
                     <span class="symbol-label">
@@ -242,6 +226,7 @@
           </tbody>
         </table>
       </div>
+
       <!--end::Table-->
     </div>
     <div class="text-center">
@@ -254,7 +239,6 @@
 
 <script>
 import { mapGetters } from "vuex";
-import CreateEmployee from "@/view/content/customer/CreateEmployee";
 
 export default {
   name: "widget-2",
@@ -479,12 +463,8 @@ export default {
       ],
     };
   },
-  components: { CreateEmployee },
-  methods: {
-    setCheck(checked) {
-      this.checked = checked;
-    },
-  },
+  components: {},
+  methods: {},
   computed: {
     ...mapGetters(["layoutConfig", "employeeList"]),
 
