@@ -11,27 +11,34 @@ export const SET_ERROR = "setError";
 
 const state = {
   errors: {},
-  employees: []
+  employees: [],
+  employees_page_config: {
+    total: 0,
+    size: 10,
+    current: 1,
+    pages: 0
+  }
 };
 
 const getters = {
   employeeList(state) {
     return state.employees;
+  },
+  employeesPageConfig(state) {
+    return state.employees_page_config;
   }
 };
 
 const actions = {
   [FETCH_EMPLOYEE_LIST](context, payload) {
-    console.log(444)
-     console.log(payload)
     return new Promise((resolve, reject) => {
       ApiService.query("/member/list", {
         params: { enterpriseId: payload.enterpriseId }
       })
         .then(response => {
           if (response.data.code == 200) {
-            context.commit(SET_EMPLOYEE_LIST, response.data.data.userList);
-            resolve(response.data.data);
+            context.commit(SET_EMPLOYEE_LIST, response.data.data);
+            resolve()
           } else {
             reject(response.data.msg);
           }
@@ -88,9 +95,12 @@ const mutations = {
   [SET_ERROR](state, error) {
     state.errors = error;
   },
-  [SET_EMPLOYEE_LIST](state, employees) {
-    console.log(employees);
-    state.employees = employees;
+  [SET_EMPLOYEE_LIST](state, payload) {
+    state.employees = payload.records;
+    state.employees_page_config.total = payload.total;
+    state.employees_page_config.size = payload.size;
+    state.employees_page_config.current = payload.current;
+    state.employees_page_config.pages = Math.ceil(payload.total / payload.size);
   }
 };
 

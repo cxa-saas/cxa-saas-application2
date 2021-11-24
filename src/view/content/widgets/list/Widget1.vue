@@ -226,8 +226,8 @@ export default {
   name: "widget-1",
   data() {
     return {
-      createInsuranceProjectUrl: `${window.location.origin}#/custom-wizard/wizard-1`,
-      createInspectionProjectUrl: `${window.location.origin}#/custom-wizard/wizard-1`,
+      createInsuranceProjectUrl: `${window.location.origin}#/customer/create-insurance`,
+      createInspectionProjectUrl: `${window.location.origin}#/customer/create-inspection`,
       createPointRechargeUrl: `${window.location.origin}#/customer/point-recharge`,
       userCenterUrl: `${window.location.origin}#/customer/employee-list`,
       projectCenterUrl: `${window.location.origin}#/customer/project-center`,

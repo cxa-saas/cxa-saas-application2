@@ -349,8 +349,7 @@ export default {
       email: this.$store.state.auth.user.email,
       enterpriseId: this.$store.state.enterprise.currentEnterpriseId
     });
-    console.log(888)
-    console.log(this.$store)
+
     this.$store.dispatch(FETCH_EMPLOYEE_LIST, {
       enterpriseId: this.$store.state.enterprise.currentEnterpriseId
     });

@@ -245,7 +245,11 @@
       <!--end::Table-->
     </div>
     <div class="text-center">
-      <v-pagination v-model="page" :length="5" circle></v-pagination>
+      <v-pagination
+        v-model="employeesPageConfig.current"
+        :length="employeesPageConfig.pages"
+        circle
+      ></v-pagination>
     </div>
     <!--end::Body-->
     <!--end::Advance Table Widget 2-->
@@ -486,7 +490,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(["layoutConfig", "employeeList"]),
+    ...mapGetters(["layoutConfig", "employeeList", "employeesPageConfig"]),
 
     dataToShow() {
       // if (this.show === "month") return this.month;

@@ -23,8 +23,7 @@ export default new Router({
         {
           path: "/customer",
           name: "customer",
-          component: () =>
-            import("@/view/pages/customer/Customer.vue"),
+          component: () => import("@/view/pages/customer/Customer.vue"),
           children: [
             {
               path: "get-start",
@@ -35,6 +34,18 @@ export default new Router({
               path: "add-enterprise",
               name: "customer-add-enterprise",
               component: () => import("@/view/pages/customer/AddEnterprise.vue")
+            },
+            {
+              path: "create-insurance",
+              name: "create-insurance",
+              component: () =>
+                import("@/view/pages/customer/CreateInsurance.vue")
+            },
+            {
+              path: "create-inspection",
+              name: "create-insurance",
+              component: () =>
+                import("@/view/pages/customer/CreateInspection.vue")
             },
             {
               path: "point-recharge",
@@ -55,7 +66,7 @@ export default new Router({
               path: "project-center",
               name: "project-center",
               component: () => import("@/view/pages/customer/ProjectCenter.vue")
-            },
+            }
           ]
         },
         {

@@ -62,8 +62,6 @@ const actions = {
           console.log(response);
           if (response.data && response.data.code == 200) {
             context.commit(SET_AUTH, response.data.data.user.token);
-            await context.dispatch(FETCH_USER_INFO);
-            console.log(context);
             if (context.state.enterpriseList.length > 0) {
               resolve(`dashboard`);
             } else {
@@ -101,18 +99,6 @@ const actions = {
     if (JwtService.getToken()) {
       ApiService.setHeader();
       context.dispatch(FETCH_USER_INFO);
-
-      //   ApiService.post("verify")
-      //     .then(response => {
-      //       context.commit(SET_AUTH, response.data.data.user.data);
-      //       context.commit(
-      //         SET_ENTERPRISE_LIST,
-      //         response.data.data.enterpriseList
-      //       );
-      //     })
-      //     .catch(error => {
-      //       context.commit(SET_ERROR, error);
-      //     });
     } else {
       context.commit(PURGE_AUTH);
     }
