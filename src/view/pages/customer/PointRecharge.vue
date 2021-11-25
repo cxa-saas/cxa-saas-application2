@@ -639,6 +639,8 @@
 
 <script>
 import { SET_BREADCRUMB } from "@/core/services/store/breadcrumbs.module";
+import { SUBMIT_POINT_ORDER } from "@/core/services/store/point.module";
+
 import KTUtil from "@/assets/js/components/util";
 import KTWizard from "@/assets/js/components/wizard";
 import Swal from "sweetalert2";
@@ -692,7 +694,10 @@ export default {
     submit: async function(e) {
       e.preventDefault();
       try {
-        const result = await this.$store.dispatch("rechargePoint", this.form);
+        const result = await this.$store.dispatch(
+          SUBMIT_POINT_ORDER,
+          this.form
+        );
         Swal.fire({
           title: "Recharge Success!",
           text: result,

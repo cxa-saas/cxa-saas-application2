@@ -1,7 +1,6 @@
 import ApiService from "@/core/services/api.service";
 
 // action types
-export const POINT_RECHARGE = "rechargePoint";
 export const FETCH_ENTERPRISE_DETAIL = "fetchEnterpriseDetail";
 export const UPDATE_ENTERPRISE_DETAIL = "updateEnterpriseDetail";
 
@@ -64,23 +63,7 @@ const actions = {
         });
     });
   },
-  [POINT_RECHARGE](context, formData) {
-    return new Promise((resolve, reject) => {
-      ApiService.post("/point/createOrder", formData)
-        .then(response => {
-          if (response.data.code == 200) {
-            context.commit(SET_ORDER, response.data.data.orderId);
-            resolve(response.data.msg);
-          } else {
-            context.commit(SET_ERROR, response.data.msg);
-            reject(response.data.msg);
-          }
-        })
-        .catch(({ response }) => {
-          context.commit(SET_ERROR, response.data.msg);
-        });
-    });
-  }
+
 };
 
 const mutations = {

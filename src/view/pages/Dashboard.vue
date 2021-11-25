@@ -61,7 +61,7 @@ import ListWidget8 from "@/view/content/widgets/list/Widget8.vue";
 import ListWidget10 from "@/view/content/widgets/list/Widget10.vue";
 import ListWidget11 from "@/view/content/widgets/list/Widget11.vue";
 import ListWidget12 from "@/view/content/widgets/list/Widget12.vue";
-
+import { FETCH_POINT_LIST } from "@/core/services/store/point.module";
 export default {
   name: "dashboard",
   components: {
@@ -74,13 +74,14 @@ export default {
     ListWidget8,
     ListWidget10,
     ListWidget11,
-    ListWidget12
+    ListWidget12,
   },
   data() {
     return {};
   },
   mounted() {
     this.$store.dispatch(SET_BREADCRUMB, [{ title: "Dashboard" }]);
+    this.$store.dispatch(FETCH_POINT_LIST);
     if (this.$store.state.auth.enterpriseList.length == 0) {
       this.$router.push({ name: "customer-get-start" });
     }
@@ -110,7 +111,7 @@ export default {
 
       // set clicked tab index to bootstrap tab
       return parseInt(event.target.getAttribute("data-tab"));
-    }
-  }
+    },
+  },
 };
 </script>

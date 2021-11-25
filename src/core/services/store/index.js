@@ -9,7 +9,8 @@ import htmlClass from "./htmlclass.module";
 import config from "./config.module";
 import breadcrumbs from "./breadcrumbs.module";
 import profile from "./profile.module";
-import projectt from "./project.module";
+import project from "./project.module";
+import point from "./point.module";
 
 Vue.use(Vuex);
 
@@ -22,6 +23,7 @@ export default new Vuex.Store({
     profile,
     enterprise,
     employee,
-    projectt
+    project,
+    point
   }
 });
