@@ -71,6 +71,8 @@ const mutations = {
     state.errors = error;
   },
   [SET_ENTERPRISE_DETAIL](state, enterpriseDetail) {
+    console.log(777)
+    console.log(enterpriseDetail)
     state.enterpriseDetail = enterpriseDetail;
   },
   [SET_ORDER](state, orderId) {

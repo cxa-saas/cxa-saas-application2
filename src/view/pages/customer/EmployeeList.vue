@@ -32,7 +32,7 @@
                     font-size-h5 font-weight-bold
                     mr-3
                   "
-                  >{{ currentEnterpriseInfo.name }}</a
+                  >{{ this.currentEnterpriseInfo.name }}</a
                 >
                 <a href="#"
                   ><i class="flaticon2-correct text-success font-size-h5"></i
@@ -48,7 +48,7 @@
                     text-uppercase
                     mr-3
                   "
-                  >Update</a
+                  >Recharge Point</a
                 >
                 <a
                   href="#"
@@ -72,7 +72,7 @@
                       mb-lg-0 mb-2
                     "
                     ><i class="flaticon2-new-email mr-2 font-size-lg"></i
-                    >{{ currentEnterpriseInfo.email }}</a
+                    >{{ this.currentEnterpriseInfo.email }}</a
                   >
                   <a
                     href="#"
@@ -84,7 +84,7 @@
                     "
                     ><i class="flaticon2-calendar-3 mr-2 font-size-lg"></i
                     >{{
-                      currentEnterpriseInfo.enterprise_size_type == 0
+                      this.currentEnterpriseInfo.enterprise_size_type == 0
                         ? "中小型企业"
                         : "大型企业"
                     }}
@@ -93,12 +93,12 @@
                     href="#"
                     class="text-dark-50 text-hover-primary font-weight-bold"
                     ><i class="flaticon2-placeholder mr-2 font-size-lg"></i
-                    >{{ currentEnterpriseInfo.address }}</a
+                    >{{ this.currentEnterpriseInfo.address }}</a
                   >
                 </div>
 
                 <span class="font-weight-bold text-dark-50">{{
-                  currentEnterpriseInfo.introduction
+                  this.currentEnterpriseInfo.introduction
                 }}</span>
                 <!-- <span class="font-weight-bold text-dark-50"
                   >A second could be persuade people.You want people to bay
@@ -213,7 +213,7 @@
           <!--end::Item-->
 
           <!--begin::Item-->
-          <div class="d-flex align-items-center flex-lg-fill mr-5 mb-2">
+          <!-- <div class="d-flex align-items-center flex-lg-fill mr-5 mb-2">
             <span class="mr-4">
               <i
                 class="flaticon-chat-1 display-4 text-muted font-weight-bold"
@@ -225,7 +225,7 @@
               >
               <a href="#" class="text-primary font-weight-bolder">View</a>
             </div>
-          </div>
+          </div> -->
           <!--end::Item-->
 
           <!--begin::Item-->
@@ -281,34 +281,57 @@
         <!--begin::Items-->
       </div>
     </div>
-    <!--end::Card-->
-    <div class="row">
-      <div class="col-lg-8">
-        <PointDistributeContent></PointDistributeContent>
-      </div>
-      <div class="col-lg-4">
-        <ListWidget11></ListWidget11>
-      </div>
-    </div>
 
-    <!--begin::Row-->
-    <div class="row">
-      <div class="col-lg-12">
-        <EmployeeListContent></EmployeeListContent>
-      </div>
-    </div>
-    <!--end::Row-->
-
-    <!--begin::Row-->
-    <div class="row">
-      <div class="col-lg-8">
-        <EmployeeCharts></EmployeeCharts>
-      </div>
-      <div class="col-lg-4">
-        <Widget13></Widget13>
-
-        <!-- <Widget15></Widget15> -->
-      </div>
+    <div>
+      <b-card no-body>
+        <b-tabs pills card >
+          <b-tab title="Company Information" active>
+            <!--end::Card-->
+            <!-- <div class="row"> -->
+            <!-- <div class="col-lg-8">
+                <PointDistributeContent></PointDistributeContent>
+              </div>
+              <div class="col-lg-4">
+                <ListWidget11></ListWidget11>
+              </div> -->
+            <company-information></company-information>
+            <!-- </div> -->
+          </b-tab>
+          <b-tab title="Department Manage">
+            <!--begin::Row-->
+            <!--begin::Row-->
+            <department></department>
+            <!--end::Row-->
+          </b-tab>
+          <b-tab title="Administrator Manage">
+            <adminstrator></adminstrator>
+          </b-tab>
+          <b-tab title="Employee Manage">
+            <!--begin::Row-->
+            <div class="row">
+              <div class="col-lg-12">
+                <EmployeeListContent></EmployeeListContent>
+              </div>
+            </div>
+            <!--end::Row-->
+            ></b-tab
+          >
+          <b-tab title="Order Records">
+            <!--begin::Row-->
+            <!--begin::Row-->
+            <div class="row">
+              <div class="col-lg-8">
+                <EmployeeCharts></EmployeeCharts>
+              </div>
+              <div class="col-lg-4">
+                <Widget13></Widget13>
+                <!-- <Widget15></Widget15> -->
+              </div>
+            </div>
+            <!--end::Row-->
+          </b-tab>
+        </b-tabs>
+      </b-card>
     </div>
   </div>
 </template>
@@ -318,14 +341,17 @@ import { mapGetters } from "vuex";
 
 import { SET_BREADCRUMB } from "@/core/services/store/breadcrumbs.module";
 import EmployeeListContent from "@/view/content/customer/EmployeeListContent";
-import PointDistributeContent from "@/view/content/customer/PointDistributeContent";
+// import PointDistributeContent from "@/view/content/customer/PointDistributeContent";
 
 import Widget13 from "@/view/pages/profile/profile-comp-3/Widget13";
 // import Widget15 from "@/view/pages/profile/profile-comp-3/Widget15";
 import EmployeeCharts from "@/view/content/customer/EmployeeCharts";
-import ListWidget11 from "@/view/content/widgets/list/Widget11.vue";
+// import ListWidget11 from "@/view/content/widgets/list/Widget11.vue";
 import { FETCH_ENTERPRISE_DETAIL } from "@/core/services/store/enterprise.module";
 import { FETCH_EMPLOYEE_LIST } from "@/core/services/store/employee.module";
+import CompanyInformation from "@/view/content/customer/companycenter/CompanyInformation";
+import Department from "@/view/content/customer/companycenter/Department";
+import Adminstrator from "@/view/content/customer/companycenter/Adminstrator";
 
 export default {
   name: "custom-page",
@@ -333,26 +359,30 @@ export default {
     EmployeeListContent,
     Widget13,
     // Widget15,
-    ListWidget11,
+    // ListWidget11,
     EmployeeCharts,
-    PointDistributeContent
+    // PointDistributeContent,
+    CompanyInformation,
+    Adminstrator,
+    Department,
   },
   computed: {
-    ...mapGetters(["currentEnterpriseInfo"])
+    ...mapGetters(["currentEnterpriseInfo"]),
   },
   data() {
     return {};
   },
-  mounted() {
+  async mounted() {
     this.$store.dispatch(SET_BREADCRUMB, [{ title: "Profile 3" }]);
-    this.$store.dispatch(FETCH_ENTERPRISE_DETAIL, {
+    await this.$store.dispatch(FETCH_ENTERPRISE_DETAIL, {
       email: this.$store.state.auth.user.email,
-      enterpriseId: this.$store.state.enterprise.currentEnterpriseId
+      enterpriseId: this.$store.state.enterprise.currentEnterpriseId,
     });
-
+    console.log(2468)
+    console.log(this.currentEnterpriseInfo)
     this.$store.dispatch(FETCH_EMPLOYEE_LIST, {
-      enterpriseId: this.$store.state.enterprise.currentEnterpriseId
+      enterpriseId: this.$store.state.enterprise.currentEnterpriseId,
     });
-  }
+  },
 };
 </script>

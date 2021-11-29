@@ -89,7 +89,7 @@
         <div class="navi navi-spacer-x-0 p-0">
           <!--begin::Item-->
           <router-link
-            to="/builder"
+            to="/customer/profile"
             @click.native="closeOffcanvas"
             href="#"
             class="navi-item"

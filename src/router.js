@@ -66,6 +66,11 @@ export default new Router({
               path: "project-center",
               name: "project-center",
               component: () => import("@/view/pages/customer/ProjectCenter.vue")
+            },
+            {
+              path: "profile",
+              name: "profile",
+              component: () => import("@/view/pages/customer/Profile.vue")
             }
           ]
         },

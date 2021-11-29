@@ -7,7 +7,7 @@
           href="#"
           v-bind="attrs"
           v-on="on"
-          class="btn btn-sm btn-info font-weight-bolder text-uppercase"
+          class="btn btn-sm btn-info font-weight-bolder text-uppercase ml-10"
           >Create</a
         >
         <!-- <v-btn color="red lighten-2" dark v-bind="attrs" v-on="on">

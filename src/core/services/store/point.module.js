@@ -20,8 +20,6 @@ const getters = {
 
 const actions = {
   [FETCH_POINT_LIST](context) {
-    console.log(444)
-    console.log(context)
     return new Promise((resolve, reject) => {
       ApiService.query("/point/getOrders", {
         params: {

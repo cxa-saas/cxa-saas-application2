@@ -19,9 +19,9 @@
       >
         <h3 class="font-weight-bold m-0">
           Quick Actions
-          <small class="text-muted font-size-sm ml-2"
+          <!-- <small class="text-muted font-size-sm ml-2"
             >finance &amp; reports</small
-          >
+          > -->
         </h3>
         <a
           href="#"
@@ -38,7 +38,7 @@
           <!--begin::Item-->
           <div class="col-6">
             <a
-              href="#"
+              href="#/customer/profile"
               class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-10 px-5"
             >
               <span class="svg-icon svg-icon-3x svg-icon-primary m-0">
@@ -55,7 +55,7 @@
           <!--begin::Item-->
           <div class="col-6">
             <a
-              href="#"
+              href="#/customer/employee-list"
               class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-10 px-5"
             >
               <span class="svg-icon svg-icon-3x svg-icon-primary m-0">
@@ -76,7 +76,7 @@
           <!--begin::Item-->
           <div class="col-6">
             <a
-              href="#"
+              href="#/customer/project-center"
               class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-10 px-5"
             >
               <span class="svg-icon svg-icon-3x svg-icon-primary m-0">
