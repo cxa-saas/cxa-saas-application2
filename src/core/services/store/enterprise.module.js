@@ -6,11 +6,13 @@ export const UPDATE_ENTERPRISE_DETAIL = "updateEnterpriseDetail";
 export const FETCH_ENTERPRISE_DEPARTMENT = "fetchEnterpriseDepartment";
 export const DELETE_ENTERPRISE_DEPARTMENT = "deleteEnterpriseDepartment";
 export const ADD_ENTERPRISE_DEPARTMENT = "addEnterpriseDepartment";
-
+export const FETCH_ENTERPRISE_ADMINISTRATOR = "fetchEnterpriseAdministrator";
+export const DELETE_ENTERPRISE_ADMINISTRATOR = "deleteEnterpriseAdministrator";
+export const ADD_ENTERPRISE_ADMINISTRATOR = "addEnterpriseAdministrator";
 // mutation types
+export const SET_ENTERPRISE_ADMINISTRATOR = "setEnterpriseAdministrator";
 export const SET_CURRENT_ENTERPRISE = "setEnterprise";
 export const SET_CURRENT_DEPARTMENT = "setCurrentDepartments";
-
 export const SET_ENTERPRISE_DETAIL = "setEnterpriseDetail";
 export const SET_ENTERPRISE_POINT = "setEnterpriseDetail";
 export const SET_ERROR = "setError";
@@ -35,7 +37,8 @@ const state = {
     freeze_points: 0,
     points_balance: 0
   },
-  departments: []
+  departments: [],
+  administrators: []
 };
 
 const getters = {
@@ -47,6 +50,9 @@ const getters = {
   },
   currentEnterpriseDepartments(state) {
     return state.departments;
+  },
+  currentEnterpriseAdministrators(state) {
+    return state.administrators;
   }
 };
 
@@ -94,7 +100,6 @@ const actions = {
         });
     });
   },
-
   [DELETE_ENTERPRISE_DEPARTMENT](context, { enterpriseId, nodeId }) {
     return new Promise((resolve, reject) => {
       ApiService.post("/department/del", {
@@ -131,7 +136,62 @@ const actions = {
         });
     });
   },
-
+  [FETCH_ENTERPRISE_ADMINISTRATOR](context, enterpriseId) {
+    return new Promise((resolve, reject) => {
+      ApiService.query("/administrator/list", {
+        params: { enterpriseId }
+      })
+        .then(response => {
+          if (response.status == 200) {
+            context.commit(
+              SET_ENTERPRISE_ADMINISTRATOR,
+              response.data)
+            resolve(response.data);
+          } else {
+            reject(response.data);
+          }
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  },
+  [DELETE_ENTERPRISE_ADMINISTRATOR](context, { enterpriseId, nodeId }) {
+    return new Promise((resolve, reject) => {
+      ApiService.post("/department/del", {
+        enterpriseId, nodeId
+      })
+        .then(async response => {
+          if (response.status == 200) {
+            await context.dispatch(FETCH_ENTERPRISE_DEPARTMENT, enterpriseId)
+            resolve(response.data.msg);
+          } else {
+            reject(response.data);
+          }
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  },
+  [ADD_ENTERPRISE_ADMINISTRATOR](context, { enterpriseId, name, level = 1, parentNodeId = undefined }) {
+    return new Promise((resolve, reject) => {
+      ApiService.post("/department/add", {
+        enterpriseId, name, level, parentNodeId
+      })
+        .then(async response => {
+          if (response.status == 200) {
+            await context.dispatch(SET_ENTERPRISE_ADMINISTRATOR, enterpriseId)
+            resolve(response.data);
+          } else {
+            reject(response.data);
+          }
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  },
 };
 
 const mutations = {
@@ -143,6 +203,10 @@ const mutations = {
   },
   [SET_ENTERPRISE_DETAIL](state, enterpriseDetail) {
     state.enterpriseDetail = enterpriseDetail;
+  },
+  [SET_ENTERPRISE_ADMINISTRATOR](state,administrators){
+    state.administrators = administrators
+
   },
   [SET_ORDER](state, orderId) {
     state.orderId = orderId;

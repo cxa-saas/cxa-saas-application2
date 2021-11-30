@@ -1,47 +1,58 @@
 <template>
-  <div class="card card-custom card-stretch gutter-b bg-light">
+  <div class="card card-custom card-stretch gutter-b">
     <!--begin::Header-->
     <div class="card-header border-0 pt-5">
       <h3 class="card-title align-items-start flex-column">
         <span class="card-label font-weight-bolder text-dark"
-          >Favorite Benefits</span
-        >
-        <span class="text-muted mt-3 font-weight-bold font-size-sm"
-          >Count the most popular benefits of employees</span
+          >Platform Adminstrator</span
         >
       </h3>
       <div class="card-toolbar">
         <ul class="nav nav-pills nav-pills-sm nav-dark-75">
-          <li class="nav-item">
-            <a
-              class="nav-link py-2 px-4"
-              data-toggle="tab"
-              :class="{ active: this.show === 'month' }"
-              href="#kt_tab_pane_2_1"
-              @click="show = 'month'"
-              >Month</a
+          <div>
+            <b-button
+              class="btn btn-info font-weight-bolder font-size-sm"
+              v-b-modal.modal-scoped
+              >NEW</b-button
             >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link py-2 px-4"
-              data-toggle="tab"
-              :class="{ active: this.show === 'week' }"
-              href="#kt_tab_pane_2_2"
-              @click="show = 'week'"
-              >Week</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link py-2 px-4"
-              data-toggle="tab"
-              :class="{ active: this.show === 'day' }"
-              href="#kt_tab_pane_2_3"
-              @click="show = 'day'"
-              >Day</a
-            >
-          </li>
+
+            <!-- <b-modal id="modal-scoped" size="lg">
+              <template #modal-header="{}">
+                <h5>Add New Department</h5>
+              </template>
+              <div class="form-group row">
+                <label class="col-xl-3 col-lg-3 col-form-label text-right">
+                  Name</label
+                >
+                <div class="col-lg-9 col-xl-6">
+                  <div class="input-group input-group-lg input-group-solid">
+                    <input
+                      type="text"
+                      class="form-control form-control-lg form-control-solid"
+                      placeholder="Name"
+                      v-model="form.name"
+                    />
+                  </div>
+                </div>
+              </div>
+              <template #modal-footer="{}">
+                <b-button
+                  size="sm"
+                  variant="success"
+                  @click="submitDepartment()"
+                >
+                  OK
+                </b-button>
+                <b-button
+                  size="sm"
+                  variant="danger"
+                  @click="cancelSubmitDepartment()"
+                >
+                  Cancel
+                </b-button>
+              </template>
+            </b-modal> -->
+          </div>
         </ul>
       </div>
     </div>
@@ -53,17 +64,18 @@
         <table class="table table-borderless table-vertical-center">
           <thead>
             <tr>
-              <th class="p-0" style="width: 50px"></th>
-              <th class="p-0" style="min-width: 150px"></th>
-              <th class="p-0" style="min-width: 140px"></th>
-              <th class="p-0" style="min-width: 120px"></th>
-              <th class="p-0" style="min-width: 40px"></th>
+              <th class="p-0" style="min-width: 150px">name</th>
+              <th class="p-0" style="min-width: 150px">email</th>
+              <th class="p-0" style="min-width: 140px">mobile</th>
+              <th class="p-0" style="min-width: 120px">adminstrator type</th>
+              <th class="p-0" style="min-width: 40px">is activited</th>
+              <th class="p-0" style="min-width: 40px">action</th>
             </tr>
           </thead>
           <tbody>
-            <template v-for="(item, i) in dataToShow">
+            <template v-for="(item, i) in this.currentEnterpriseAdministrators">
               <tr v-bind:key="i">
-                <td class="pl-0 py-5">
+                <!-- <td class="pl-0 py-5">
                   <div class="symbol symbol-50 symbol-light mr-2">
                     <span class="symbol-label">
                       <img
@@ -73,33 +85,42 @@
                       />
                     </span>
                   </div>
-                </td>
-                <td class="pl-0">
-                  <a
-                    href="#"
-                    class="text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg"
-                    >{{ item.title }}</a
-                  >
-                  <span class="text-muted font-weight-bold d-block">{{
-                    item.desc
-                  }}</span>
-                </td>
-                <td class="text-right">
+                </td> -->
+
+                <td class="pl-0 py-5">
                   <span class="text-muted font-weight-bold">{{
-                    item.desc2
+                    item.name
                   }}</span>
                 </td>
-                <td class="text-right">
+
+                <td class="pl-0 py-5">
                   <span class="text-muted font-weight-bold">{{
-                    item.users
+                    item.email
                   }}</span>
                 </td>
-                <td class="text-right pr-0">
+
+                <td class="pl-0 py-5">
+                  <span class="text-muted font-weight-bold">{{
+                    item.mobile
+                  }}</span>
+                </td>
+                <td class="pl-0 py-5">
+                  <span class="text-muted font-weight-bold">{{
+                    item.adminstrator_type
+                  }}</span>
+                </td>
+                <td class="pl-0 py-5">
+                  <span class="text-muted font-weight-bold">{{
+                    item.is_activited
+                  }}</span>
+                </td>
+
+                <td class="pl-0 py-5">
                   <a href="#" class="btn btn-icon btn-light btn-sm">
                     <span class="svg-icon svg-icon-md svg-icon-success">
                       <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Arrow-right.svg-->
                       <inline-svg
-                        src="media/svg/icons/Navigation/Arrow-right.svg"
+                        src="media/svg/icons/General/Trash.svg"
                       ></inline-svg>
                       <!--end::Svg Icon-->
                     </span>
@@ -118,133 +139,25 @@
 
 <script>
 import { mapGetters } from "vuex";
+import { FETCH_ENTERPRISE_ADMINISTRATOR } from "@/core/services/store/enterprise.module";
 
 export default {
   name: "widget-12",
   data() {
     return {
       show: "day",
-      month: [
-        {
-          title: "Holiday Trading",
-          desc: "Amazing Templates",
-          desc2: "ReactJS, Ruby",
-          users: "354 Users",
-          img: "media/svg/misc/014-kickstarter.svg"
-        },
-        {
-          title: "Top Authors",
-          desc: "Successful Fellas",
-          desc2: "ReactJs, HTML",
-          users: "4600 Users",
-          img: "media/svg/misc/006-plurk.svg"
-        },
-        {
-          title: "New Users",
-          desc: "Awesome Users",
-          desc2: "Laravel, Metronic",
-          users: "890 Users",
-          img: "media/svg/misc/003-puzzle.svg"
-        },
-        {
-          title: "Popular Authors",
-          desc: "Most Successful",
-          desc2: "Python, MySQL",
-          users: "7200 Users",
-          img: "media/svg/misc/015-telegram.svg"
-        },
-        {
-          title: "Active Customers",
-          desc: "Best Customers",
-          desc2: "AngularJS, C#",
-          users: "6370 Users",
-          img: "media/svg/misc/005-bebo.svg"
-        }
-      ],
-      week: [
-        {
-          title: "Popular Authors",
-          desc: "Most Successful",
-          desc2: "Python, MySQL",
-          users: "7200 Users",
-          img: "media/svg/misc/015-telegram.svg"
-        },
-        {
-          title: "Top Authors",
-          desc: "Successful Fellas",
-          desc2: "ReactJs, HTML",
-          users: "4600 Users",
-          img: "media/svg/misc/006-plurk.svg"
-        },
-        {
-          title: "New Users",
-          desc: "Awesome Users",
-          desc2: "Laravel, Metronic",
-          users: "890 Users",
-          img: "media/svg/misc/003-puzzle.svg"
-        },
-        {
-          title: "Active Customers",
-          desc: "Best Customers",
-          desc2: "AngularJS, C#",
-          users: "6370 Users",
-          img: "media/svg/misc/005-bebo.svg"
-        },
-        {
-          title: "Bestseller Theme",
-          desc: "Amazing Templates",
-          desc2: "ReactJS, Ruby",
-          users: "354 Users",
-          img: "media/svg/misc/014-kickstarter.svg"
-        }
-      ],
-      day: [
-        {
-          title: "Holiday Trading",
-          desc: "Health Mall",
-          desc2: "14982 Likes",
-          users: "720 Users",
-          img: "media/svg/misc/015-telegram.svg"
-        },
-        {
-          title: "Insurance Package 2019",
-          desc: "CXA Insurance",
-          desc2: "5498 Likes",
-          users: "4600 Users",
-          img: "media/svg/misc/006-plurk.svg"
-        },
-        {
-          title: "Inspection Package 2018",
-          desc: "CXA Inspection",
-          desc2: "2498 Likes",
-          users: "890 Users",
-          img: "media/svg/misc/003-puzzle.svg"
-        },
-        {
-          title: "Inspection Package 2020",
-          desc: "CXA Inspection",
-          desc2: "1498 Likes",
-          users: "354 Users",
-          img: "media/svg/misc/014-kickstarter.svg"
-        },
-        {
-          title: "Macbook Pro 2020",
-          desc: "Health Mall",
-          desc2: "12498 Likes",
-          users: "6370 Users",
-          img: "media/svg/misc/005-bebo.svg"
-        }
-      ]
     };
   },
   computed: {
-    ...mapGetters(["layoutConfig"]),
-    dataToShow() {
-      if (this.show === "month") return this.month;
-      if (this.show === "week") return this.week;
-      if (this.show === "day") return this.day;
-      return this.day;
-    }
-  }
+    ...mapGetters(["layoutConfig", "currentEnterpriseAdministrators"]),
+  },
+  async mounted() {
+    const result = await this.$store.dispatch(
+      FETCH_ENTERPRISE_ADMINISTRATOR,
+      this.$store.state.enterprise.currentEnterpriseId
+    );
+    console.log(4567);
+    console.log(result);
+  },
 };
 </script>

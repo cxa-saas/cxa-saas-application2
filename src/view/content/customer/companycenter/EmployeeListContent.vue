@@ -518,6 +518,8 @@ export default {
         enterpriseId: this.$store.state.enterprise.currentEnterpriseId,
         nodeId,
       });
+      console.log(233333)
+      console.log(employeeList)
       this.employeeList = employeeList;
     },
   },
