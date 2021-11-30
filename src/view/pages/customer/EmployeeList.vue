@@ -314,7 +314,7 @@
               </div>
             </div>
             <!--end::Row-->
-            ></b-tab
+            </b-tab
           >
           <b-tab title="Order Records">
             <!--begin::Row-->
