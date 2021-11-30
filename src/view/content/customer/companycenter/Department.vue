@@ -12,9 +12,48 @@
         > -->
       </h3>
       <div class="card-toolbar">
-        <a href="#" class="btn btn-info font-weight-bolder font-size-sm"
-          >New</a
-        >
+        <div>
+          <b-button
+            class="btn btn-info font-weight-bolder font-size-sm"
+            v-b-modal.modal-scoped
+            >NEW</b-button
+          >
+
+          <b-modal id="modal-scoped" size="lg">
+            <template #modal-header="{}">
+              <!-- Emulate built in modal header close button action -->
+              <h5>Add New Department</h5>
+            </template>
+            <div class="form-group row">
+              <label class="col-xl-3 col-lg-3 col-form-label text-right"
+                > Name</label
+              >
+              <div class="col-lg-9 col-xl-6">
+                <div class="input-group input-group-lg input-group-solid">
+                  <input
+                    type="text"
+                    class="form-control form-control-lg form-control-solid"
+                    placeholder="Name"
+                    v-model="form.name"
+                  />
+                </div>
+              </div>
+            </div>
+            <template #modal-footer="{}">
+              <b-button size="sm" variant="success" @click="submitDepartment()">
+                OK
+              </b-button>
+              <b-button
+                size="sm"
+                variant="danger"
+                @click="cancelSubmitDepartment()"
+              >
+                Cancel
+              </b-button>
+            </template>
+          </b-modal>
+        </div>
+        <!-- <a href="#" class="btn btn-info font-weight-bolder font-size-sm">New</a> -->
       </div>
     </div>
     <!--end::Header-->
@@ -39,13 +78,11 @@
               </th>
               <th class="pl-0" style="min-width: 120px">Department id</th>
               <th class="pl-0" style="min-width: 120px">Name</th>
-              <th class="pl-0" style="min-width: 120px">ID Card</th>
-              <th style="min-width: 110px">Status</th>
               <th class="pr-0 text-right" style="min-width: 160px">Action</th>
             </tr>
           </thead>
           <tbody>
-            <template v-for="(item, i) in list">
+            <template v-for="(item, i) in this.currentEnterpriseDepartments">
               <tr v-bind:key="i">
                 <td class="pl-0 py-6">
                   <label class="checkbox checkbox-lg checkbox-single">
@@ -62,111 +99,21 @@
                       text-hover-primary
                       font-size-lg
                     "
-                    >{{ item.order_id }}</a
+                    >{{ item.nodeId }}</a
                   >
-                </td>
-                <td>
-                  <span
-                    class="text-dark-75 font-weight-bolder d-block font-size-lg"
-                    >{{ item.country }}</span
-                  >
-                  <span class="text-muted font-weight-bold">{{
-                    item.country_desc
-                  }}</span>
                 </td>
 
                 <td>
                   <span
                     class="text-dark-75 font-weight-bolder d-block font-size-lg"
-                    >{{ item.company }}</span
-                  >
-                  <span class="text-muted font-weight-bold">{{
-                    item.company_desc
-                  }}</span>
-                </td>
-                <td>
-                  <span
-                    class="text-primary font-weight-bolder d-block font-size-lg"
-                    >{{ item.date }}</span
-                  >
-                  <span class="text-muted font-weight-bold">{{
-                    item.date_desc
-                  }}</span>
-                </td>
-
-                <td class="pl-0">
-                  <a
-                    href="#"
-                    class="
-                      text-dark-75
-                      font-weight-bolder
-                      text-hover-primary
-                      font-size-lg
-                    "
-                    >{{ item.job_grade }}</a
+                    >{{ item.name }}</span
                   >
                 </td>
-
-                <td>
-                  <span
-                    class="label label-lg label-inline"
-                    v-bind:class="`label-light-${item.class}`"
-                    >{{ item.status }}</span
-                  >
-                </td>
-                <td class="pl-0">
-                  <a
-                    href="#"
-                    class="
-                      text-dark-75
-                      font-weight-bolder
-                      text-hover-primary
-                      font-size-lg
-                    "
-                    >{{ item.additional_group }}</a
-                  >
-                </td>
-                <td class="pl-0">
-                  <a
-                    href="#"
-                    class="
-                      text-dark-75
-                      font-weight-bolder
-                      text-hover-primary
-                      font-size-lg
-                    "
-                    >{{ item.birthday }}</a
-                  >
-                </td>
-
                 <td class="pr-0 text-right">
                   <a
                     href="#"
                     class="btn btn-icon btn-light btn-hover-primary btn-sm"
-                  >
-                    <span class="svg-icon svg-icon-md svg-icon-primary">
-                      <!--begin::Svg Icon | path:assets/media/svg/icons/General/Settings-1.svg-->
-                      <inline-svg
-                        src="media/svg/icons/General/Settings-1.svg"
-                      ></inline-svg>
-                      <!--end::Svg Icon-->
-                    </span>
-                  </a>
-                  <a
-                    href="#"
-                    class="btn btn-icon btn-light btn-hover-primary btn-sm mx-3"
-                  >
-                    <span class="svg-icon svg-icon-md svg-icon-primary">
-                      <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg-->
-                      <inline-svg
-                        src="media/svg/icons/Communication/Write.svg"
-                      ></inline-svg>
-                      <!--end::Svg Icon-->
-                    </span>
-                  </a>
-                  <a
-                    href="#"
-                    class="btn btn-icon btn-light btn-hover-primary btn-sm"
+                    @click="deleteDepartment(item.nodeId)"
                   >
                     <span class="svg-icon svg-icon-md svg-icon-primary">
                       <!--begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg-->
@@ -196,78 +143,30 @@
 </template>
 
 <script>
+import {
+  DELETE_ENTERPRISE_DEPARTMENT,
+  ADD_ENTERPRISE_DEPARTMENT,
+} from "@/core/services/store/enterprise.module";
+import { mapGetters } from "vuex";
+
 export default {
   name: "widget-2",
   data() {
     return {
+      form: {
+        name: "",
+      },
       employeesPageConfig: {
         current: 1,
         pages: 1,
       },
       checked: false,
-      list: [
-        {
-          order_id: "56037-XDER",
-          country: "Chovy Qiu",
-          country_desc: "Male",
-          date: "05/28/2020",
-          date_desc: "Paid",
-          company: "320923199607136035",
-          company_desc: "ID Card",
-          class: "primary",
-          birthday: "1996-07-13",
-          job_grade: "Developer",
-          status: "Approved",
-          additional_group: "血常规",
-        },
-        {
-          order_id: "05822-FXSP",
-          country: "Cain Liang",
-          country_desc: "Male",
-          birthday: "1996-07-13",
-
-          date: "02/04/2020",
-          date_desc: "Rejected",
-          company: "320923199607136035",
-          company_desc: "ID Card",
-          class: "warning",
-          status: "In Progress",
-          job_grade: "Developer",
-          additional_group: "血常规",
-        },
-        {
-          order_id: "00347-BCLQ",
-          country: "Alvin Li",
-          country_desc: "Male",
-          date: "23/12/2020",
-          date_desc: "Paid",
-          company: "320923199607136035",
-          birthday: "1996-07-13",
-
-          company_desc: "ID Card",
-          class: "success",
-          status: "Success",
-          job_grade: "Developer",
-          additional_group: "血常规",
-        },
-        {
-          order_id: "4472-QREX",
-          country: "Wind",
-          country_desc: "Male",
-          date: "17/09/2021",
-          date_desc: "Pending",
-          company: "320923199607136035",
-          birthday: "1996-07-13",
-
-          company_desc: "ID Card",
-          class: "danger",
-          status: "Danger",
-          job_grade: "Developer",
-          additional_group: "血常规",
-        },
-      ],
     };
   },
+  computed: {
+    ...mapGetters(["currentEnterpriseDepartments"]),
+  },
+  mounted() {},
   components: {},
   methods: {
     setCheck(check) {
@@ -276,6 +175,30 @@ export default {
       } else {
         this.checked = false;
       }
+    },
+    deleteDepartment(nodeId) {
+      this.$store.dispatch(DELETE_ENTERPRISE_DEPARTMENT, {
+        enterpriseId: this.$store.state.enterprise.currentEnterpriseId,
+        nodeId,
+      });
+    },
+    addDepartment(name) {
+      this.$store.dispatch(ADD_ENTERPRISE_DEPARTMENT, {
+        enterpriseId: this.$store.state.enterprise.currentEnterpriseId,
+        name,
+      });
+    },
+    submitDepartment() {
+      this.$store.dispatch(ADD_ENTERPRISE_DEPARTMENT, {
+        enterpriseId: this.$store.state.enterprise.currentEnterpriseId,
+        name: this.form.name,
+      });
+      this.$bvModal.hide("modal-scoped");
+      this.form.name = "";
+    },
+    cancelSubmitDepartment() {
+      this.form.name = "";
+      this.$bvModal.hide("modal-scoped");
     },
   },
 };

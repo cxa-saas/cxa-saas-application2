@@ -284,7 +284,7 @@
 
     <div>
       <b-card no-body>
-        <b-tabs pills card >
+        <b-tabs pills card>
           <b-tab title="Company Information" active>
             <!--end::Card-->
             <!-- <div class="row"> -->
@@ -340,14 +340,17 @@
 import { mapGetters } from "vuex";
 
 import { SET_BREADCRUMB } from "@/core/services/store/breadcrumbs.module";
-import EmployeeListContent from "@/view/content/customer/EmployeeListContent";
+import EmployeeListContent from "@/view/content/customer/companycenter/EmployeeListContent";
 // import PointDistributeContent from "@/view/content/customer/PointDistributeContent";
 
 import Widget13 from "@/view/pages/profile/profile-comp-3/Widget13";
 // import Widget15 from "@/view/pages/profile/profile-comp-3/Widget15";
 import EmployeeCharts from "@/view/content/customer/EmployeeCharts";
 // import ListWidget11 from "@/view/content/widgets/list/Widget11.vue";
-import { FETCH_ENTERPRISE_DETAIL } from "@/core/services/store/enterprise.module";
+import {
+  FETCH_ENTERPRISE_DETAIL,
+  FETCH_ENTERPRISE_DEPARTMENT,
+} from "@/core/services/store/enterprise.module";
 import { FETCH_EMPLOYEE_LIST } from "@/core/services/store/employee.module";
 import CompanyInformation from "@/view/content/customer/companycenter/CompanyInformation";
 import Department from "@/view/content/customer/companycenter/Department";
@@ -378,11 +381,13 @@ export default {
       email: this.$store.state.auth.user.email,
       enterpriseId: this.$store.state.enterprise.currentEnterpriseId,
     });
-    console.log(2468)
-    console.log(this.currentEnterpriseInfo)
     this.$store.dispatch(FETCH_EMPLOYEE_LIST, {
       enterpriseId: this.$store.state.enterprise.currentEnterpriseId,
     });
+    this.$store.dispatch(
+      FETCH_ENTERPRISE_DEPARTMENT,
+      this.$store.state.enterprise.currentEnterpriseId
+    );
   },
 };
 </script>

@@ -33,12 +33,15 @@ const actions = {
   [FETCH_EMPLOYEE_LIST](context, payload) {
     return new Promise((resolve, reject) => {
       ApiService.query("/member/list", {
-        params: { enterpriseId: payload.enterpriseId }
+        params: { enterpriseId: payload.enterpriseId ,deparmentId:payload.nodeId}
       })
         .then(response => {
           if (response.data.code == 200) {
-            context.commit(SET_EMPLOYEE_LIST, response.data.data);
-            resolve()
+            if (payload.nodeId) {
+              resolve(response.data.data)
+            } else {
+              context.commit(SET_EMPLOYEE_LIST, response.data.data);
+            }
           } else {
             reject(response.data.msg);
           }
