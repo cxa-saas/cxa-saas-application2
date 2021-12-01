@@ -211,7 +211,7 @@
 
 <script>
 export default {
-  name: "widget-2",
+  name: "plan-employee-list",
   data() {
     return {
       employeesPageConfig: {

@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div class="row">
+      <div class="col-lg-12">
+        <DataDashboard></DataDashboard>
+      </div>
+    </div>
     <div class="d-flex flex-column-fluid">
       <!--begin::Container-->
       <div class="container">
@@ -239,6 +244,7 @@
               <!--begin::Footer-->
               <div class="card-footer d-flex align-items-center">
                 <button
+                  @click="goToEmployeeList"
                   type="button"
                   class="
                     btn btn-primary btn-sm
@@ -1465,7 +1471,8 @@
                     <span class="font-weight-bolder mb-4">Plan</span>
                     <span class="font-weight-bolder font-size-h5 pt-1">
                       <span class="font-weight-bold text-dark-50"></span
-                    >90</span>
+                      >90</span
+                    >
                   </div>
                   <!--end::Item-->
                   <!--begin::Item-->
@@ -1693,10 +1700,24 @@
 </template>
 
 <script>
+import DataDashboard from "@/view/content/customer/projectcenter/insurance/DataDashboard";
+import { FETCH_INSURANCE_DETAIL } from "@/core/services/store/project.module";
+
 export default {
-  name: "project-list",
-  data() {},
-  components: {},
-  methods: {},
+  name: "plan-list",
+  async  mounted(){
+    const result = await this.$store.dispatch(FETCH_INSURANCE_DETAIL,{enterpriseId:this.$store.state.enterprise.currentEnterpriseId,projectBid:this.$route.query.bid})
+    console.log(1111)
+    console.log(result)
+  },
+  data() {
+    return {}
+  },
+  components: { DataDashboard },
+  methods: {
+    goToEmployeeList(){
+      this.$router.push({name:'plan-employee-list'})
+    }
+  },
 };
 </script>

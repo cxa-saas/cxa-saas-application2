@@ -287,23 +287,16 @@
     <!--end::Card-->
 
     <div>
-      ``
       <b-card no-body>
         <b-tabs card>
           <b-tab title="Insurance" active>
-            <project-list></project-list>
+            <router-view :key="tabIndex"></router-view>
           </b-tab>
-          <b-tab title="Inspection" active>
-            <div class="row">
-              <div class="col-lg-12">
-                <DataDashboard></DataDashboard>
-              </div>
-            </div>
-            <PlanList></PlanList>
+          <b-tab title="Inspection">
+            <router-view></router-view>
           </b-tab>
-          <b-tab title="Benefit" active>
-            <!--end::Row-->
-            <EmployeeList></EmployeeList>
+          <b-tab title="Benefit">
+            <router-view></router-view>
           </b-tab>
         </b-tabs>
       </b-card>
@@ -314,11 +307,10 @@
 <script>
 import { mapGetters } from "vuex";
 import { SET_BREADCRUMB } from "@/core/services/store/breadcrumbs.module";
-import DataDashboard from "@/view/content/customer/projectcenter/insurance/DataDashboard";
-import EmployeeList from "@/view/content/customer/projectcenter/insurance/EmployeeList";
-import ProjectList from "@/view/content/customer/projectcenter/insurance/ProjectList";
-import PlanList from "@/view/content/customer/projectcenter/insurance/PlanList";
+// import EmployeeList from "@/view/content/customer/projectcenter/insurance/EmployeeList";
+// import ProjectList from "@/view/content/customer/projectcenter/insurance/ProjectList";
 import { FETCH_USER_INFO } from "@/core/services/store/auth.module";
+import { FETCH_INSURANCE_LIST } from "@/core/services/store/project.module";
 
 export default {
   name: "Profile-2",
@@ -328,16 +320,18 @@ export default {
     };
   },
   components: {
-    DataDashboard,
-    EmployeeList,
-    ProjectList,
-    PlanList,
+    // DataDashboard,
+    // EmployeeList,
+    // ProjectList,
     // Widget14
   },
   async mounted() {
     this.$store.dispatch(SET_BREADCRUMB, [{ title: "Profile 2" }]);
     await this.$store.dispatch(FETCH_USER_INFO);
-    console.log(this.currentUser);
+    await this.$store.dispatch(
+      FETCH_INSURANCE_LIST,
+      this.$store.state.enterprise.currentEnterpriseId
+    );
   },
   methods: {
     /**

@@ -65,7 +65,21 @@ export default new Router({
             {
               path: "project-center",
               name: "project-center",
-              component: () => import("@/view/pages/customer/ProjectCenter.vue")
+              redirect: "/customer/project-center/project-list",
+              component: () => import("@/view/pages/customer/ProjectCenter.vue"),
+              children: [{
+                path: "project-list",
+                name: "project-list",
+                component: () => import("@/view/content/customer/projectcenter/insurance/ProjectList")
+              }, {
+                path: "plan-list",
+                name: "plan-list",
+                component: () => import("@/view/content/customer/projectcenter/insurance/PlanList")
+              }, {
+                path: "plan-employee-list",
+                name: "plan-employee-list",
+                component: () => import("@/view/content/customer/projectcenter/insurance/EmployeeList")
+              }]
             },
             {
               path: "profile",
