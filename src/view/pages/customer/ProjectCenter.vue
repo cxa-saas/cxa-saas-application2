@@ -289,13 +289,17 @@
     <div>
       <b-card no-body>
         <b-tabs card>
-          <b-tab title="Insurance" active>
-            <router-view :key="tabIndex"></router-view>
-          </b-tab>
-          <b-tab title="Inspection">
+          <b-tab
+            v-on:click="setActiveTab('insurance')"
+            title="Insurance"
+            active
+          >
             <router-view></router-view>
           </b-tab>
-          <b-tab title="Benefit">
+          <b-tab v-on:click="setActiveTab('inspection')" title="Inspection">
+            <router-view></router-view>
+          </b-tab>
+          <b-tab v-on:click="setActiveTab" title="Benefit">
             <router-view></router-view>
           </b-tab>
         </b-tabs>
@@ -310,7 +314,10 @@ import { SET_BREADCRUMB } from "@/core/services/store/breadcrumbs.module";
 // import EmployeeList from "@/view/content/customer/projectcenter/insurance/EmployeeList";
 // import ProjectList from "@/view/content/customer/projectcenter/insurance/ProjectList";
 import { FETCH_USER_INFO } from "@/core/services/store/auth.module";
-import { FETCH_INSURANCE_LIST } from "@/core/services/store/project.module";
+import {
+  FETCH_INSURANCE_LIST,
+  FETCH_INSPECTION_LIST,
+} from "@/core/services/store/project.module";
 
 export default {
   name: "Profile-2",
@@ -332,6 +339,10 @@ export default {
       FETCH_INSURANCE_LIST,
       this.$store.state.enterprise.currentEnterpriseId
     );
+    await this.$store.dispatch(
+      FETCH_INSPECTION_LIST,
+      this.$store.state.enterprise.currentEnterpriseId
+    );
   },
   methods: {
     /**
@@ -339,19 +350,12 @@ export default {
      * @param event
      */
     setActiveTab(event) {
-      let target = event.target;
-      const tab = target.closest('[role="tablist"]');
-      const links = tab.querySelectorAll('[data-toggle="tab"]');
-      // remove active tab links
-      for (let i = 0; i < links.length; i++) {
-        links[i].classList.remove("active");
+      if (event == "insurance") {
+        this.$router.push({ name: "project-list" });
       }
-
-      // set clicked tab index to bootstrap tab
-      this.tabIndex = parseInt(target.getAttribute("data-tab"));
-
-      // set current active tab
-      target.classList.add("active");
+      if (event == "inspection") {
+        this.$router.push({ name: "project-inspection-list" });
+      }
     },
   },
   computed: {

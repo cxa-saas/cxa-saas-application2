@@ -34,7 +34,10 @@
 
 <script>
 import { mapGetters } from "vuex";
-import { SET_CURRENT_ENTERPRISE } from "@/core/services/store/enterprise.module";
+import {
+  SET_CURRENT_ENTERPRISE,
+  FETCH_ENTERPRISE_DETAIL,
+} from "@/core/services/store/enterprise.module";
 export default {
   name: "KTMenu",
   computed: {
@@ -44,8 +47,12 @@ export default {
     console.log(this.enterpriseList);
   },
   methods: {
-    setEnterprise(enterpriseId) {
-      this.$store.commit(SET_CURRENT_ENTERPRISE, enterpriseId);
+    async setEnterprise(enterpriseId) {
+      await this.$store.commit(SET_CURRENT_ENTERPRISE, enterpriseId);
+      await this.$store.dispatch(FETCH_ENTERPRISE_DETAIL, {
+        email: this.$store.state.auth.user.email,
+        enterpriseId: this.$store.state.enterprise.currentEnterpriseId,
+      });
     },
     hasActiveChildren(match) {
       return this.$route["path"].indexOf(match) !== -1;

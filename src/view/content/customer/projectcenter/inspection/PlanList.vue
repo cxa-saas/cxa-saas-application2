@@ -265,7 +265,7 @@
         </div>
         <!--end::Row-->
         <!--begin::Pagination-->
-        <!-- <div
+        <div
           class="d-flex justify-content-between align-items-center flex-wrap"
         >
           <div class="d-flex flex-wrap mr-3">
@@ -393,7 +393,7 @@
             </select>
             <span class="text-muted">Displaying 10 of 230 records</span>
           </div>
-        </div> -->
+        </div>
         <!--end::Pagination-->
       </div>
       <!--end::Container-->

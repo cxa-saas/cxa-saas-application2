@@ -76,7 +76,13 @@ export default new Router({
                 path: "project-list",
                 name: "project-list",
                 component: () => import("@/view/content/customer/projectcenter/insurance/ProjectList")
-              }, {
+              },
+              {
+                path: "project-inspection-list",
+                name: "project-inspection-list",
+                component: () => import("@/view/content/customer/projectcenter/inspection/ProjectList")
+              }
+                , {
                 path: "plan-list",
                 name: "plan-list",
                 component: () => import("@/view/content/customer/projectcenter/insurance/PlanList")

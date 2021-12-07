@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <div
-        v-for="item in this.insuranceList"
+        v-for="item in this.inspectionList"
         :key="item.bid"
         class="col-xl-4 col-lg-6 col-md-6 col-sm-6"
       >
@@ -159,7 +159,7 @@
                     font-weight-bold
                     btn-upper btn-text
                   "
-                  >{{ item.regBeginTime.substring(0, 10) }}</span
+                  >{{ item.bookBeginDate.substring(0, 10) }}</span
                 >
               </div>
               <div class="mr-5 d-flex flex-column mb-5">
@@ -170,7 +170,7 @@
                     font-weight-bold
                     btn-upper btn-text
                   "
-                  >{{ item.regEndTime.substring(0, 10) }}</span
+                  >{{ item.bookEndDate.substring(0, 10) }}</span
                 >
               </div>
               <div class="d-flex flex-column mb-5">
@@ -346,7 +346,7 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters(["insuranceList"]),
+    ...mapGetters(["inspectionList"]),
   },
   components: {},
   methods: {

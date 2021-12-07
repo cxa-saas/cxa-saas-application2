@@ -212,8 +212,8 @@
         v-model="employeesPageConfig.current"
         :length="employeesPageConfig.pages"
       ></v-pagination>
-    </div> -->
-  </div>
+    </div>
+  </div> -->
   <!--end::Advance Table Widget 10-->
 </template>
 

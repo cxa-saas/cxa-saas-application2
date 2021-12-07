@@ -30,6 +30,9 @@ const getters = {
   insuranceList(state) {
     return state.insuranceList;
   },
+  inspectionList(state) {
+    return state.inspectionList;
+  },
   insuranceTemplatePlan(state) {
     return state.insuranceTemplate;
   },
@@ -144,12 +147,12 @@ const actions = {
   [FETCH_INSPECTION_LIST](context, enterpriseId) {
     return new Promise((resolve, reject) => {
       ApiService.query("/insurance/list", {
-        enterpriseId
+        params: { enterpriseId }
       })
         .then(response => {
           if (response.data.code == 200) {
-            context.commit(SET_INSPECTION_LIST, response.data.data);
-            resolve(response.data.data);
+            context.commit(SET_INSPECTION_LIST, response.data.data.records);
+            resolve(response.data.data.records);
           } else {
             reject(response.data.msg);
           }
