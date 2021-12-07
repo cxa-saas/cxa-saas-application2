@@ -338,12 +338,6 @@ import { mapGetters } from "vuex";
 
 import { SET_BREADCRUMB } from "@/core/services/store/breadcrumbs.module";
 import EmployeeListContent from "@/view/content/customer/companycenter/EmployeeListContent";
-// import PointDistributeContent from "@/view/content/customer/PointDistributeContent";
-
-// import Widget13 from "@/view/pages/profile/profile-comp-3/Widget13";
-// import Widget15 from "@/view/pages/profile/profile-comp-3/Widget15";
-// import EmployeeCharts from "@/view/content/customer/EmployeeCharts";
-// import ListWidget11 from "@/view/content/widgets/list/Widget11.vue";
 import {
   FETCH_ENTERPRISE_DETAIL,
   FETCH_ENTERPRISE_DEPARTMENT,
@@ -357,11 +351,6 @@ export default {
   name: "custom-page",
   components: {
     EmployeeListContent,
-    // Widget13,
-    // Widget15,
-    // ListWidget11,
-    // EmployeeCharts,
-    // PointDistributeContent,
     CompanyInformation,
     Adminstrator,
     Department,

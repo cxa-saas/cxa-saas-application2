@@ -81,6 +81,25 @@ const actions = {
         });
     });
   },
+  [UPDATE_ENTERPRISE_DETAIL](context, payload) {
+    return new Promise((resolve, reject) => {
+      ApiService.post("/enterprise/update", payload)
+        .then(response => {
+          if (response.data.code == 200) {
+            context.dispatch(
+              FETCH_ENTERPRISE_DETAIL,
+              {email:context.rootState.auth.user.email,enterpriseId:context.rootState.enterprise.currentEnterpriseId}
+            );
+            resolve(response.data.msg);
+          } else {
+            reject(response.data.msg);
+          }
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  },
   [FETCH_ENTERPRISE_DEPARTMENT](context, enterpriseId) {
     return new Promise((resolve, reject) => {
       ApiService.query("/department/menu", {
@@ -195,6 +214,7 @@ const actions = {
         });
     });
   },
+
 };
 
 const mutations = {

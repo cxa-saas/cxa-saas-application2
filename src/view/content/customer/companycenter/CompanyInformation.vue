@@ -130,7 +130,7 @@
           >
           <div class="col-lg-9 col-xl-6">
             <input
-              ref="surname"
+              ref="address"
               class="form-control form-control-lg form-control-solid"
               type="text"
               v-bind:value="currentEnterpriseInfo.address"
@@ -143,7 +143,7 @@
           >
           <div class="col-lg-9 col-xl-6">
             <input
-              ref="company_name"
+              ref="introduction"
               class="form-control form-control-lg form-control-solid"
               type="text"
               v-bind:value="currentEnterpriseInfo.introduction"
@@ -160,7 +160,7 @@
           >
           <div class="col-lg-9 col-xl-6">
             <input
-              ref="name"
+              ref="sizeType"
               class="form-control form-control-lg form-control-solid"
               type="text"
               value="small(0-99)"
@@ -185,10 +185,10 @@
                 </span>
               </div>
               <input
-                ref="phone"
+                ref="mobile"
                 type="text"
                 class="form-control form-control-lg form-control-solid"
-                placeholder="Phone"
+                placeholder="Mobile"
                 v-bind:value="currentEnterpriseInfo.mobile"
               />
             </div>
@@ -246,7 +246,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-import { UPDATE_PERSONAL_INFO } from "@/core/services/store/profile.module";
+import { UPDATE_ENTERPRISE_DETAIL } from "@/core/services/store/enterprise.module";
 
 export default {
   name: "PersonalInformation",
@@ -263,12 +263,10 @@ export default {
   methods: {
     save() {
       var name = this.$refs.name.value;
-      var surname = this.$refs.surname.value;
-      var company_name = this.$refs.company_name.value;
-      var phone = this.$refs.phone.value;
+      var address = this.$refs.address.value;
+      var introduction = this.$refs.introduction.value;
+      var mobile = this.$refs.mobile.value;
       var email = this.$refs.email.value;
-      var company_site = this.$refs.company_site.value;
-      var photo = this.photo;
 
       // set spinner to submit button
       const submitButton = this.$refs["kt_save_changes"];
@@ -277,14 +275,13 @@ export default {
       // dummy delay
       setTimeout(() => {
         // send update request
-        this.$store.dispatch(UPDATE_PERSONAL_INFO, {
+        this.$store.dispatch(UPDATE_ENTERPRISE_DETAIL, {
           name,
-          surname,
-          company_name,
-          phone,
+          address,
+          introduction,
+          mobile,
           email,
-          company_site,
-          photo,
+          enterpriseId: this.$store.state.enterprise.currentEnterpriseId,
         });
 
         submitButton.classList.remove(
@@ -295,13 +292,11 @@ export default {
       }, 2000);
     },
     cancel() {
-      this.$refs.name.value = this.currentUserPersonalInfo.name;
-      this.$refs.surname.value = this.currentUserPersonalInfo.surname;
-      this.$refs.company_name.value = this.currentUserPersonalInfo.company_name;
-      this.$refs.phone.value = this.currentUserPersonalInfo.phone;
-      this.$refs.email.value = this.currentUserPersonalInfo.email;
-      this.$refs.company_site.value = this.currentUserPersonalInfo.company_site;
-      this.current_photo = this.currentUserPersonalInfo.photo;
+      this.$refs.name.value = this.currentEnterpriseInfo.name;
+      this.$refs.address.value = this.currentEnterpriseInfo.address;
+      this.$refs.introduction.value = this.currentEnterpriseInfo.introduction;
+      this.$refs.mobile.value = this.currentEnterpriseInfo.mobile;
+      this.$refs.email.value = this.currentEnterpriseInfo.email;
     },
     onFileChange(e) {
       const file = e.target.files[0];
