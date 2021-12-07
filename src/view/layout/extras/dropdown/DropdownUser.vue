@@ -44,7 +44,7 @@
       <!--end::Item-->
 
       <!--begin::Item-->
-      <a href="#" class="navi-item px-8">
+      <!-- <a href="#" class="navi-item px-8">
         <div class="navi-link">
           <div class="navi-icon mr-2">
             <i class="flaticon2-mail text-warning"></i>
@@ -58,11 +58,11 @@
             </div>
           </div>
         </div>
-      </a>
+      </a> -->
       <!--end::Item-->
 
       <!--begin::Item-->
-      <a href="#" class="navi-item px-8">
+      <!-- <a href="#" class="navi-item px-8">
         <div class="navi-link">
           <div class="navi-icon mr-2">
             <i class="flaticon2-rocket-1 text-danger"></i>
@@ -76,11 +76,11 @@
             </div>
           </div>
         </div>
-      </a>
+      </a> -->
       <!--end::Item-->
 
       <!--begin::Item-->
-      <a href="#" class="navi-item px-8">
+      <!-- <a href="#" class="navi-item px-8">
         <div class="navi-link">
           <div class="navi-icon mr-2">
             <i class="flaticon2-hourglass text-primary"></i>
@@ -94,7 +94,7 @@
             </div>
           </div>
         </div>
-      </a>
+      </a> -->
       <!--end::Item-->
 
       <!--begin::Footer-->

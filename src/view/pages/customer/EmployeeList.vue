@@ -41,7 +41,7 @@
 
               <div class="my-lg-0 my-3">
                 <a
-                  href="#"
+                  href="#/customer/point-recharge"
                   class="
                     btn btn-sm btn-light-success
                     font-weight-bolder
@@ -50,11 +50,11 @@
                   "
                   >Recharge Point</a
                 >
-                <a
+                <!-- <a
                   href="#"
                   class="btn btn-sm btn-info font-weight-bolder text-uppercase"
                   >Upgrade package</a
-                >
+                > -->
               </div>
             </div>
             <!--end::Title-->
@@ -153,7 +153,7 @@
               ></i>
             </span>
             <div class="d-flex flex-column text-dark-75">
-              <span class="font-weight-bolder font-size-sm">Account</span>
+              <span class="font-weight-bolder font-size-sm">Point Balance</span>
               <span class="font-weight-bolder font-size-h5"
                 ><span class="text-dark-50 font-weight-bold">$</span
                 >{{ currentEnterpriseInfo.points_balance }}</span
@@ -190,7 +190,7 @@
               <span class="font-weight-bolder font-size-sm">Billing</span>
               <span class="font-weight-bolder font-size-h5"
                 ><span class="text-dark-50 font-weight-bold">$</span
-                >782,300</span
+                >{{ currentEnterpriseInfo.billing || 0}}</span
               >
             </div>
           </div>
@@ -205,9 +205,9 @@
             </span>
             <div class="d-flex flex-column flex-lg-fill">
               <span class="text-dark-75 font-weight-bolder font-size-sm"
-                >73 Projects</span
+                >{{ currentEnterpriseInfo.project  || 0}}</span
               >
-              <a href="#" class="text-primary font-weight-bolder">View</a>
+              <a href="#/customer/project-center/project-list" class="text-primary font-weight-bolder">View</a>
             </div>
           </div>
           <!--end::Item-->
@@ -316,20 +316,17 @@
             <!--end::Row-->
             </b-tab
           >
-          <b-tab title="Order Records">
-            <!--begin::Row-->
-            <!--begin::Row-->
+          <!-- <b-tab title="Order Records">
+
             <div class="row">
               <div class="col-lg-8">
                 <EmployeeCharts></EmployeeCharts>
               </div>
               <div class="col-lg-4">
                 <Widget13></Widget13>
-                <!-- <Widget15></Widget15> -->
               </div>
             </div>
-            <!--end::Row-->
-          </b-tab>
+          </b-tab> -->
         </b-tabs>
       </b-card>
     </div>
@@ -343,9 +340,9 @@ import { SET_BREADCRUMB } from "@/core/services/store/breadcrumbs.module";
 import EmployeeListContent from "@/view/content/customer/companycenter/EmployeeListContent";
 // import PointDistributeContent from "@/view/content/customer/PointDistributeContent";
 
-import Widget13 from "@/view/pages/profile/profile-comp-3/Widget13";
+// import Widget13 from "@/view/pages/profile/profile-comp-3/Widget13";
 // import Widget15 from "@/view/pages/profile/profile-comp-3/Widget15";
-import EmployeeCharts from "@/view/content/customer/EmployeeCharts";
+// import EmployeeCharts from "@/view/content/customer/EmployeeCharts";
 // import ListWidget11 from "@/view/content/widgets/list/Widget11.vue";
 import {
   FETCH_ENTERPRISE_DETAIL,
@@ -360,10 +357,10 @@ export default {
   name: "custom-page",
   components: {
     EmployeeListContent,
-    Widget13,
+    // Widget13,
     // Widget15,
     // ListWidget11,
-    EmployeeCharts,
+    // EmployeeCharts,
     // PointDistributeContent,
     CompanyInformation,
     Adminstrator,

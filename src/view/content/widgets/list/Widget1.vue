@@ -174,7 +174,7 @@
       </li>
       <!--end::Item-->
       <!--begin::Item-->
-      <li
+      <!-- <li
         class="nav-item d-flex col flex-grow-1 flex-shrink-0 mr-0 mb-3 mb-lg-0"
       >
         <a
@@ -201,7 +201,7 @@
             >Employee Order</span
           >
         </a>
-      </li>
+      </li> -->
       <!--end::Item-->
     </ul>
     <!--end::Nav Tabs-->

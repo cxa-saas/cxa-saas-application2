@@ -62,6 +62,7 @@ import ListWidget10 from "@/view/content/widgets/list/Widget10.vue";
 import ListWidget11 from "@/view/content/widgets/list/Widget11.vue";
 import ListWidget12 from "@/view/content/widgets/list/Widget12.vue";
 import { FETCH_POINT_LIST } from "@/core/services/store/point.module";
+import { mapGetters } from "vuex";
 export default {
   name: "dashboard",
   components: {
@@ -78,6 +79,9 @@ export default {
   },
   data() {
     return {};
+  },
+  computed: {
+    ...mapGetters(["currentEnterpriseId"]),
   },
   mounted() {
     this.$store.dispatch(SET_BREADCRUMB, [{ title: "Dashboard" }]);

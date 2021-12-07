@@ -15,7 +15,13 @@
     >
       <!--begin::Header-->
       <div
-        class="offcanvas-header d-flex align-items-center justify-content-between pb-10"
+        class="
+          offcanvas-header
+          d-flex
+          align-items-center
+          justify-content-between
+          pb-10
+        "
       >
         <h3 class="font-weight-bold m-0">
           Quick Actions
@@ -38,25 +44,36 @@
           <!--begin::Item-->
           <div class="col-6">
             <a
-              href="#/customer/profile"
-              class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-10 px-5"
+              href="#/dashboard"
+              class="
+                btn btn-block btn-light btn-hover-primary
+                text-dark-50 text-center
+                py-10
+                px-5
+              "
             >
               <span class="svg-icon svg-icon-3x svg-icon-primary m-0">
-                <!--begin::Svg Icon | path:assets/media/svg/icons/Shopping/Euro.svg-->
-                <inline-svg src="media/svg/icons/Shopping/Euro.svg" />
+                <!--begin::Svg Icon | path:assets/media/svg/icons/Shopping/Box2.svg-->
+                <inline-svg src="media/svg/icons/Shopping/Box2.svg" />
                 <!--end::Svg Icon-->
               </span>
               <span class="d-block font-weight-bold font-size-h6 mt-2"
-                >Accounting</span
+                >Dashboard</span
               >
             </a>
           </div>
           <!--end::Item-->
+
           <!--begin::Item-->
           <div class="col-6">
             <a
               href="#/customer/employee-list"
-              class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-10 px-5"
+              class="
+                btn btn-block btn-light btn-hover-primary
+                text-dark-50 text-center
+                py-10
+                px-5
+              "
             >
               <span class="svg-icon svg-icon-3x svg-icon-primary m-0">
                 <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Mail-attachment.svg-->
@@ -66,7 +83,7 @@
                 <!--end::Svg Icon-->
               </span>
               <span class="d-block font-weight-bold font-size-h6 mt-2"
-                >Members</span
+                >Company</span
               >
             </a>
           </div>
@@ -77,7 +94,12 @@
           <div class="col-6">
             <a
               href="#/customer/project-center"
-              class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-10 px-5"
+              class="
+                btn btn-block btn-light btn-hover-primary
+                text-dark-50 text-center
+                py-10
+                px-5
+              "
             >
               <span class="svg-icon svg-icon-3x svg-icon-primary m-0">
                 <!--begin::Svg Icon | path:assets/media/svg/icons/Shopping/Box2.svg-->
@@ -93,63 +115,13 @@
           <!--begin::Item-->
           <div class="col-6">
             <a
-              href="#"
-              class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-10 px-5"
-            >
-              <span class="svg-icon svg-icon-3x svg-icon-primary m-0">
-                <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Group.svg-->
-                <inline-svg src="media/svg/icons/Communication/Group.svg" />
-                <!--end::Svg Icon-->
-              </span>
-              <span class="d-block font-weight-bold font-size-h6 mt-2"
-                >Customers</span
-              >
-            </a>
-          </div>
-          <!--end::Item-->
-        </div>
-        <div class="row gutter-b">
-          <!--begin::Item-->
-          <div class="col-6">
-            <a
-              href="#"
-              class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-10 px-5"
-            >
-              <span class="svg-icon svg-icon-3x svg-icon-primary m-0">
-                <!--begin::Svg Icon | path:assets/media/svg/icons/Shopping/Chart-bar1.svg-->
-                <inline-svg src="media/svg/icons/Shopping/Chart-bar1.svg" />
-                <!--end::Svg Icon-->
-              </span>
-              <span class="d-block font-weight-bold font-size-h6 mt-2"
-                >Email</span
-              >
-            </a>
-          </div>
-          <!--end::Item-->
-          <!--begin::Item-->
-          <div class="col-6">
-            <a
-              href="#"
-              class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-10 px-5"
-            >
-              <span class="svg-icon svg-icon-3x svg-icon-primary m-0">
-                <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Color-profile.svg-->
-                <inline-svg src="media/svg/icons/Design/Color-profile.svg" />
-                <!--end::Svg Icon-->
-              </span>
-              <span class="d-block font-weight-bold font-size-h6 mt-2"
-                >Settings</span
-              >
-            </a>
-          </div>
-          <!--end::Item-->
-        </div>
-        <div class="row">
-          <!--begin::Item-->
-          <div class="col-6">
-            <a
-              href="#"
-              class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-10 px-5"
+              href="#/customer/profile"
+              class="
+                btn btn-block btn-light btn-hover-primary
+                text-dark-50 text-center
+                py-10
+                px-5
+              "
             >
               <span class="svg-icon svg-icon-3x svg-icon-primary m-0">
                 <!--begin::Svg Icon | path:assets/media/svg/icons/Shopping/Euro.svg-->
@@ -157,10 +129,25 @@
                 <!--end::Svg Icon-->
               </span>
               <span class="d-block font-weight-bold font-size-h6 mt-2"
-                >Orders</span
+                >Accounting</span
               >
             </a>
           </div>
+          <!--end::Item-->
+          <!--begin::Item-->
+          <!-- <div class="col-6">
+            <a
+              href="#"
+              class="btn btn-block btn-light btn-hover-primary text-dark-50 text-center py-10 px-5"
+            >
+              <span class="svg-icon svg-icon-3x svg-icon-primary m-0">
+                <inline-svg src="media/svg/icons/Communication/Group.svg" />
+              </span>
+              <span class="d-block font-weight-bold font-size-h6 mt-2"
+                >Customers</span
+              >
+            </a>
+          </div> -->
           <!--end::Item-->
         </div>
       </div>
@@ -179,6 +166,6 @@ export default {
     KTLayoutQuickUser.init(this.$refs["kt_quick_actions"]);
   },
   methods: {},
-  computed: {}
+  computed: {},
 };
 </script>

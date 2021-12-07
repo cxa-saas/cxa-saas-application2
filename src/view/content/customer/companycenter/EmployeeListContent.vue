@@ -156,9 +156,11 @@
                   </th>
                   <th class="p-0" style="width: 50px">Avatar</th>
                   <th class="p-0" style="min-width: 110px">Name</th>
-                  <th class="p-0" style="min-width: 100px">Point Balance</th>
-                  <th class="p-0" style="min-width: 125px">Grade</th>
-                  <th class="p-0" style="min-width: 110px">Status</th>
+                  <th class="p-0" style="min-width: 100px">Email</th>
+                  <th class="p-0" style="min-width: 125px">Mobile</th>
+                  <th class="p-0" style="min-width: 125px">Location</th>
+                  <th class="p-0" style="min-width: 125px">Entry Date</th>
+                  <th class="p-0" style="min-width: 110px">Marital Status</th>
                   <th class="p-0" style="min-width: 150px">Action</th>
                 </tr>
               </thead>
@@ -195,11 +197,10 @@
                         {{ item.name }}
                       </a>
                       <div>
-                        <span class="font-weight-bolder">Email:</span>
                         <a
                           class="text-muted font-weight-bold text-hover-primary"
                         >
-                          {{ item.email }}
+                          {{ item.sex == 1 ? "male" : "female" }}
                         </a>
                       </div>
                     </td>
@@ -212,12 +213,43 @@
                           font-size-lg
                         "
                       >
-                        {{ item.point }}
+                        {{ item.email || "1061773869@qq.com" }}
                       </span>
                     </td>
                     <td class="text-left">
-                      <span class="text-muted font-weight-500">
-                        {{ item.grade }}
+                      <span
+                        class="
+                          text-dark-75
+                          font-weight-bolder
+                          d-block
+                          font-size-lg
+                        "
+                      >
+                        {{ item.mobile }}
+                      </span>
+                    </td>
+                    <td class="text-left">
+                      <span
+                        class="
+                          text-dark-75
+                          font-weight-bolder
+                          d-block
+                          font-size-lg
+                        "
+                      >
+                        {{ item.location }}
+                      </span>
+                    </td>
+                                        <td class="text-left">
+                      <span
+                        class="
+                          text-dark-75
+                          font-weight-bolder
+                          d-block
+                          font-size-lg
+                        "
+                      >
+                        {{ item.entrytime.substring(0,10) }}
                       </span>
                     </td>
                     <td class="text-left">
@@ -225,7 +257,7 @@
                         class="label label-lg label-inline"
                         v-bind:class="`label-light-${item.class}`"
                       >
-                        {{ item.status }}
+                        {{ item.maritalStatus==3?'unmarried':'married'}}
                       </span>
                     </td>
                     <td class="text-left pr-0">
@@ -273,7 +305,6 @@
         <!--end::Body-->
         <!--end::Advance Table Widget 2-->
       </b-tab>
-      <b-tab title="+ New"></b-tab>
     </b-tabs>
   </div>
 </template>
@@ -518,8 +549,6 @@ export default {
         enterpriseId: this.$store.state.enterprise.currentEnterpriseId,
         nodeId,
       });
-      console.log(233333)
-      console.log(employeeList)
       this.employeeList = employeeList;
     },
   },

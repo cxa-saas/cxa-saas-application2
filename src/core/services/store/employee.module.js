@@ -41,6 +41,7 @@ const actions = {
               resolve(response.data.data.records)
             } else {
               context.commit(SET_EMPLOYEE_LIST, response.data.data);
+              resolve(response.data.data)
             }
           } else {
             reject(response.data.msg);

@@ -244,7 +244,7 @@
               <!--begin::Footer-->
               <div class="card-footer d-flex align-items-center">
                 <button
-                  @click="goToEmployeeList"
+                  @click="goToEmployeeList(item.bid)"
                   type="button"
                   class="
                     btn btn-primary btn-sm
@@ -413,8 +413,6 @@ export default {
       projectBid: this.$route.query.bid,
     });
     this.plan = result.plans
-    console.log(1111);
-    console.log(result);
   },
   data() {
     return{
@@ -423,8 +421,8 @@ export default {
   },
   components: { DataDashboard },
   methods: {
-    goToEmployeeList() {
-      this.$router.push({ name: "plan-employee-list" });
+    goToEmployeeList(planBid) {
+      this.$router.push({ name: "plan-employee-list",query:{projectBid:this.$route.query.bid,planBid:planBid} });
     },
   },
 };

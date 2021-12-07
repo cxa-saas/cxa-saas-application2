@@ -204,6 +204,26 @@
             </div>
             <div class="form-group row">
               <label class="col-xl-3 col-lg-3 col-form-label text-right"
+                >department</label
+              >
+              <div class="col-lg-9 col-xl-6">
+                <select
+                  v-model="form.deptId"
+                  class="form-control form-control-solid form-control-lg"
+                >
+                  <option
+                    v-for="item in this.currentEnterpriseDepartments"
+                    :value="item.nodeId"
+                    :key="item.nodeId"
+                  >
+                    {{ item.name }}
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-xl-3 col-lg-3 col-form-label text-right"
                 >ID Type</label
               >
               <div class="col-lg-9 col-xl-6">
@@ -439,6 +459,8 @@ export default {
   },
   mounted() {
     this.current_photo = this.currentUserPersonalInfo.photo;
+    console.log("department");
+    console.log(this.currentEnterpriseDepartments);
   },
   methods: {
     savebirthday(date) {
@@ -459,7 +481,7 @@ export default {
       submitButton.classList.add("spinner", "spinner-light", "spinner-right");
 
       // dummy delay
-      setTimeout(async() => {
+      setTimeout(async () => {
         // send update request
         // this.$store.dispatch(UPDATE_PERSONAL_INFO, {
         //   name,
@@ -471,11 +493,11 @@ export default {
         //   photo
         // });
         const result = await this.$store.dispatch(SUBMIT_EMPLOYEE_LIST, {
-          employeeList: [this.form]
+          employeeList: [this.form],
         });
-        console.log(result)
-        this.dialog.createDialog = false
-       
+        console.log(result);
+        this.dialog.createDialog = false;
+
         submitButton.classList.remove(
           "spinner",
           "spinner-light",
@@ -511,7 +533,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(["currentUserPersonalInfo"]),
+    ...mapGetters(["currentUserPersonalInfo", "currentEnterpriseDepartments"]),
     photo() {
       return this.current_photo == null
         ? this.default_photo

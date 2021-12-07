@@ -47,7 +47,15 @@
                 :style="{ backgroundImage: `url(${photo})` }"
               ></div>
               <label
-                class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
+                class="
+                  btn
+                  btn-xs
+                  btn-icon
+                  btn-circle
+                  btn-white
+                  btn-hover-text-primary
+                  btn-shadow
+                "
                 data-action="change"
                 data-toggle="tooltip"
                 title=""
@@ -63,7 +71,15 @@
                 <input type="hidden" name="profile_avatar_remove" />
               </label>
               <span
-                class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
+                class="
+                  btn
+                  btn-xs
+                  btn-icon
+                  btn-circle
+                  btn-white
+                  btn-hover-text-primary
+                  btn-shadow
+                "
                 data-action="cancel"
                 data-toggle="tooltip"
                 title="Cancel avatar"
@@ -71,7 +87,15 @@
                 <i class="ki ki-bold-close icon-xs text-muted"></i>
               </span>
               <span
-                class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
+                class="
+                  btn
+                  btn-xs
+                  btn-icon
+                  btn-circle
+                  btn-white
+                  btn-hover-text-primary
+                  btn-shadow
+                "
                 data-action="remove"
                 data-toggle="tooltip"
                 title="Remove avatar"
@@ -87,45 +111,15 @@
         </div>
         <div class="form-group row">
           <label class="col-xl-3 col-lg-3 col-form-label text-right"
-            >First Name</label
+            >Name</label
           >
           <div class="col-lg-9 col-xl-6">
             <input
               ref="name"
               class="form-control form-control-lg form-control-solid"
               type="text"
-              v-bind:value="currentUserPersonalInfo.name"
+              v-bind:value="currentUser.name"
             />
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-xl-3 col-lg-3 col-form-label text-right"
-            >Last Name</label
-          >
-          <div class="col-lg-9 col-xl-6">
-            <input
-              ref="surname"
-              class="form-control form-control-lg form-control-solid"
-              type="text"
-              v-bind:value="currentUserPersonalInfo.surname"
-            />
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-xl-3 col-lg-3 col-form-label text-right"
-            >Company Name</label
-          >
-          <div class="col-lg-9 col-xl-6">
-            <input
-              ref="company_name"
-              class="form-control form-control-lg form-control-solid"
-              type="text"
-              v-bind:value="currentUserPersonalInfo.company_name"
-            />
-            <span class="form-text text-muted"
-              >If you want your invoices addressed to a company. Leave blank to
-              use your full name.</span
-            >
           </div>
         </div>
         <div class="row">
@@ -150,7 +144,7 @@
                 type="text"
                 class="form-control form-control-lg form-control-solid"
                 placeholder="Phone"
-                v-bind:value="currentUserPersonalInfo.phone"
+                v-bind:value="currentUser.mobile"
               />
             </div>
             <span class="form-text text-muted"
@@ -174,27 +168,8 @@
                 type="text"
                 class="form-control form-control-lg form-control-solid"
                 placeholder="Email"
-                v-bind:value="currentUserPersonalInfo.email"
+                v-bind:value="currentUser.email"
               />
-            </div>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-xl-3 col-lg-3 col-form-label text-right"
-            >Company Site</label
-          >
-          <div class="col-lg-9 col-xl-6">
-            <div class="input-group input-group-lg input-group-solid">
-              <input
-                ref="company_site"
-                type="text"
-                class="form-control form-control-lg form-control-solid"
-                placeholder="Username"
-                v-bind:value="currentUserPersonalInfo.company_site"
-              />
-              <div class="input-group-append">
-                <span class="input-group-text">.com</span>
-              </div>
             </div>
           </div>
         </div>
@@ -214,7 +189,7 @@ export default {
   data() {
     return {
       default_photo: "media/users/blank.png",
-      current_photo: null
+      current_photo: null,
     };
   },
   mounted() {
@@ -244,7 +219,7 @@ export default {
           phone,
           email,
           company_site,
-          photo
+          photo,
         });
 
         submitButton.classList.remove(
@@ -269,7 +244,7 @@ export default {
       if (typeof FileReader === "function") {
         const reader = new FileReader();
 
-        reader.onload = event => {
+        reader.onload = (event) => {
           this.current_photo = event.target.result;
         };
 
@@ -277,15 +252,15 @@ export default {
       } else {
         alert("Sorry, FileReader API not supported");
       }
-    }
+    },
   },
   computed: {
-    ...mapGetters(["currentUserPersonalInfo"]),
+    ...mapGetters(["currentUserPersonalInfo", "currentUser"]),
     photo() {
       return this.current_photo == null
         ? this.default_photo
         : this.current_photo;
-    }
-  }
+    },
+  },
 };
 </script>

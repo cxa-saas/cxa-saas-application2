@@ -45,6 +45,9 @@ const getters = {
   enterprisePoint(state) {
     return state.currentEnterprise;
   },
+  currentEnterpriseId(state) {
+    return state.currentEnterpriseId;
+  },
   currentEnterpriseInfo(state) {
     return state.enterpriseDetail;
   },
@@ -195,8 +198,8 @@ const actions = {
 };
 
 const mutations = {
-  [SET_CURRENT_ENTERPRISE](state, error) {
-    state.errors = error;
+  [SET_CURRENT_ENTERPRISE](state, currentEnterpriseId) {
+    state.currentEnterpriseId = currentEnterpriseId;
   },
   [SET_CURRENT_DEPARTMENT](state, department) {
     state.departments = department
@@ -204,7 +207,7 @@ const mutations = {
   [SET_ENTERPRISE_DETAIL](state, enterpriseDetail) {
     state.enterpriseDetail = enterpriseDetail;
   },
-  [SET_ENTERPRISE_ADMINISTRATOR](state,administrators){
+  [SET_ENTERPRISE_ADMINISTRATOR](state, administrators) {
     state.administrators = administrators
 
   },

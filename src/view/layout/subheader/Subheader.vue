@@ -67,7 +67,7 @@
           <!--begin::Navigation-->
           <div class="navi navi-hover min-w-md-250px">
             <b-dropdown-text tag="div" class="navi-item">
-              <a href="#" class="navi-link">
+              <a href="#/customer/get-start" class="navi-link">
                 <span class="navi-icon">
                   <i class="flaticon2-drop"></i>
                 </span>

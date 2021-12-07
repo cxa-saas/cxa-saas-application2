@@ -124,7 +124,7 @@
           </router-link>
           <!--end:Item-->
           <!--begin::Item-->
-          <router-link
+          <!-- <router-link
             to="/builder"
             @click.native="closeOffcanvas"
             href="#"
@@ -134,9 +134,7 @@
               <div class="symbol symbol-40 bg-light mr-3">
                 <div class="symbol-label">
                   <span class="svg-icon svg-icon-md svg-icon-warning">
-                    <!--begin::Svg Icon-->
                     <inline-svg src="media/svg/icons/Shopping/Chart-bar1.svg" />
-                    <!--end::Svg Icon-->
                   </span>
                 </div>
               </div>
@@ -145,10 +143,10 @@
                 <div class="text-muted">Inbox and tasks</div>
               </div>
             </div>
-          </router-link>
+          </router-link> -->
           <!--end:Item-->
           <!--begin::Item-->
-          <router-link
+          <!-- <router-link
             to="/builder"
             @click.native="closeOffcanvas"
             href="#"
@@ -158,9 +156,7 @@
               <div class="symbol symbol-40 bg-light mr-3">
                 <div class="symbol-label">
                   <span class="svg-icon svg-icon-md svg-icon-danger">
-                    <!--begin::Svg Icon-->
                     <inline-svg src="media/svg/icons/Files/Selected-file.svg" />
-                    <!--end::Svg Icon-->
                   </span>
                 </div>
               </div>
@@ -169,10 +165,10 @@
                 <div class="text-muted">Logs and notifications</div>
               </div>
             </div>
-          </router-link>
+          </router-link> -->
           <!--end:Item-->
           <!--begin::Item-->
-          <router-link
+          <!-- <router-link
             to="/builder"
             @click.native="closeOffcanvas"
             href="#"
@@ -182,11 +178,9 @@
               <div class="symbol symbol-40 bg-light mr-3">
                 <div class="symbol-label">
                   <span class="svg-icon svg-icon-md svg-icon-primary">
-                    <!--begin::Svg Icon-->
                     <inline-svg
                       src="media/svg/icons/Communication/Mail-opened.svg"
                     />
-                    <!--end::Svg Icon-->
                   </span>
                 </div>
               </div>
@@ -195,7 +189,7 @@
                 <div class="text-muted">latest tasks and projects</div>
               </div>
             </div>
-          </router-link>
+          </router-link> -->
           <!--end:Item-->
         </div>
         <!--end::Nav-->

@@ -16,6 +16,11 @@ export default new Router({
           component: () => import("@/view/pages/Dashboard.vue")
         },
         {
+          path: "/dashboard/:enterpriseId",
+          name: "dashboard",
+          component: () => import("@/view/pages/Dashboard.vue")
+        },
+        {
           path: "/builder",
           name: "builder",
           component: () => import("@/view/pages/Builder.vue")

@@ -84,7 +84,7 @@ const actions = {
   },
   [REGISTER](context, credentials) {
     return new Promise(resolve => {
-      ApiService.post("/administrator/add", credentials)
+      ApiService.post("/auth/register", credentials)
         .then(({ data }) => {
           context.commit(SET_AUTH, data);
           resolve(data);

@@ -11,32 +11,52 @@
           </div>
           <div class="d-flex align-items-center">
             <div
-              class="symbol symbol-60 symbol-xxl-100 mr-5 align-self-start align-self-xxl-center"
+              class="
+                symbol symbol-60 symbol-xxl-100
+                mr-5
+                align-self-start align-self-xxl-center
+              "
             >
               <div
                 class="symbol-label"
                 :style="{
-                  backgroundImage: `url(${currentUserPersonalInfo.photo})`
+                  backgroundImage: `url(${currentUserPersonalInfo.photo})`,
                 }"
               ></div>
               <i class="symbol-badge bg-success"></i>
             </div>
             <div>
               <a
-                class="font-weight-bolder font-size-h5 text-dark-75 text-hover-primary"
-                >{{ getFullName }}</a
+                class="
+                  font-weight-bolder font-size-h5
+                  text-dark-75 text-hover-primary
+                "
+                >{{ currentUser.name }}</a
               >
               <div class="text-muted">Application Developer</div>
-              <div class="mt-2">
+              <!-- <div class="mt-2">
                 <a
-                  class="btn btn-sm btn-primary font-weight-bold mr-2 py-2 px-3 px-xxl-5 my-1"
+                  class="
+                    btn btn-sm btn-primary
+                    font-weight-bold
+                    mr-2
+                    py-2
+                    px-3 px-xxl-5
+                    my-1
+                  "
                   >Chat</a
                 >
                 <a
-                  class="btn btn-sm btn-success font-weight-bold py-2 px-3 px-xxl-5 my-1"
+                  class="
+                    btn btn-sm btn-success
+                    font-weight-bold
+                    py-2
+                    px-3 px-xxl-5
+                    my-1
+                  "
                   >Follow</a
                 >
-              </div>
+              </div> -->
             </div>
           </div>
           <!--end::User-->
@@ -45,20 +65,16 @@
             <div class="d-flex align-items-center justify-content-between mb-2">
               <span class="font-weight-bold mr-2">Email:</span>
               <a class="text-muted text-hover-primary">{{
-                currentUserPersonalInfo.email
+                currentUser.email
               }}</a>
             </div>
             <div class="d-flex align-items-center justify-content-between mb-2">
               <span class="font-weight-bold mr-2">Phone:</span>
-              <span class="text-muted">{{
-                currentUserPersonalInfo.phone
-              }}</span>
+              <span class="text-muted">{{ currentUser.mobile }}</span>
             </div>
             <div class="d-flex align-items-center justify-content-between">
               <span class="font-weight-bold mr-2">Company Name:</span>
-              <span class="text-muted">{{
-                currentUserPersonalInfo.company_name
-              }}</span>
+              <span class="text-muted">{{ currentEnterpriseInfo.name }}</span>
             </div>
           </div>
           <!--end::Contact-->
@@ -69,28 +85,10 @@
           >
             <div class="navi-item mb-2">
               <a
-                class="navi-link py-4 active"
-                @click="setActiveTab"
-                style="cursor:pointer"
-                data-tab="0"
-                data-toggle="tab"
-                role="tab"
-                aria-selected="false"
-              >
-                <span class="navi-icon mr-2">
-                  <span class="svg-icon">
-                    <inline-svg src="media/svg/icons/Design/Layers.svg" />
-                  </span>
-                </span>
-                <span class="navi-text font-size-lg">Profile Overview</span>
-              </a>
-            </div>
-            <div class="navi-item mb-2">
-              <a
                 class="navi-link py-4"
                 @click="setActiveTab"
-                style="cursor:pointer"
-                data-tab="1"
+                style="cursor: pointer"
+                data-tab="0"
                 data-toggle="tab"
                 role="tab"
                 aria-selected="false"
@@ -107,8 +105,8 @@
               <a
                 class="navi-link py-4"
                 @click="setActiveTab"
-                style="cursor:pointer"
-                data-tab="2"
+                style="cursor: pointer"
+                data-tab="1"
                 data-toggle="tab"
                 role="tab"
                 aria-selected="false"
@@ -125,8 +123,8 @@
               <a
                 class="navi-link py-4"
                 @click="setActiveTab"
-                style="cursor:pointer"
-                data-tab="3"
+                style="cursor: pointer"
+                data-tab="2"
                 data-toggle="tab"
                 role="tab"
                 aria-selected="false"
@@ -141,7 +139,10 @@
                 <span class="navi-text font-size-lg">Change Passwort</span>
                 <span class="navi-label">
                   <span
-                    class="label label-light-danger label-rounded font-weight-bold"
+                    class="
+                      label label-light-danger label-rounded
+                      font-weight-bold
+                    "
                     >5</span
                   >
                 </span>
@@ -151,8 +152,8 @@
               <a
                 class="navi-link py-4"
                 @click="setActiveTab"
-                style="cursor:pointer"
-                data-tab="4"
+                style="cursor: pointer"
+                data-tab="3"
                 data-toggle="tab"
                 role="tab"
                 aria-selected="false"
@@ -167,53 +168,6 @@
                 <span class="navi-text font-size-lg">Email settings</span>
               </a>
             </div>
-            <div class="navi-item mb-2">
-              <a
-                class="navi-link py-4"
-                v-b-tooltip.hover.right="'Comming soon...'"
-              >
-                <span class="navi-icon mr-2">
-                  <span class="svg-icon">
-                    <inline-svg
-                      src="media/svg/icons/Layout/Layout-top-panel-6.svg"
-                    />
-                  </span>
-                </span>
-                <span class="navi-text font-size-lg">Saved Credit Cards</span>
-              </a>
-            </div>
-            <div class="navi-item mb-2">
-              <a
-                class="navi-link py-4"
-                v-b-tooltip.hover.right="'Comming soon...'"
-              >
-                <span class="navi-icon mr-2">
-                  <span class="svg-icon">
-                    <inline-svg src="media/svg/icons/Files/File.svg" />
-                  </span>
-                </span>
-                <span class="navi-text font-size-lg">Tax information</span>
-                <span class="navi-label">
-                  <span
-                    class="label label-light-primary label-inline font-weight-bold"
-                    >new</span
-                  >
-                </span>
-              </a>
-            </div>
-            <div class="navi-item mb-2">
-              <a
-                class="navi-link py-4"
-                v-b-tooltip.hover.right="'Comming soon...'"
-              >
-                <span class="navi-icon mr-2">
-                  <span class="svg-icon">
-                    <inline-svg src="media/svg/icons/Text/Article.svg" />
-                  </span>
-                </span>
-                <span class="navi-text">Statements</span>
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -223,10 +177,6 @@
     <div class="flex-row-fluid ml-lg-8">
       <b-tabs class="hide-tabs" v-model="tabIndex">
         <b-tab active>
-          <KTProfileOverview></KTProfileOverview>
-        </b-tab>
-
-        <b-tab>
           <KTPersonalInformation></KTPersonalInformation>
         </b-tab>
 
@@ -251,7 +201,6 @@
 import { mapGetters } from "vuex";
 import { SET_BREADCRUMB } from "@/core/services/store/breadcrumbs.module";
 import KTDropdown2 from "@/view/content/dropdown/Dropdown2";
-import KTProfileOverview from "@/view/content/customer/profile/ProfileOverview";
 import KTPersonalInformation from "@/view/content/customer/profile/profile-comp/PersonalInformation";
 import KTAccountInformation from "@/view/content/customer/profile/profile-comp/AccountInformation";
 import KTChangePassword from "@/view/content/customer/profile/profile-comp/ChangePassword";
@@ -261,15 +210,14 @@ export default {
   name: "custom-page",
   components: {
     KTDropdown2,
-    KTProfileOverview,
     KTPersonalInformation,
     KTAccountInformation,
     KTChangePassword,
-    KTEmailSettings
+    KTEmailSettings,
   },
   data() {
     return {
-      tabIndex: 0
+      tabIndex: 0,
     };
   },
   mounted() {
@@ -298,10 +246,14 @@ export default {
 
       // set current active tab
       target.classList.add("active");
-    }
+    },
   },
   computed: {
-    ...mapGetters(["currentUserPersonalInfo"]),
+    ...mapGetters([
+      "currentUserPersonalInfo",
+      "currentUser",
+      "currentEnterpriseInfo",
+    ]),
 
     getFullName() {
       return (
@@ -309,7 +261,7 @@ export default {
         " " +
         this.currentUserPersonalInfo.surname
       );
-    }
-  }
+    },
+  },
 };
 </script>

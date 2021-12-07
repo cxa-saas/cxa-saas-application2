@@ -4,6 +4,7 @@ import ApiService from "@/core/services/api.service";
 export const FETCH_INSURANCE_TEMPLATE = "fetchInsuranceTemplate";
 export const CREATE_INSURANCE = "createInsurance";
 export const FETCH_INSURANCE_LIST = "fetchInsuranceList";
+export const FETCH_INSURANCE_EMPLOYEE_LIST = "fetchInsuranceEmployeeList";
 
 export const FETCH_INSPECTION_TEMPLATE = "fetchInspectionTemplate";
 export const CREATE_INSPECTION = "createInspection";
@@ -81,6 +82,23 @@ const actions = {
           if (response.data.code == 200) {
             context.commit(SET_INSURANCE_LIST, response.data.data.records);
             resolve(response.data.data.records);
+          } else {
+            reject(response.data.msg);
+          }
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  },
+  [FETCH_INSURANCE_EMPLOYEE_LIST](context, payload) {
+    return new Promise((resolve, reject) => {
+      ApiService.query("/benefits/getMember", {
+        params: { enterpriseId: payload.enterpriseId, projectBid: payload.projectBid, planBid: payload.planBid }
+      })
+        .then(response => {
+          if (response.data.code == 200) {
+            resolve(response.data.data);
           } else {
             reject(response.data.msg);
           }

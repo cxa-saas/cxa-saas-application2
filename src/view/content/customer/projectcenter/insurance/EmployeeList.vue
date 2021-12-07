@@ -50,16 +50,15 @@
                   <!--end::Svg Icon-->
                 </span>
               </th>
-              <th style="min-width: 110px">Job Grade</th>
-
-              <th style="min-width: 110px">Status</th>
+              <th style="min-width: 110px">Marital Status</th>
+              <th style="min-width: 110px">Gender</th>
               <th style="min-width: 120px">Addition</th>
               <th style="min-width: 120px">Age</th>
               <th class="pr-0 text-right" style="min-width: 160px">Action</th>
             </tr>
           </thead>
           <tbody>
-            <template v-for="(item, i) in list">
+            <template v-for="(item, i) in employees">
               <tr v-bind:key="i">
                 <td class="pl-0 py-6">
                   <label class="checkbox checkbox-lg checkbox-single">
@@ -67,6 +66,15 @@
                     <span></span>
                   </label>
                 </td>
+                <td>
+                  <span
+                    class="text-dark-75 font-weight-bolder d-block font-size-lg"
+                    >{{ item.code }}</span
+                  >
+                  <!-- <span class="text-muted font-weight-bold">{{
+                    item.country_desc
+                  }}</span> -->
+                </td>
                 <td class="pl-0">
                   <a
                     href="#"
@@ -76,36 +84,36 @@
                       text-hover-primary
                       font-size-lg
                     "
-                    >{{ item.order_id }}</a
+                    >{{ item.name }}</a
                   >
                 </td>
                 <td>
                   <span
                     class="text-dark-75 font-weight-bolder d-block font-size-lg"
-                    >{{ item.country }}</span
+                    >{{ item.certificateNo }}</span
                   >
-                  <span class="text-muted font-weight-bold">{{
+                  <!-- <span class="text-muted font-weight-bold">{{
                     item.country_desc
-                  }}</span>
+                  }}</span> -->
                 </td>
 
                 <td>
                   <span
                     class="text-dark-75 font-weight-bolder d-block font-size-lg"
-                    >{{ item.company }}</span
+                    >{{ item.entryTime.substring(0, 10) }}</span
                   >
-                  <span class="text-muted font-weight-bold">{{
+                  <!-- <span class="text-muted font-weight-bold">{{
                     item.company_desc
-                  }}</span>
+                  }}</span> -->
                 </td>
                 <td>
                   <span
                     class="text-primary font-weight-bolder d-block font-size-lg"
                     >{{ item.date }}</span
                   >
-                  <span class="text-muted font-weight-bold">{{
+                  <!-- <span class="text-muted font-weight-bold">{{
                     item.date_desc
-                  }}</span>
+                  }}</span> -->
                 </td>
 
                 <td class="pl-0">
@@ -117,15 +125,15 @@
                       text-hover-primary
                       font-size-lg
                     "
-                    >{{ item.job_grade }}</a
+                    >{{ item.maritalStatus===3?'married':'unmarried' }}</a
                   >
                 </td>
+                    <!-- v-bind:class="`label-light-${item.class}`" -->
 
                 <td>
                   <span
                     class="label label-lg label-inline"
-                    v-bind:class="`label-light-${item.class}`"
-                    >{{ item.status }}</span
+                    >{{ item.sex==1?'male':'female' }}</span
                   >
                 </td>
                 <td class="pl-0">
@@ -137,10 +145,10 @@
                       text-hover-primary
                       font-size-lg
                     "
-                    >{{ item.additional_group }}</a
+                    >{{ item.orders }}</a
                   >
                 </td>
-                <td class="pl-0">
+                <!-- <td class="pl-0">
                   <a
                     href="#"
                     class="
@@ -151,7 +159,7 @@
                     "
                     >{{ item.birthday }}</a
                   >
-                </td>
+                </td> -->
 
                 <td class="pr-0 text-right">
                   <a
@@ -210,6 +218,8 @@
 </template>
 
 <script>
+import { FETCH_INSURANCE_EMPLOYEE_LIST } from "@/core/services/store/project.module";
+
 export default {
   name: "plan-employee-list",
   data() {
@@ -219,68 +229,16 @@ export default {
         pages: 1,
       },
       checked: false,
-      list: [
-        {
-          order_id: "56037-XDER",
-          country: "Chovy Qiu",
-          country_desc: "Male",
-          date: "05/28/2020",
-          date_desc: "Paid",
-          company: "320923199607136035",
-          company_desc: "ID Card",
-          class: "primary",
-          birthday: "1996-07-13",
-          job_grade: "Developer",
-          status: "Approved",
-          additional_group: "血常规",
-        },
-        {
-          order_id: "05822-FXSP",
-          country: "Cain Liang",
-          country_desc: "Male",
-          birthday: "1996-07-13",
-
-          date: "02/04/2020",
-          date_desc: "Rejected",
-          company: "320923199607136035",
-          company_desc: "ID Card",
-          class: "warning",
-          status: "In Progress",
-          job_grade: "Developer",
-          additional_group: "血常规",
-        },
-        {
-          order_id: "00347-BCLQ",
-          country: "Alvin Li",
-          country_desc: "Male",
-          date: "23/12/2020",
-          date_desc: "Paid",
-          company: "320923199607136035",
-          birthday: "1996-07-13",
-
-          company_desc: "ID Card",
-          class: "success",
-          status: "Success",
-          job_grade: "Developer",
-          additional_group: "血常规",
-        },
-        {
-          order_id: "4472-QREX",
-          country: "Wind",
-          country_desc: "Male",
-          date: "17/09/2021",
-          date_desc: "Pending",
-          company: "320923199607136035",
-          birthday: "1996-07-13",
-
-          company_desc: "ID Card",
-          class: "danger",
-          status: "Danger",
-          job_grade: "Developer",
-          additional_group: "血常规",
-        },
-      ],
+      employees: [],
     };
+  },
+  async mounted() {
+    const result = await this.$store.dispatch(FETCH_INSURANCE_EMPLOYEE_LIST, {
+      enterpriseId: this.$store.state.enterprise.currentEnterpriseId,
+      projectBid: this.$route.query.projectBid,
+      planBid: this.$route.query.planBid,
+    });
+    this.employees = result;
   },
   components: {},
   methods: {
