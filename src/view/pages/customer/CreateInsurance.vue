@@ -442,7 +442,7 @@ export default {
         regEndTimeDialog: false,
       },
       form: {
-        enterpriseId: 19,
+        enterpriseId: this.$store.state.enterprise.currentEnterpriseId,
         name: "",
         effectTime: "",
         expireTime: "",

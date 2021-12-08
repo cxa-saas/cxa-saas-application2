@@ -9,6 +9,8 @@ export const ADD_ENTERPRISE_DEPARTMENT = "addEnterpriseDepartment";
 export const FETCH_ENTERPRISE_ADMINISTRATOR = "fetchEnterpriseAdministrator";
 export const DELETE_ENTERPRISE_ADMINISTRATOR = "deleteEnterpriseAdministrator";
 export const ADD_ENTERPRISE_ADMINISTRATOR = "addEnterpriseAdministrator";
+export const SUBMIT_ENTERPRISE = "submitEnterprise";
+// export const FETCH_ENTERPRISE_LIST = "fetchEnterpriseList";
 // mutation types
 export const SET_ENTERPRISE_ADMINISTRATOR = "setEnterpriseAdministrator";
 export const SET_CURRENT_ENTERPRISE = "setEnterprise";
@@ -17,6 +19,7 @@ export const SET_ENTERPRISE_DETAIL = "setEnterpriseDetail";
 export const SET_ENTERPRISE_POINT = "setEnterpriseDetail";
 export const SET_ERROR = "setError";
 export const SET_ORDER = "setOrder";
+export const SET_ENTERPRISE_LIST = "setEnterpriseList";
 
 const state = {
   errors: {},
@@ -60,6 +63,27 @@ const getters = {
 };
 
 const actions = {
+
+  [SUBMIT_ENTERPRISE](context, payload) {
+    return new Promise((resolve, reject) => {
+      ApiService.post("/enterprise/add", payload)
+        .then(response => {
+          // if (response.data && response.code == 200) {
+          if (response) {
+            context.dispatch('fetchUserInfo')
+            // context.dispatch(FETCH_ENTERPRISE_LIST, context.state.user.email);
+            resolve();
+          } else {
+            context.commit(SET_ERROR, response.data.msg);
+            reject(response.data.msg);
+          }
+        })
+        .catch(() => {
+          context.commit(SET_ERROR, "unknown error");
+          reject("unknown error");
+        });
+    });
+  },
   [FETCH_ENTERPRISE_DETAIL](context, { email, enterpriseId }) {
     return new Promise((resolve, reject) => {
       ApiService.query("/enterprise/detail", {
@@ -88,7 +112,7 @@ const actions = {
           if (response.data.code == 200) {
             context.dispatch(
               FETCH_ENTERPRISE_DETAIL,
-              {email:context.rootState.auth.user.email,enterpriseId:context.rootState.enterprise.currentEnterpriseId}
+              { email: context.rootState.auth.user.email, enterpriseId: context.rootState.enterprise.currentEnterpriseId }
             );
             resolve(response.data.msg);
           } else {
@@ -214,6 +238,28 @@ const actions = {
         });
     });
   },
+  // [FETCH_ENTERPRISE_LIST](context, email) {
+  //   return new Promise((resolve, reject) => {
+  //     ApiService.query("/enterprise/list", { params: { email } })
+  //       .then(response => {
+  //         if (response.data && response.data.code == 200) {
+  //           context.commit(
+  //             SET_ENTERPRISE_LIST,
+  //             response.data.data.enterpriseList
+  //           );
+  //           console.log(context.state)
+  //           resolve(response.data.data.enterpriseList);
+  //         } else {
+  //           context.commit(SET_ERROR, response.data.msg);
+  //           reject(response.data.msg);
+  //         }
+  //       })
+  //       .catch(() => {
+  //         context.commit(SET_ERROR, "unknown error");
+  //         reject("unknown error");
+  //       });
+  //   });
+  // }
 
 };
 

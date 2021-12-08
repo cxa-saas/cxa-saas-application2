@@ -296,12 +296,12 @@
           </div>
           <!--end::Table-->
         </div>
-        <div class="text-center" style="margin-left: 10px">
+        <!-- <div class="text-center" style="margin-left: 10px">
           <v-pagination
             v-model="employeesPageConfig.current"
             :length="employeesPageConfig.pages"
           ></v-pagination>
-        </div>
+        </div> -->
         <!--end::Body-->
         <!--end::Advance Table Widget 2-->
       </b-tab>

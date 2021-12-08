@@ -7,8 +7,7 @@ export const LOGIN = "login";
 export const LOGOUT = "logout";
 export const REGISTER = "register";
 export const UPDATE_PASSWORD = "updateUser";
-export const SUBMIT_ENTERPRISE = "submitEnterprise";
-export const FETCH_ENTERPRISE_LIST = "fetchEnterpriseList";
+
 export const FETCH_USER_INFO = "fetchUserInfo";
 // mutation types
 export const PURGE_AUTH = "logOut";
@@ -59,9 +58,11 @@ const actions = {
     return new Promise(async (resolve, reject) => {
       ApiService.post("/admin/login", credentials)
         .then(async response => {
-          console.log(response);
+          console.log('....')
+          console.log(response)
           if (response.data && response.data.code == 200) {
-            context.commit(SET_AUTH, response.data.data.user.token);
+            await context.commit(SET_AUTH, response.data.data.user.token);
+            await context.dispatch(FETCH_USER_INFO)
             if (context.state.enterpriseList.length > 0) {
               resolve(`dashboard`);
             } else {
@@ -111,46 +112,8 @@ const actions = {
       return data;
     });
   },
-  [SUBMIT_ENTERPRISE](context, payload) {
-    return new Promise((resolve, reject) => {
-      ApiService.post("/enterprise/add", payload)
-        .then(response => {
-          // if (response.data && response.code == 200) {
-          if (response) {
-            context.dispatch(FETCH_ENTERPRISE_LIST, context.state.user.email);
-            resolve();
-          } else {
-            context.commit(SET_ERROR, response.data.msg);
-            reject(response.data.msg);
-          }
-        })
-        .catch(() => {
-          context.commit(SET_ERROR, "unknown error");
-          reject("unknown error");
-        });
-    });
-  },
-  [FETCH_ENTERPRISE_LIST](context, email) {
-    return new Promise((resolve, reject) => {
-      ApiService.query("/enterprise/list", { params: { email } })
-        .then(response => {
-          if (response.data && response.data.code == 200) {
-            context.commit(
-              SET_ENTERPRISE_LIST,
-              response.data.data.enterpriseList
-            );
-            resolve(response.data.data.enterpriseList);
-          } else {
-            context.commit(SET_ERROR, response.data.msg);
-            reject(response.data.msg);
-          }
-        })
-        .catch(() => {
-          context.commit(SET_ERROR, "unknown error");
-          reject("unknown error");
-        });
-    });
-  }
+
+
 };
 
 const mutations = {

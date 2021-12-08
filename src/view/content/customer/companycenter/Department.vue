@@ -132,12 +132,12 @@
       <!--end::Table-->
     </div>
     <!--end::Body-->
-    <div class="text-center" style="margin-left: 10px">
+    <!-- <div class="text-center" style="margin-left: 10px">
       <v-pagination
         v-model="employeesPageConfig.current"
         :length="employeesPageConfig.pages"
       ></v-pagination>
-    </div>
+    </div> -->
   </div>
   <!--end::Advance Table Widget 10-->
 </template>

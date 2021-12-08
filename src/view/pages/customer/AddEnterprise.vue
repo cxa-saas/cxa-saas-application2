@@ -478,15 +478,14 @@ export default {
   methods: {
     submit: function(e) {
       e.preventDefault();
-      this.$store.commit("setEnterprise", this.form);
       this.$store.dispatch("submitEnterprise", this.form);
       Swal.fire({
         title: "",
         text: "The application has been successfully submitted!",
         icon: "success",
         confirmButtonClass: "btn btn-secondary"
-      }).then(result => {
-        this.$router.push({ name: result });
+      }).then(() => {
+        this.$router.push({ name: 'dashboard' });
       });
     }
   }

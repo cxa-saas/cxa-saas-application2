@@ -559,7 +559,7 @@ export default {
       var password = this.form.password;
 
       // clear existing errors
-      this.$store.dispatch(LOGIN);
+      // this.$store.dispatch(LOGIN);
 
       // set spinner to submit button
       const submitButton = this.$refs["kt_login_signin_submit"];
