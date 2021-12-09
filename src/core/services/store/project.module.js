@@ -5,11 +5,13 @@ export const FETCH_INSURANCE_TEMPLATE = "fetchInsuranceTemplate";
 export const CREATE_INSURANCE = "createInsurance";
 export const FETCH_INSURANCE_LIST = "fetchInsuranceList";
 export const FETCH_INSURANCE_EMPLOYEE_LIST = "fetchInsuranceEmployeeList";
+export const FETCH_INSPECTION_EMPLOYEE_LIST = "fetchInspectionEmployeeList";
 
 export const FETCH_INSPECTION_TEMPLATE = "fetchInspectionTemplate";
 export const CREATE_INSPECTION = "createInspection";
 export const FETCH_INSPECTION_LIST = "fetchInspectionList";
 export const FETCH_INSURANCE_DETAIL = "fetchInsuranceDetail";
+export const FETCH_INSPECTION_DETAIL = "fetchInspectionDetail";
 
 // mutation types
 export const SET_INSURANCE_TEMPLATE = "setInsuranceTemplate";
@@ -111,6 +113,23 @@ const actions = {
         });
     });
   },
+  [FETCH_INSPECTION_EMPLOYEE_LIST](context, payload) {
+    return new Promise((resolve, reject) => {
+      ApiService.query("/insurance/getMember", {
+        params: { enterpriseId: payload.enterpriseId, planBid: payload.projectBid, pkgBid: payload.planBid }
+      })
+        .then(response => {
+          if (response.data.code == 200) {
+            resolve(response.data.data);
+          } else {
+            reject(response.data.msg);
+          }
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  },
   [FETCH_INSPECTION_TEMPLATE](context, enterpriseId) {
     return new Promise((resolve, reject) => {
       ApiService.query("/insurance/template", {
@@ -181,7 +200,32 @@ const actions = {
           reject(err);
         });
     });
+  },
+  [FETCH_INSPECTION_DETAIL](context, payload) {
+    return new Promise((resolve, reject) => {
+      ApiService.query("/insurance/detail", {
+        params: {
+          enterpriseId: payload.enterpriseId,
+          projectBid: payload.projectBid
+        }
+      })
+        .then(response => {
+          if (response.data.code == 200) {
+            resolve(response.data.data);
+          } else {
+            reject(response.data.msg);
+          }
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
   }
+
+
+
+
+
 };
 
 const mutations = {

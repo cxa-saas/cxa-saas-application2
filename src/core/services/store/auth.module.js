@@ -58,8 +58,6 @@ const actions = {
     return new Promise(async (resolve, reject) => {
       ApiService.post("/admin/login", credentials)
         .then(async response => {
-          console.log('....')
-          console.log(response)
           if (response.data && response.data.code == 200) {
             await context.commit(SET_AUTH, response.data.data.user.token);
             await context.dispatch(FETCH_USER_INFO)

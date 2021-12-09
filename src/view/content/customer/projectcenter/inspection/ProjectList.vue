@@ -351,7 +351,7 @@ export default {
   components: {},
   methods: {
     goToProjectDetail(bid) {
-      this.$router.push({ name: "plan-list" ,query:{bid}});
+      this.$router.push({ name: "plan-inspection-list" ,query:{bid}});
     },
   },
 };

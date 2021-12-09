@@ -296,48 +296,44 @@
               </div>
               <!--end: Wizard Step 3-->
 
-              <!--begin: Wizard Step 5-->
+              <!--begin: Wizard Step 5###-->
               <div class="pb-5" data-wizard-type="step-content">
                 <h4 class="mb-10 font-weight-bold text-dark">
                   Review your Details and Submit
                 </h4>
                 <div class="border-bottom mb-5 pb-5">
-                  <div class="font-weight-bold mb-3">Current Address:</div>
+                  <div class="font-weight-bold mb-3">Project Basic Info:</div>
                   <div class="line-height-md">
-                    Address Line 1
-                    <br />
-                    Address Line 2 <br />
-                    Melbourne 3000, VIC, Australia
+                    Project Name: {{ this.form.name }} <br />
                   </div>
                 </div>
                 <div class="border-bottom mb-5 pb-5">
-                  <div class="font-weight-bold mb-3">Delivery Details:</div>
+                  <div class="font-weight-bold mb-3">Date Details:</div>
                   <div class="line-height-md">
-                    Package: Complete Workstation (Monitor, Computer, Keyboard &
-                    Mouse)
+                    Effective Date:{{ this.form.effectTime }} -
+                    {{ this.form.expireTime }}
                     <br />
-                    Weight: 25kg <br />
-                    Dimensions: 110cm (w) x 90cm (h) x 150cm (L)
+                    Register Date:{{ this.form.regBeginTime }} -
+                    {{ this.form.regEndTime }}
+                    <br />
                   </div>
                 </div>
                 <div class="border-bottom mb-5 pb-5">
-                  <div class="font-weight-bold mb-3">
-                    Delivery Service Type:
-                  </div>
+                  <div class="font-weight-bold mb-3">Plan Details:</div>
                   <div class="line-height-md">
-                    Overnight Delivery with Regular Packaging
-                    <br />
-                    Preferred Morning (8:00AM - 11:00AM) Delivery
+                    <p
+                      v-for="(item, index) of this.choosePlanName"
+                      :key="index"
+                    >
+                      {{ item }}
+                    </p>
                   </div>
                 </div>
                 <div class="mb-5">
-                  <div class="font-weight-bold mb-3">Delivery Address:</div>
-                  <div class="line-height-md">
-                    Address Line 1
-                    <br />
-                    Address Line 2 <br />
-                    Preston 3072, VIC, Australia
-                  </div>
+                  <div class="font-weight-bold mb-3">Employees:</div>
+                  <p v-for="(item, index) of this.chooseEmployeeList" :key="index">
+                    name: {{ item.name }}
+                  </p>
                 </div>
               </div>
               <!--end: Wizard Step 5-->
@@ -441,6 +437,8 @@ export default {
         regBeginTimeDialog: false,
         regEndTimeDialog: false,
       },
+      choosePlanName: [],
+      chooseEmployeeList: [],
       form: {
         enterpriseId: this.$store.state.enterprise.currentEnterpriseId,
         name: "",
@@ -464,8 +462,6 @@ export default {
     await this.$store.dispatch(FETCH_EMPLOYEE_LIST, {
       enterpriseId: this.$store.state.enterprise.currentEnterpriseId,
     });
-    console.log(990);
-    console.log(this.$store.state.employee.employees);
     this.desserts = this.$store.state.employee.employees;
     this.form.name = this.insuranceTemplatePlan.name;
     this.form.effectTime = moment(this.insuranceTemplatePlan.effectTime).format(
@@ -527,6 +523,7 @@ export default {
         icon: "success",
         confirmButtonClass: "btn btn-secondary",
       });
+      this.$router.push({name:'project-center'})
     },
     choosePlan: function (value) {
       if (_.indexOf(this.form.planBids, value) == -1) {
@@ -534,16 +531,35 @@ export default {
       } else {
         this.form.planBids = _.without(this.form.planBids, value);
       }
+
+      this.choosePlanName = this.insuranceTemplatePlan.plans.map((item) => {
+        for (let i = 0; i < this.form.planBids.length; i++) {
+          if (this.form.planBids.indexOf(item.bid) > -1) {
+            return item.nameAlias;
+          }
+        }
+      });
     },
     chooseEmployee: function (payload) {
-
-      if (_.indexOf(this.form.employeeIds, payload.item.eid) == -1 && payload.value == true) {
+      if (
+        _.indexOf(this.form.employeeIds, payload.item.eid) == -1 &&
+        payload.value == true
+      ) {
         this.form.employeeIds.push(payload.item.eid);
       } else {
-        this.form.employeeIds = _.without(this.form.employeeIds, payload.item.eid);
+        this.form.employeeIds = _.without(
+          this.form.employeeIds,
+          payload.item.eid
+        );
       }
-      console.log(7881);
-      console.log(this.form.employeeIds);
+
+      this.chooseEmployeeList = this.desserts.map((item) => {
+        for (let i = 0; i < this.form.employeeIds.length; i++) {
+          if (this.form.employeeIds.indexOf(item.eid) > -1) {
+            return item;
+          }
+        }
+      });
     },
   },
 };

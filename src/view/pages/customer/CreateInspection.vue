@@ -314,41 +314,43 @@
                   Review your Details and Submit
                 </h4>
                 <div class="border-bottom mb-5 pb-5">
-                  <div class="font-weight-bold mb-3">Current Address:</div>
+                  <div class="font-weight-bold mb-3">Project Basic Info:</div>
                   <div class="line-height-md">
-                    Address Line 1
+                    Project Name: {{ this.form.nameI18n.en }} <br />
                     <br />
-                    Address Line 2 <br />
-                    Melbourne 3000, VIC, Australia
                   </div>
                 </div>
                 <div class="border-bottom mb-5 pb-5">
-                  <div class="font-weight-bold mb-3">Delivery Details:</div>
+                  <div class="font-weight-bold mb-3">Date Details:</div>
                   <div class="line-height-md">
-                    Package: Complete Workstation (Monitor, Computer, Keyboard &
-                    Mouse)
+                    Effective Date:{{ this.form.bookBeginDate }} -
+                    {{ this.form.bookEndDate }}
                     <br />
-                    Weight: 25kg <br />
-                    Dimensions: 110cm (w) x 90cm (h) x 150cm (L)
+                    Register Date:{{ this.form.healthBeginDate }} -
+                    {{ this.form.healthEndDate }}
+                    <br />
                   </div>
                 </div>
                 <div class="border-bottom mb-5 pb-5">
-                  <div class="font-weight-bold mb-3">
-                    Delivery Service Type:
-                  </div>
+                  <div class="font-weight-bold mb-3">Package Details:</div>
                   <div class="line-height-md">
-                    Overnight Delivery with Regular Packaging
-                    <br />
-                    Preferred Morning (8:00AM - 11:00AM) Delivery
+                    <p
+                      v-for="(item, index) of this.choosePlanName"
+                      :key="index"
+                    >
+                      {{ item }}
+                    </p>
                   </div>
                 </div>
                 <div class="mb-5">
-                  <div class="font-weight-bold mb-3">Delivery Address:</div>
+                  <div class="font-weight-bold mb-3">Employees:</div>
                   <div class="line-height-md">
-                    Address Line 1
-                    <br />
-                    Address Line 2 <br />
-                    Preston 3072, VIC, Australia
+                    <p
+                      v-for="(item, index) of this.chooseEmployeeList"
+                      :key="index"
+                    >
+                      name: {{ item.name }}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -453,6 +455,8 @@ export default {
         healthBeginDateDialog: false,
         healthEndDateDialog: false,
       },
+      choosePlanName: [],
+      chooseEmployeeList: [],
       form: {
         enterpriseId: 19,
         nameI18n: { en: "", zh: "" },
@@ -473,8 +477,6 @@ export default {
       FETCH_INSPECTION_TEMPLATE,
       this.$store.state.enterprise.currentEnterpriseId
     );
-    console.log(9999);
-    console.log(this.inspectionTemplatePlan);
     await this.$store.dispatch(FETCH_EMPLOYEE_LIST, {
       enterpriseId: this.$store.state.enterprise.currentEnterpriseId,
     });
@@ -539,15 +541,21 @@ export default {
         icon: "success",
         confirmButtonClass: "btn btn-secondary",
       });
+      this.$router.push({ name: "project-inspection-list" });
     },
     choosePlan: function (value) {
-      console.log(999)
-      console.log(value)
       if (_.indexOf(this.form.packages, value) == -1) {
         this.form.packages.push(value);
       } else {
         this.form.packages = _.without(this.form.packages, value);
       }
+      this.choosePlanName = this.inspectionTemplatePlan.packages.map((item) => {
+        for (let i = 0; i < this.form.packages.length; i++) {
+          if (this.form.packages.indexOf(item.bid) > -1) {
+            return item.name;
+          }
+        }
+      });
     },
     chooseEmployee: function (payload) {
       if (
@@ -561,6 +569,14 @@ export default {
           payload.item.eid
         );
       }
+
+      this.chooseEmployeeList = this.desserts.map((item) => {
+        for (let i = 0; i < this.form.employeeIds.length; i++) {
+          if (this.form.employeeIds.indexOf(item.eid) > -1) {
+            return item;
+          }
+        }
+      });
     },
   },
 };

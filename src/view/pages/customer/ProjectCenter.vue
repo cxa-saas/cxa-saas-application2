@@ -193,7 +193,7 @@
               <span class="font-weight-bolder font-size-sm">Billing</span>
               <span class="font-weight-bolder font-size-h5"
                 ><span class="text-dark-50 font-weight-bold">$</span
-                >782,300</span
+                >0</span
               >
             </div>
           </div>

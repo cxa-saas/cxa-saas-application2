@@ -86,10 +86,19 @@ export default new Router({
                 path: "plan-list",
                 name: "plan-list",
                 component: () => import("@/view/content/customer/projectcenter/insurance/PlanList")
+              },
+              {
+                path: "plan-inspection-list",
+                name: "plan-inspection-list",
+                component: () => import("@/view/content/customer/projectcenter/inspection/PlanList")
               }, {
                 path: "plan-employee-list",
                 name: "plan-employee-list",
                 component: () => import("@/view/content/customer/projectcenter/insurance/EmployeeList")
+              }, {
+                path: "inspection-employee-list",
+                name: "inspection-employee-list",
+                component: () => import("@/view/content/customer/projectcenter/inspection/EmployeeList")
               }]
             },
             {

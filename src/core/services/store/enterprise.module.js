@@ -1,4 +1,5 @@
 import ApiService from "@/core/services/api.service";
+import CommonService from "@/core/services/common.service";
 
 // action types
 export const FETCH_ENTERPRISE_DETAIL = "fetchEnterpriseDetail";
@@ -23,23 +24,9 @@ export const SET_ENTERPRISE_LIST = "setEnterpriseList";
 
 const state = {
   errors: {},
-  currentEnterpriseId: 19,
+  currentEnterpriseId: CommonService.geCurrentEnterprise(),
   orderId: "",
-  enterpriseDetail: {
-    currentEnterPhoto: "media/logos/logo-cxa-1.png",
-    enterprise_size_type: 0,
-    enterprise_status: 0,
-    introduction: "",
-    point: 0,
-    mobile: "",
-    email: "",
-    address: "",
-    username: "张三",
-    name: "",
-    enterpriseId: "",
-    freeze_points: 0,
-    points_balance: 0
-  },
+  enterpriseDetail: CommonService.geCurrentEnterpriseDetail(),
   departments: [],
   administrators: []
 };
@@ -49,10 +36,10 @@ const getters = {
     return state.currentEnterprise;
   },
   currentEnterpriseId(state) {
-    return state.currentEnterpriseId;
+    return state.currentEnterpriseId || CommonService.geCurrentEnterprise();
   },
   currentEnterpriseInfo(state) {
-    return state.enterpriseDetail;
+    return state.enterpriseDetail || CommonService.geCurrentEnterprise();;
   },
   currentEnterpriseDepartments(state) {
     return state.departments;
@@ -238,39 +225,19 @@ const actions = {
         });
     });
   },
-  // [FETCH_ENTERPRISE_LIST](context, email) {
-  //   return new Promise((resolve, reject) => {
-  //     ApiService.query("/enterprise/list", { params: { email } })
-  //       .then(response => {
-  //         if (response.data && response.data.code == 200) {
-  //           context.commit(
-  //             SET_ENTERPRISE_LIST,
-  //             response.data.data.enterpriseList
-  //           );
-  //           console.log(context.state)
-  //           resolve(response.data.data.enterpriseList);
-  //         } else {
-  //           context.commit(SET_ERROR, response.data.msg);
-  //           reject(response.data.msg);
-  //         }
-  //       })
-  //       .catch(() => {
-  //         context.commit(SET_ERROR, "unknown error");
-  //         reject("unknown error");
-  //       });
-  //   });
-  // }
 
 };
 
 const mutations = {
   [SET_CURRENT_ENTERPRISE](state, currentEnterpriseId) {
+    CommonService.saveCurrentEnterprise(currentEnterpriseId)
     state.currentEnterpriseId = currentEnterpriseId;
   },
   [SET_CURRENT_DEPARTMENT](state, department) {
     state.departments = department
   },
   [SET_ENTERPRISE_DETAIL](state, enterpriseDetail) {
+    CommonService.saveCurrentEnterpriseDetail(enterpriseDetail)
     state.enterpriseDetail = enterpriseDetail;
   },
   [SET_ENTERPRISE_ADMINISTRATOR](state, administrators) {

@@ -10,7 +10,7 @@
       <div class="container">
         <!--begin::Row-->
         <div class="row">
-          <div v-for="item in this.plan" :key="item.bid" class="col-xl-6">
+          <div v-for="item in this.packages" :key="item.bid" class="col-xl-6">
             <!--begin::Card-->
             <div class="card card-custom gutter-b card-stretch">
               <!--begin::Body-->
@@ -36,11 +36,11 @@
                         text-dark
                         mb-1
                       "
-                      >{{item.nameAlias}}</a
+                      >{{item.name}}</a
                     >
-                    <span class="text-muted font-weight-bold"
+                    <!-- <span class="text-muted font-weight-bold"
                       >Creates Limitless possibilities</span
-                    >
+                    > -->
                     <!--end::Title-->
                   </div>
                   <!--end::Info-->
@@ -131,7 +131,7 @@
                 <div class="d-flex flex-wrap justify-content-between mt-5">
                   <div class="mr-5 d-flex flex-column mb-5">
                     <span class="d-block font-weight-bold mb-5"
-                      >Start Date</span
+                      >Start Age</span
                     >
                     <span
                       class="
@@ -139,56 +139,65 @@
                         font-weight-bold
                         btn-upper btn-text
                       "
-                      >{{item.effectTime.substring(0,10)}}</span
+                      >{{item.startAge}}</span
                     >
                   </div>
                   <div class="mr-5 d-flex flex-column mb-5">
-                    <span class="d-block font-weight-bold mb-5">Due Date</span>
+                    <span class="d-block font-weight-bold mb-5">End Age</span>
                     <span
                       class="
                         btn btn-light-success btn-sm
                         font-weight-bold
                         btn-upper btn-text
                       "
-                      >{{item.expireTime.substring(0,10)}}</span
+                      >{{item.endAge}}</span
                     >
                   </div>
                   <div class="d-flex flex-column mb-5">
-                    <span class="d-block font-weight-bold mb-5">Status</span>
+                    <span class="d-block font-weight-bold mb-5">Package Type</span>
                     <span
                       class="
                         btn btn-text btn-light-success btn-sm
                         font-weight-bold
                       "
-                      >Success</span
+                      >{{item.packageType==1?'general':'additional'}}</span
                     >
                   </div>
                 </div>
                 <!--end::Content-->
                 <!--begin::Text-->
-                <p class="mb-7 mt-3">
+                <!-- <p class="mb-7 mt-3">
                   I distinguish three main text objectives.First, your objective
                   could be merely to inform people.A second be to persuade
                   people.
-                </p>
+                </p> -->
                 <!--end::Text-->
                 <!--begin::Blog-->
                 <div class="d-flex flex-wrap">
                   <!--begin: Item-->
                   <div class="mr-12 d-flex flex-column mb-7">
-                    <span class="font-weight-bolder mb-4">Plan</span>
+                    <span class="font-weight-bolder mb-4">Male Price</span>
                     <span class="font-weight-bolder font-size-h5 pt-1">
-                      <span class="font-weight-bold text-dark-50"></span
-                      >99</span
+                      <span class="font-weight-bold text-dark-50">$</span
+                      >{{item.malePrice}}</span
                     >
                   </div>
                   <!--end::Item-->
                   <!--begin::Item-->
                   <div class="mr-12 d-flex flex-column mb-7">
-                    <span class="font-weight-bolder mb-4">Cost</span>
+                    <span class="font-weight-bolder mb-4">Female Price</span>
                     <span class="font-weight-bolder font-size-h5 pt-1">
                       <span class="font-weight-bold text-dark-50">$</span
-                      >439,500</span
+                      >{{item.femalePrice}}</span
+                    >
+                  </div>
+                  <!--end::Item-->
+                                  <!--begin::Item-->
+                  <div class="mr-12 d-flex flex-column mb-7">
+                    <span class="font-weight-bolder mb-4">Married Female Price</span>
+                    <span class="font-weight-bolder font-size-h5 pt-1">
+                      <span class="font-weight-bold text-dark-50">$</span
+                      >{{item.marriedFemalePrice}}</span
                     >
                   </div>
                   <!--end::Item-->
@@ -265,7 +274,7 @@
         </div>
         <!--end::Row-->
         <!--begin::Pagination-->
-        <div
+        <!-- <div
           class="d-flex justify-content-between align-items-center flex-wrap"
         >
           <div class="d-flex flex-wrap mr-3">
@@ -393,7 +402,7 @@
             </select>
             <span class="text-muted">Displaying 10 of 230 records</span>
           </div>
-        </div>
+        </div> -->
         <!--end::Pagination-->
       </div>
       <!--end::Container-->
@@ -403,26 +412,26 @@
 
 <script>
 import DataDashboard from "@/view/content/customer/projectcenter/insurance/DataDashboard";
-import { FETCH_INSURANCE_DETAIL } from "@/core/services/store/project.module";
+import { FETCH_INSPECTION_DETAIL } from "@/core/services/store/project.module";
 
 export default {
   name: "plan-list",
   async mounted() {
-    const result = await this.$store.dispatch(FETCH_INSURANCE_DETAIL, {
+    const result = await this.$store.dispatch(FETCH_INSPECTION_DETAIL, {
       enterpriseId: this.$store.state.enterprise.currentEnterpriseId,
       projectBid: this.$route.query.bid,
     });
-    this.plan = result.plans
+    this.packages = result.packages
   },
   data() {
     return{
-      plan: []
+      packages: []
     }
   },
   components: { DataDashboard },
   methods: {
     goToEmployeeList(planBid) {
-      this.$router.push({ name: "plan-employee-list",query:{projectBid:this.$route.query.bid,planBid:planBid} });
+      this.$router.push({ name: "inspection-employee-list",query:{projectBid:this.$route.query.bid,planBid:planBid} });
     },
   },
 };

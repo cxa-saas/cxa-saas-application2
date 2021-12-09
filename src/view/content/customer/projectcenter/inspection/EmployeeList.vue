@@ -213,12 +213,13 @@
         :length="employeesPageConfig.pages"
       ></v-pagination>
     </div>
-  </div> -->
+    -->
+  </div> 
   <!--end::Advance Table Widget 10-->
 </template>
 
 <script>
-import { FETCH_INSURANCE_EMPLOYEE_LIST } from "@/core/services/store/project.module";
+import { FETCH_INSPECTION_EMPLOYEE_LIST } from "@/core/services/store/project.module";
 
 export default {
   name: "plan-employee-list",
@@ -233,7 +234,7 @@ export default {
     };
   },
   async mounted() {
-    const result = await this.$store.dispatch(FETCH_INSURANCE_EMPLOYEE_LIST, {
+    const result = await this.$store.dispatch(FETCH_INSPECTION_EMPLOYEE_LIST, {
       enterpriseId: this.$store.state.enterprise.currentEnterpriseId,
       projectBid: this.$route.query.projectBid,
       planBid: this.$route.query.planBid,
