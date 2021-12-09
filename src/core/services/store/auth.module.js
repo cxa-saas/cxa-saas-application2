@@ -1,5 +1,6 @@
 import ApiService from "@/core/services/api.service";
 import JwtService from "@/core/services/jwt.service";
+import CommonService from "@/core/services/common.service";
 
 // action types
 export const VERIFY_AUTH = "verifyAuth";
@@ -55,11 +56,13 @@ const actions = {
   },
 
   [LOGIN](context, credentials) {
+    context.commit(PURGE_AUTH);
     return new Promise(async (resolve, reject) => {
       ApiService.post("/admin/login", credentials)
         .then(async response => {
           if (response.data && response.data.code == 200) {
             await context.commit(SET_AUTH, response.data.data.user.token);
+            ApiService.setHeader();
             await context.dispatch(FETCH_USER_INFO)
             if (context.state.enterpriseList.length > 0) {
               resolve(`dashboard`);
@@ -82,6 +85,7 @@ const actions = {
     context.commit(PURGE_AUTH);
   },
   [REGISTER](context, credentials) {
+    context.commit(PURGE_AUTH);
     return new Promise(resolve => {
       ApiService.post("/auth/register", credentials)
         .then(({ data }) => {
@@ -135,6 +139,9 @@ const mutations = {
     state.user = {};
     state.errors = {};
     JwtService.destroyToken();
+    CommonService.destroyCurrentEnterpriseDetail()
+    CommonService.destroyCurrentEnterprise()
+
   },
   [SET_USER_INFO](state, payload) {
     state.user = payload.user;
