@@ -127,6 +127,7 @@ const mutations = {
     state.token = token;
     state.errors = {};
     JwtService.saveToken(token);
+    ApiService.setHeader();
   },
   [SET_PASSWORD](state, password) {
     state.user.password = password;
