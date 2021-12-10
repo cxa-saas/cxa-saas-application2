@@ -7,7 +7,6 @@
         :key="item.nodeId"
         :title="item.name"
         @click="changeTab(item.nodeId)"
-        active
       >
         <!--begin::Header-->
         <div class="card-header border-0 pt-5">
@@ -552,11 +551,12 @@ export default {
       this.employeeList = employeeList;
     },
   },
-  mounted() {
-    this.$store.dispatch(
+  async mounted() {
+    await this.$store.dispatch(
       FETCH_ENTERPRISE_DEPARTMENT,
       this.$store.state.enterprise.currentEnterpriseId
     );
+    await this.changeTab(this.currentEnterpriseDepartments[0].nodeId)
   },
   computed: {
     ...mapGetters([

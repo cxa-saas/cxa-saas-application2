@@ -192,8 +192,7 @@
             <div class="d-flex flex-column text-dark-75">
               <span class="font-weight-bolder font-size-sm">Billing</span>
               <span class="font-weight-bolder font-size-h5"
-                ><span class="text-dark-50 font-weight-bold">$</span
-                >0</span
+                ><span class="text-dark-50 font-weight-bold">$</span>0</span
               >
             </div>
           </div>
@@ -343,6 +342,8 @@ export default {
       FETCH_INSPECTION_LIST,
       this.$store.state.enterprise.currentEnterpriseId
     );
+
+
   },
   methods: {
     /**

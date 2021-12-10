@@ -40,7 +40,7 @@
               <th class="pl-0" style="min-width: 120px">Employee id</th>
               <th class="pl-0" style="min-width: 120px">Name</th>
               <th class="pl-0" style="min-width: 120px">ID Card</th>
-              <th style="min-width: 110px">
+              <th  style="min-width: 110px">
                 <span class="text-primary">Date</span>
                 <span class="svg-icon svg-icon-sm svg-icon-primary">
                   <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Down-2.svg-->
@@ -50,10 +50,10 @@
                   <!--end::Svg Icon-->
                 </span>
               </th>
-              <th style="min-width: 110px">Marital Status</th>
-              <th style="min-width: 110px">Gender</th>
-              <th style="min-width: 120px">Addition</th>
-              <th style="min-width: 120px">Age</th>
+              <th class="pl-0" style="min-width: 110px">Marital Status</th>
+              <th class="pl-0" style="min-width: 110px">Gender</th>
+              <!-- <th style="min-width: 120px">Addition</th> -->
+              <!-- <th style="min-width: 120px">Age</th> -->
               <th class="pr-0 text-right" style="min-width: 160px">Action</th>
             </tr>
           </thead>
@@ -106,15 +106,13 @@
                     item.company_desc
                   }}</span> -->
                 </td>
-                <td>
+                <!-- <td>
                   <span
                     class="text-primary font-weight-bolder d-block font-size-lg"
                     >{{ item.date }}</span
                   >
-                  <!-- <span class="text-muted font-weight-bold">{{
-                    item.date_desc
-                  }}</span> -->
-                </td>
+              
+                </td> -->
 
                 <td class="pl-0">
                   <a
@@ -136,7 +134,7 @@
                     >{{ item.sex==1?'male':'female' }}</span
                   >
                 </td>
-                <td class="pl-0">
+                <!-- <td class="pl-0">
                   <a
                     href="#"
                     class="
@@ -147,7 +145,7 @@
                     "
                     >{{ item.orders }}</a
                   >
-                </td>
+                </td> -->
                 <!-- <td class="pl-0">
                   <a
                     href="#"

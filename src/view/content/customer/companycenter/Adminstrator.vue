@@ -156,7 +156,6 @@ export default {
       FETCH_ENTERPRISE_ADMINISTRATOR,
       this.$store.state.enterprise.currentEnterpriseId
     );
-    console.log(4567);
     console.log(result);
   },
 };
