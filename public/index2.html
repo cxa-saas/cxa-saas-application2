@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+Use below html tag for RTL version
+<html lang="en" dir="rtl" direction="rtl" style="direction: rtl">
+-->
+<html lang="en">
+
+<head>
+
+</head>
+<style>
+  body,
+  html {
+    height: 100%;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .fixedBg {
+    min-height: 500px;
+    background-image: url("https://upload-images.jianshu.io/upload_images/25524960-39a75f21730f99bb.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  .testBefore,
+  .testAfter {
+    background: #333;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+  }
+
+  h1 {
+    color: #fff;
+    font-size: 100px;
+    line-height: 300px;
+  }
+</style>
+
+<body>
+  <div class="testBefore">
+    <h1>BEFORE</h1>
+  </div>
+  <div class="fixedBg"></div>
+  <div class="testAfter">
+    <h1>AFTER</h1>
+  </div>
+</body>
+
+</html>
