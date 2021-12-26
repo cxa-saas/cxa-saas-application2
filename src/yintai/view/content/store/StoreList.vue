@@ -210,7 +210,7 @@
           <div class="store-item-list-right">
             <div class="store-item-list-right-list">
               <div class="store-item-list-right-item">
-                <div class="store-item-list-right-item-text">杭州临平店</div>
+                <a href="#/store_inner"><div class="store-item-list-right-item-text">杭州临平店</div></a>
                 <div class="store-item-list-right-item-text">杭州城西店</div>
                 <div class="store-item-list-right-item-text">杭州富阳店</div>
                 <div class="store-item-list-right-item-text">杭州庆春店</div>
