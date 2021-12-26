@@ -41,50 +41,145 @@ export default {
     return {
       imgsArr: [
         {
-          src: "/media/yintai/cloudpicture-1.png",
+          src: "/media/yintai/cloudimage-demo1.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
         {
-          src: "/media/yintai/cloudpicture-1.png",
+          src: "/media/yintai/cloudimage-demo2.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
         {
-          src: "/media/yintai/cloudpicture-1.png",
+          src: "/media/yintai/cloudimage-demo3.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
         {
-          src: "/media/yintai/cloudpicture-1.png",
+          src: "/media/yintai/cloudimage-demo4.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
         {
-          src: "/media/yintai/cloudpicture-1.png",
+          src: "/media/yintai/cloudimage-demo5.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
         {
-          src: "/media/yintai/cloudpicture-1.png",
+          src: "/media/yintai/cloudimage-demo6.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
         {
-          src: "/media/yintai/cloudpicture-1.png",
+          src: "/media/yintai/cloudimage-demo7.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
         {
-          src: "/media/yintai/cloudpicture-1.png",
+          src: "/media/yintai/cloudimage-demo8.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
         {
-          src: "/media/yintai/cloudpicture-1.png",
+          src: "/media/yintai/cloudimage-demo9.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
+         {
+          src: "/media/yintai/cloudimage-demo10.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+         {
+          src: "/media/yintai/cloudimage-demo11.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+         {
+          src: "/media/yintai/cloudimage-demo12.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+         {
+          src: "/media/yintai/cloudimage-demo13.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+         {
+          src: "/media/yintai/cloudimage-demo14.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        }, {
+          src: "/media/yintai/cloudimage-demo1.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+        {
+          src: "/media/yintai/cloudimage-demo2.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+        {
+          src: "/media/yintai/cloudimage-demo3.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+        {
+          src: "/media/yintai/cloudimage-demo4.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+        {
+          src: "/media/yintai/cloudimage-demo5.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+        {
+          src: "/media/yintai/cloudimage-demo6.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+        {
+          src: "/media/yintai/cloudimage-demo7.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+        {
+          src: "/media/yintai/cloudimage-demo8.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+        {
+          src: "/media/yintai/cloudimage-demo9.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+         {
+          src: "/media/yintai/cloudimage-demo10.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+         {
+          src: "/media/yintai/cloudimage-demo11.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+         {
+          src: "/media/yintai/cloudimage-demo12.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+         {
+          src: "/media/yintai/cloudimage-demo13.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+         {
+          src: "/media/yintai/cloudimage-demo14.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+        
       ],
       group: 0, // request param
     };
@@ -108,6 +203,76 @@ export default {
         },
         {
           src: "/media/yintai/cloudpicture-1.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+         {
+          src: "/media/yintai/cloudimage-demo1.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+        {
+          src: "/media/yintai/cloudimage-demo2.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+        {
+          src: "/media/yintai/cloudimage-demo3.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+        {
+          src: "/media/yintai/cloudimage-demo4.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+        {
+          src: "/media/yintai/cloudimage-demo5.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+        {
+          src: "/media/yintai/cloudimage-demo6.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+        {
+          src: "/media/yintai/cloudimage-demo7.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+        {
+          src: "/media/yintai/cloudimage-demo8.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+        {
+          src: "/media/yintai/cloudimage-demo9.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+         {
+          src: "/media/yintai/cloudimage-demo10.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+         {
+          src: "/media/yintai/cloudimage-demo11.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+         {
+          src: "/media/yintai/cloudimage-demo12.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+         {
+          src: "/media/yintai/cloudimage-demo13.png",
+          href: "https://www.baidu.com",
+          info: "一些图片描述文字",
+        },
+         {
+          src: "/media/yintai/cloudimage-demo14.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
