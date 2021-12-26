@@ -127,10 +127,10 @@
 
 <template>
   <div class="catlogo">
-    <div class="catlogo-top">
+    <!-- <div class="catlogo-top">
       <div class="catlog-top-logo"></div>
       <div class="catlog-top-title">喵街</div>
-    </div>
+    </div> -->
 
     <div class="catlogo-bottom">
       <div class="container">

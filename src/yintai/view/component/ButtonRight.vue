@@ -58,7 +58,6 @@
     justify-content: center;
     .getmore-title {
       font-family: SourceHanSansSC-Medium;
-      font-weight: 600;
       color: #e02b20;
       font-size: 1.2rem;
     }

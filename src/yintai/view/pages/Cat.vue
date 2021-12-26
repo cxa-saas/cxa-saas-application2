@@ -1,11 +1,13 @@
 <template>
   <div>
     <CatBanner></CatBanner>
-    <CatLogo></CatLogo>
-    <CatBannerApp></CatBannerApp>
-    <CatContent></CatContent>
-    <CatContentView></CatContentView>
+
     <CatDownload></CatDownload>
+    <CatBannerApp></CatBannerApp>
+
+    <CatContent></CatContent>
+    <CatLogo></CatLogo>
+    <CatContentView></CatContentView>
     <CatBanner3></CatBanner3>
   </div>
 </template>

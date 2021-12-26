@@ -144,6 +144,23 @@
             text-align: center;
           }
         }
+        .new-contact-4 {
+          margin-top: 1rem;
+          width: 100%;
+          height: 20rem;
+          border-radius: 1.2rem;
+          box-shadow: 0px 3px 5px #cdcacabe;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          .qrcode {
+            width: 16rem;
+            height: 16rem;
+            background-image: url("/media/yintai/contact-qrcode.png");
+            background-size: 100% 100%;
+          }
+        }
       }
     }
   }
@@ -245,6 +262,23 @@
             text-align: center;
           }
         }
+        .new-contact-4 {
+          margin-top: 1rem;
+          width: 100%;
+          height: 20rem;
+          border-radius: 1.2rem;
+          box-shadow: 0px 3px 5px #cdcacabe;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          .qrcode {
+            width: 16rem;
+            height: 16rem;
+            background-image: url("/media/yintai/contact-qrcode.png");
+            background-size: 100% 100%;
+          }
+        }
       }
     }
   }
@@ -311,6 +345,9 @@
               表彰优秀员工，认可和激励员工的优秀表现。
             </div>
           </div>
+        </div>
+        <div class="new-contact-4">
+          <div class="qrcode"></div>
         </div>
       </div>
     </div>

@@ -58,7 +58,6 @@
     justify-content: center;
     .getmore-title {
       font-family: SourceHanSansSC-Medium;
-      font-weight: 500;
       color: #000000;
       font-size: 1.4rem;
     }
@@ -71,7 +70,6 @@
         animation: showInLeft 1s 1;
         display: inline-block;
         font-family: SourceHanSansSC-Medium;
-        font-weight: 500;
         color: #000000;
         font-size: 1.6rem;
         margin-left: 1rem;

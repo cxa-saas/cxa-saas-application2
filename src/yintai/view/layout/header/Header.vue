@@ -54,6 +54,7 @@
           flex-direction: row;
           justify-content: center;
           align-items: center;
+          position: relative;
           a {
             color: #00000099;
             font-size: 14px;
@@ -68,6 +69,44 @@
             // font-size: 1.25rem;
             // font-weight: bold;
             // font-family: Source Han Sans SC;
+          }
+
+          .nav-service-list {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            width: 12rem;
+            display: none;
+
+            .nav-service-item {
+              background-color: #fff;
+              width: 100%;
+              color: #00000099;
+              font-size: 14px;
+              text-decoration: none;
+              display: block;
+              position: relative;
+              -webkit-transition: all 0.4s ease-in-out;
+              transition: all 0.4s ease-in-out;
+              font-family: "SourceHanSansCN-Bold";
+              font-weight: bold;
+              padding-top: 1rem;
+              height: 3rem;
+              border-bottom: 1px whitesmoke solid;
+              text-align: center;
+              &:hover {
+                cursor: pointer;
+                background-color: whitesmoke;
+              }
+            }
+          }
+        }
+        .show-service {
+          &:hover {
+            .nav-service-list {
+              display: flex;
+            }
           }
         }
       }
@@ -87,6 +126,12 @@
     position: fixed;
     height: 6rem;
     transition: height 1s;
+  }
+  .header-top-next {
+    top: 4.5rem;
+  }
+  .header-top-before {
+    top: 6rem;
   }
 }
 @media screen and (max-width: 75rem) {
@@ -141,6 +186,10 @@
           &:last-child {
             margin-bottom: 3rem;
           }
+
+          .nav-service-list {
+            display: none;
+          }
           width: 90%;
           height: 3rem;
           display: flex;
@@ -149,6 +198,29 @@
           align-items: center;
           border-bottom: 1px whitesmoke solid;
           padding: 0px 5%;
+          &:nth-child(4) {
+            &:hover {
+              height: 16rem;
+              .nav-service-list {
+                position: relative;
+                top: 0;
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                width: 20rem;
+                .nav-service-item {
+                  padding-top: 1rem;
+                  height: 4rem;
+                  text-align: center;
+                  width: 100%;
+                  &:hover{
+                    background-color: #fff;
+                  }
+                }
+
+              }
+            }
+          }
           &:hover {
             cursor: pointer;
             background-color: whitesmoke;
@@ -165,10 +237,6 @@
             transition: all 0.4s ease-in-out;
             font-family: "SourceHanSansCN-Bold";
             font-weight: bold;
-            // color: #333333;
-            // font-size: 1.25rem;
-            // font-weight: bold;
-            // font-family: Source Han Sans SC;
           }
         }
       }
@@ -244,7 +312,26 @@
           <a href="#/news">银泰新闻</a>
         </div>
         <div class="nav-item"><a href="#/cloudPicture">银泰云图</a></div>
-        <div class="nav-item"><a href="#/membershipStore">银泰服务</a></div>
+        <div class="nav-item show-service">
+          <a href="#/membershipStore">银泰服务</a>
+          <div
+            class="nav-service-list"
+            v-bind:class="{
+              'header-top-next': cssActive,
+              'header-top-before': !cssActive,
+            }"
+          >
+            <a href="#/cat"><div class="nav-service-item">喵街</div></a>
+            <a href="#/membership"
+              ><div class="nav-service-item">INTIME365</div></a
+            >
+            <a href="#/membershipStore"
+              ><div class="nav-service-item">INTIME365 Store</div></a
+            >
+            <a href="#/store"><div class="nav-service-item">全门店导览</div></a>
+          </div>
+        </div>
+
         <div class="nav-item"><a href="#/about">关于银泰</a></div>
         <div class="nav-item"><a href="#/contact">联系我们</a></div>
       </div>

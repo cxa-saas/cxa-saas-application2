@@ -107,13 +107,13 @@
             }
             .report-title {
               font-size: 1rem;
-              font-family: Source Han Sans SC;
+              font-family: SourceHanSansSC-Medium;
               font-weight: 500;
               color: #333333;
             }
             .report-address {
               font-size: 0.8rem;
-              font-family: Source Han Sans SC;
+              font-family: SourceHanSansSC-Regular;
               font-weight: 400;
               color: #7f7f7f;
               line-height: 14px;
@@ -198,13 +198,13 @@
             }
             .report-title {
               font-size: 1rem;
-              font-family: Source Han Sans SC;
+              font-family: SourceHanSansSC-Medium;
               font-weight: 500;
               color: #333333;
             }
             .report-address {
               font-size: 0.8rem;
-              font-family: Source Han Sans SC;
+              font-family: SourceHanSansSC-Regular;
               font-weight: 400;
               color: #7f7f7f;
               line-height: 14px;
@@ -306,13 +306,13 @@
             }
             .report-title {
               font-size: 1rem;
-              font-family: Source Han Sans SC;
+              font-family:SourceHanSansSC-Medium;
               font-weight: 500;
               color: #333333;
             }
             .report-address {
               font-size: 0.8rem;
-              font-family: Source Han Sans SC;
+              font-family: SourceHanSansSC-Regular;
               font-weight: 400;
               color: #7f7f7f;
               line-height: 14px;
@@ -398,13 +398,13 @@
             }
             .report-title {
               font-size: 1rem;
-              font-family: Source Han Sans SC;
+              font-family:SourceHanSansSC-Medium;
               font-weight: 500;
               color: #333333;
             }
             .report-address {
               font-size: 0.8rem;
-              font-family: Source Han Sans SC;
+              font-family: SourceHanSansSC-Regular;
               font-weight: 400;
               color: #7f7f7f;
               line-height: 14px;

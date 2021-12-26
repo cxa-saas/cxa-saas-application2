@@ -181,7 +181,7 @@
       <div class="nav-container">
         <div class="nav-list">
           <li class="nav-list-item"><a href="#/about"> 关于银泰</a></li>
-          <li class="nav-list-item"><a href="#/event">品牌故事</a></li>
+          <li class="nav-list-item"><a href="#/about">品牌故事</a></li>
           <li class="nav-list-item"><a href="#/contact">合作</a></li>
           <li class="nav-list-item"><a href="#/school">人才</a></li>
           <li class="nav-list-item"><a href="#/contact">联系我们</a></li>

@@ -21,6 +21,7 @@
   //   display: block !important;
   // }
   .catcontentview {
+    margin-top: 5rem;
     width: 100%;
     background-color: #f5f5f5;
     display: flex;
@@ -72,7 +73,7 @@
     height: 32.75rem;
   }
   .content-carousel {
-    width: 60%;
+    width: 80%;
   }
   .el-carousel__item .catcontentview-item {
     width: 100%;
@@ -104,10 +105,10 @@ export default {
   data() {
     return {
       imageList: [
+        "/media/yintai/app-4.jpg",
         "/media/yintai/app-1.png",
         "/media/yintai/app-2.png",
         "/media/yintai/app-3.png",
-        "/media/yintai/app-4.jpg",
         "/media/yintai/app-5.jpg",
       ],
     };

@@ -95,7 +95,7 @@
               flex-direction: row;
               justify-content: center;
               align-items: center;
-              right: -15%;
+              right: -18%;
               .membershipstoremarket-bottom-list-left-item-text {
                 margin-top: -1rem;
 
@@ -197,7 +197,7 @@
               flex-direction: row;
               justify-content: center;
               align-items: center;
-              right: -15%;
+              right: -18%;
               .membershipstoremarket-bottom-list-left-item-text {
                 width: 75%;
                 height: 100%;
@@ -245,8 +245,8 @@
           }
 
           .membershipstoremarket-bottom-list-block {
-            width: 14rem;
-            height: 14rem;
+            width: 12rem;
+            height: 12rem;
             background-image: url("/media/yintai/cloudstore-market-1.png");
             background-size: 100% 100%;
           }
@@ -265,7 +265,7 @@
               flex-direction: row;
               justify-content: center;
               align-items: center;
-              left: -15%;
+              left: -18%;
               .membershipstoremarket-bottom-list-right-item-text {
                 width: 75%;
                 height: 100%;
@@ -366,7 +366,7 @@
               flex-direction: row;
               justify-content: center;
               align-items: center;
-              left: -15%;
+              left: -18%;
               .membershipstoremarket-bottom-list-right-item-text {
                 margin-top: 1rem;
 
@@ -500,7 +500,7 @@
               flex-direction: row;
               justify-content: center;
               align-items: center;
-              right: -15%;
+              right: -18%;
               .membershipstoremarket-bottom-list-left-item-text {
                 margin-top: -1rem;
 
@@ -604,7 +604,7 @@
               flex-direction: row;
               justify-content: center;
               align-items: center;
-              right: -15%;
+              right: -18%;
               .membershipstoremarket-bottom-list-left-item-text {
                 width: 75%;
                 height: 100%;
@@ -672,7 +672,7 @@
               flex-direction: row;
               justify-content: center;
               align-items: center;
-              left: -15%;
+              left: -18%;
               .membershipstoremarket-bottom-list-right-item-text {
                 width: 75%;
                 height: 100%;
@@ -774,7 +774,7 @@
               flex-direction: row;
               justify-content: center;
               align-items: center;
-              left: -15%;
+              left: -18%;
               .membershipstoremarket-bottom-list-right-item-text {
                 margin-top: 1rem;
 

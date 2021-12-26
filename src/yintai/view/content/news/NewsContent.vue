@@ -50,7 +50,7 @@
           height: 100%;
           display: flex;
           flex-direction: column;
-          justify-content: flex-end;
+          justify-content:  center;
           margin-left: 1rem;
           .newcontent-item-title {
             font-size: 25px;
@@ -149,12 +149,12 @@
             <div class="newcontent-item-subtitle">
               彩妆大师同名品牌Charlotte Tilbury入驻杭州，10月28日开业
             </div>
-            <div class="newcontent-item-text">
+            <!-- <div class="newcontent-item-text">
               《2021颜值经济新消费报告》指出，Z世代对颜值消费的观念正从满足温饱转向体验和服务。
             </div>
             <div class="newcontent-item-text">
               从近期来看，银泰百货迎来高端品牌扎堆入驻潮，成为“城市首店收割机”。同时，多个品牌入驻形成了品牌矩阵，也极大程度上丰富了消费者购物体验。
-            </div>
+            </div> -->
           </div>
         </div>
       </a>
@@ -167,12 +167,12 @@
             <div class="newcontent-item-subtitle">
               彩妆大师同名品牌Charlotte Tilbury入驻杭州，10月28日开业
             </div>
-            <div class="newcontent-item-text">
+            <!-- <div class="newcontent-item-text">
               《2021颜值经济新消费报告》指出，Z世代对颜值消费的观念正从满足温饱转向体验和服务。
             </div>
             <div class="newcontent-item-text">
               从近期来看，银泰百货迎来高端品牌扎堆入驻潮，成为“城市首店收割机”。同时，多个品牌入驻形成了品牌矩阵，也极大程度上丰富了消费者购物体验。
-            </div>
+            </div> -->
           </div>
         </div>
       </a>
@@ -184,12 +184,12 @@
             <div class="newcontent-item-subtitle">
               彩妆大师同名品牌Charlotte Tilbury入驻杭州，10月28日开业
             </div>
-            <div class="newcontent-item-text">
+            <!-- <div class="newcontent-item-text">
               《2021颜值经济新消费报告》指出，Z世代对颜值消费的观念正从满足温饱转向体验和服务。
             </div>
             <div class="newcontent-item-text">
               从近期来看，银泰百货迎来高端品牌扎堆入驻潮，成为“城市首店收割机”。同时，多个品牌入驻形成了品牌矩阵，也极大程度上丰富了消费者购物体验。
-            </div>
+            </div> -->
           </div>
         </div>
       </a>
@@ -201,12 +201,12 @@
             <div class="newcontent-item-subtitle">
               彩妆大师同名品牌Charlotte Tilbury入驻杭州，10月28日开业
             </div>
-            <div class="newcontent-item-text">
+            <!-- <div class="newcontent-item-text">
               《2021颜值经济新消费报告》指出，Z世代对颜值消费的观念正从满足温饱转向体验和服务。
             </div>
             <div class="newcontent-item-text">
               从近期来看，银泰百货迎来高端品牌扎堆入驻潮，成为“城市首店收割机”。同时，多个品牌入驻形成了品牌矩阵，也极大程度上丰富了消费者购物体验。
-            </div>
+            </div> -->
           </div>
         </div>
       </a>

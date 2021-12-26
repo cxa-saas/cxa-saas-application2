@@ -110,9 +110,21 @@
               }
             }
           }
+          &:nth-child(2) {
+            margin-top: 5rem;
+          }
+          &:nth-child(3) {
+            margin-top: 5rem;
+          }
+          &:nth-child(4) {
+            margin-top: 5rem;
+          }
         }
         .left-block:first-child {
           margin-top: 0rem;
+        }
+        .left-block:last-child {
+          margin-top: 3.5rem;
         }
       }
       .line {
@@ -193,9 +205,15 @@
           .left-block:first-child {
             margin-top: 0rem;
           }
+          &:nth-child(2) {
+            margin-top: 5rem;
+          }
+          &:nth-child(3) {
+            margin-top: 5rem;
+          }
         }
         .right-block:first-child {
-          margin-top: 18rem;
+          margin-top: 14rem;
         }
       }
     }
@@ -304,14 +322,27 @@
               }
             }
           }
+          &:nth-child(2) {
+            margin-top: -2rem;
+          }
+          &:nth-child(3) {
+            margin-top: -2rem;
+          }
+          &:nth-child(4) {
+            margin-top: -2rem;
+          }
         }
         .left-block:first-child {
           margin-top: 0rem;
         }
+        .left-block:last-child {
+          margin-top: -4rem;
+        }
       }
       .line {
         width: 3px;
-        height: 1200px;
+        height: 1000px;
+        
         background: #e5004f;
       }
       .right {
@@ -388,9 +419,18 @@
           .left-block:first-child {
             margin-top: 0rem;
           }
+          &:nth-child(2) {
+            margin-top: -2rem;
+          }
+          &:nth-child(3) {
+            margin-top: -2rem;
+          }
+          &:nth-child(4) {
+            margin-top: -2rem;
+          }
         }
         .right-block:first-child {
-          margin-top: 9rem;
+          margin-top: 8rem;
         }
       }
     }
@@ -401,7 +441,7 @@
 <template>
   <div class="milestore">
     <div class="milestore-subtitle">MILESTONE</div>
-    <div class="milestore-title">里程碑</div>
+    <div class="milestore-title">银泰大事件</div>
     <div class="content">
       <div class="left">
         <div class="left-block">
@@ -476,7 +516,7 @@
           </div>
         </div>
 
-        <div class="left-block" style="margin-top:10rem">
+        <div class="left-block">
           <div class="left-block-top">
             <div class="year">2021年</div>
             <div class="year-line"></div>
@@ -491,6 +531,11 @@
               蝉联“中国卓越管理公司”大奖
               <div class="left-point"></div>
             </div>
+          </div>
+        </div>
+        <div class="left-block">
+          <div class="left-block-top">
+            <div class="year-point"></div>
           </div>
         </div>
       </div>
