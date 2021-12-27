@@ -66,7 +66,7 @@
         .membershipstoremarket-bottom-title {
           margin-top: 2rem;
           margin-bottom: 2rem;
-          font-size: 1rem;
+          font-size: 1.5625rem;
           font-family: SourceHanSansSC-Bold;
           font-weight: bold;
           color: #7f7f7f;
