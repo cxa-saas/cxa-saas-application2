@@ -1,55 +1,37 @@
 <style lang="scss">
+@font-face {
+  font-family: "SourceHanSansCN-Heavy";
+  src: url("/media/yintai/font/SourceHanSansCN-Heavy.otf") format("opentype");
+}
+@font-face {
+  font-family: "SourceHanSansCN-Regular";
+  src: url("/media/yintai/font/SourceHanSansCN-Regular.otf") format("opentype");
+}
 @media screen and (min-width: 55rem) {
-  .el-carousel__item {
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .el-carousel__indicators {
-  }
-  // .el-carousel__arrow--left {
-  //   display: block !important;
-  //   right: 10% !important;
-  // }
-  // .el-carousel__arrow--right {
-  //   display: block !important;
-  // }
-  .homepagecontentview {
-    margin-top: 5rem;
+  .homebanner {
+    margin-top: 4.5rem;
     width: 100%;
-    background-color: #f5f5f5;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 50.75rem;
-  }
-  .content-carousel {
-    width: 100%;
-    height: 100%;
-  }
-  .homepagecontentview-item {
-    width: 100%;
-    height: 50.75rem;
-    background-size: cover;
+    background-image: url("/media/yintai/4.jpeg");
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 12.5%;
+    padding-bottom: 12.5%;
+    padding-left: 5%;
     .homebanner-context {
       max-width: 1080px;
       width: 80%;
-      height: 50.75rem;
-
+      height: 15rem;
       display: flex;
       flex-direction: column;
-      align-content: flex-start;
-      justify-content: center;
-      padding-left: 10%;
+      justify-content: flex-start;
       .homebanner-title {
         h1 {
-          font-family: SourceHanSansCN-Heavy, "Lato", Helvetica, Arial, Lucida,
-            sans-serif !important;
+          font-family: SourceHanSansCN-Heavy,"Lato", Helvetica, Arial, Lucida, sans-serif !important;
           font-weight: 900 !important;
           text-transform: uppercase !important;
           font-size: 5rem !important;
@@ -68,8 +50,7 @@
         margin-bottom: 1.187rem;
         h3 {
           font-size: 22px;
-          font-family: SourceHanSansCN-Regular, "Lato", Helvetica, Arial, Lucida,
-            sans-serif !important;
+          font-family: SourceHanSansCN-Regular,"Lato", Helvetica, Arial, Lucida, sans-serif !important;
           font-weight: 500;
           color: #ffffff;
           // text-shadow: 0px 2px 3px rgba(4, 0, 0, 0.93);
@@ -118,60 +99,32 @@
   }
 }
 @media screen and (max-width: 55rem) {
-  .el-carousel__item {
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .el-carousel__indicators {
-  }
-  // .el-carousel__arrow--left {
-  //   display: block !important;
-  //   right: 10% !important;
-  // }
-  // .el-carousel__arrow--right {
-  //   display: block !important;
-  // }
-  .homepagecontentview {
-    margin-top: 5rem;
+  .homebanner {
+    margin-top: 4.5rem;
     width: 100%;
-    background-color: #f5f5f5;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 20.75rem;
-  }
-  .content-carousel {
-    width: 100%;
-    height: 100%;
-  }
-  .homepagecontentview-item {
-    width: 100%;
-    height: 20.75rem;
-    background-size: cover;
+    background-image: url("/media/yintai/4.jpeg");
     background-repeat: no-repeat;
-    background-position: center 40%;
+    background-size: cover;
+    background-position: top center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20.5%;
+    padding-bottom: 20.5%;
     .homebanner-context {
       max-width: 1080px;
       width: 80%;
-      height: 20.75rem;
-
+      height: 15rem;
       display: flex;
       flex-direction: column;
-      align-content: flex-start;
-      justify-content: center;
-      padding-left: 10%;
+      justify-content: flex-start;
       .homebanner-title {
         h1 {
-          font-family: SourceHanSansCN-Heavy, "Lato", Helvetica, Arial, Lucida,
-            sans-serif !important;
+          font-family:  SourceHanSansCN-Heavy,"Lato", Helvetica, Arial, Lucida, sans-serif !important;
           font-weight: 900 !important;
           text-transform: uppercase !important;
-          font-size: 2.5rem !important;
+          font-size: 4rem !important;
           letter-spacing: 2px !important;
           line-height: 1.2em !important;
           text-shadow: 0em 0.1em 0.6em rgba(0, 0, 0, 0.24) !important;
@@ -186,9 +139,8 @@
         margin-top: 1.187rem;
         margin-bottom: 1.187rem;
         h3 {
-          font-size: 1.6rem;
-          font-family: SourceHanSansCN-Regular, "Lato", Helvetica, Arial, Lucida,
-            sans-serif !important;
+          font-size: 22px;
+          font-family: SourceHanSansCN-Regular,"Lato", Helvetica, Arial, Lucida, sans-serif !important;
           font-weight: 500;
           color: #ffffff;
           // text-shadow: 0px 2px 3px rgba(4, 0, 0, 0.93);
@@ -239,60 +191,45 @@
 </style>
 
 <template>
-  <div class="homepagecontentview">
-    <el-carousel :interval="4000" :height="carHeight" class="content-carousel">
-      <el-carousel-item v-for="item in imageList" :key="item">
-        <div
-          class="homepagecontentview-item"
-          :style="`background-image:url('${item}')`"
-        >
-          <transition name="fade-in-up">
-            <div class="homebanner-context">
-              <div class="homebanner-title"><h1>银泰百货</h1></div>
-              <div class="sub-title">
-                <h3>你的一站式购物娱乐专家</h3>
-              </div>
-              <a href="#/about"><GetMore></GetMore></a>
-            </div>
-          </transition>
-        </div>
-      </el-carousel-item>
-    </el-carousel>
+  <div class="homebanner" ref="banner">
+    <transition name="fade-in-up">
+      <div v-show="this.active" class="homebanner-context">
+        <div class="homebanner-title"><h1>银泰百货</h1></div>
+        <div class="sub-title"><h3>你的一站式购物娱乐专家</h3></div>
+        <a href="#/about"><GetMore></GetMore></a>
+      </div>
+    </transition>
   </div>
 </template>
-
 <script>
-export default {
-  name: "homepagecontentview",
-  components: {},
+import GetMore from "@/yintai/view/component/GetMore";
 
+export default {
+  name: "homebanner",
+  components: { GetMore },
   data() {
     return {
-      imageList: [
-        "http://118.25.186.104:9000/yintai/image/homepage-1.jpg",
-        "http://118.25.186.104:9000/yintai/image/homepage-2.jpg",
-        "http://118.25.186.104:9000/yintai/image/homepage-3.jpg",
-        "http://118.25.186.104:9000/yintai/image/homepage-4.jpg",
-      ],
-      screenWidth: document.body.clientWidth,
-      carHeight: "50.75rem",
+      active: false,
     };
   },
   mounted() {
-    const that = this;
-    if (this.screenWidth < 870) {
-      this.carHeight = "20.75rem";
-    } else {
-      this.carHeight = "50.75rem";
+    window.addEventListener("scroll", this.getDistance); //绑定页面滚动事件
+    this.distance = this.$refs.banner.getBoundingClientRect().bottom;
+    if (this.distance > 0 && this.active == false) {
+      this.active = true;
     }
-    window.onresize = () => {
-      return (() => {
-        window.screenWidth = document.body.clientWidth;
-        that.screenWidth = window.screenWidth;
-        // if()
-      })();
-    };
   },
-  methods: {},
+  methods: {
+    getDistance() {
+      this.distance = this.$refs.banner.getBoundingClientRect().bottom;
+
+      if (this.distance > 0 && this.active == false) {
+        this.active = true;
+      }
+      if (this.distance < 0 && this.active == true) {
+        this.active = false;
+      }
+    },
+  },
 };
 </script>
