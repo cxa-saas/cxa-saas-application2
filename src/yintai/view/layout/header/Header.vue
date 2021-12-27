@@ -313,7 +313,7 @@
         </div>
         <div class="nav-item"><a href="#/cloudPicture">银泰云图</a></div>
         <div class="nav-item show-service">
-          <a href="#/membershipStore">银泰服务</a>
+          <a href="#">银泰服务</a>
           <div
             class="nav-service-list"
             v-bind:class="{

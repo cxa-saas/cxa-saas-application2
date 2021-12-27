@@ -205,9 +205,9 @@
               }
             }
             .membershipcomparison-table-arrive-item-member {
-              
               width: 32%;
               font-family: SourceHanSansSC-Light;
+              position: relative;
             }
             .membershipcomparison-table-arrive-item-intime365 {
               font-family: SourceHanSansSC-Light;
@@ -607,7 +607,16 @@
             </div>
             <div class="membershipcomparison-table-shop-item-member">无</div>
             <div class="membershipcomparison-table-shop-item-intime365">
-              9折
+              <div
+                style="
+                  position: relative;
+                  left: -5px;
+                  font-family: SourceHanSansSC-Light;
+                  white-space: nowrap;
+                "
+              >
+                9折
+              </div>
             </div>
           </div>
           <div
@@ -641,7 +650,16 @@
               </div>
             </div>
             <div class="membershipcomparison-table-arrive-item-member">
-              消费足额抵扣
+              <div
+                style="
+                  position: relative;
+                  left: -30px;
+                  font-family: SourceHanSansSC-Light;
+                  white-space: nowrap;
+                "
+              >
+                消费足额抵扣
+              </div>
             </div>
             <div class="membershipcomparison-table-arrive-item-intime365">
               √
@@ -666,7 +684,16 @@
             </div>
             <div class="membershipcomparison-table-arrive-item-member">√</div>
             <div class="membershipcomparison-table-arrive-item-intime365">
-              5折
+              <div
+                style="
+                  position: relative;
+                  left: -5px;
+                  font-family: SourceHanSansSC-Light;
+                  white-space: nowrap;
+                "
+              >
+                5折
+              </div>
             </div>
           </div>
           <div class="membershipcomparison-table-arrive-item">
@@ -677,7 +704,16 @@
             </div>
             <div class="membershipcomparison-table-arrive-item-member">√</div>
             <div class="membershipcomparison-table-arrive-item-intime365">
-              5折
+              <div
+                style="
+                  position: relative;
+                  left: -5px;
+                  font-family: SourceHanSansSC-Light;
+                  white-space: nowrap;
+                "
+              >
+                5折
+              </div>
             </div>
           </div>
           <div

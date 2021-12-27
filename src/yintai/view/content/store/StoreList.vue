@@ -93,12 +93,15 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                font-size: 1.375rem;
-                font-family: SourceHanSansSC-Regular;
-                font-weight: 400;
-                color: #000000;
-                line-height: 2.625rem;
-                opacity: 0.5;
+
+                .store-item-list-right-item-text {
+                  font-size: 1.375rem;
+                  font-family: SourceHanSansSC-Regular;
+                  font-weight: 400;
+                  color: #000000;
+                  line-height: 2.625rem;
+                  opacity: 0.5;
+                }
               }
             }
           }
@@ -150,7 +153,7 @@
         .store-item-list {
           width: 100%;
           box-shadow: 0px 0px 4px #dfd9d9a6;
-          
+
           display: flex;
           flex-direction: column;
           .store-item-list-left {
@@ -179,12 +182,15 @@
                 flex-direction: column;
                 align-items: center;
                 margin-top: 1rem;
-                font-size: 1.375rem;
-                font-family: SourceHanSansSC-Regular;
-                font-weight: 400;
-                color: #000000;
-                line-height: 2.625rem;
-                opacity: 0.5;
+
+                .store-item-list-right-item-text {
+                  line-height: 2.625rem;
+                  opacity: 0.5;
+                  font-size: 1.375rem;
+                  font-family: SourceHanSansSC-Regular;
+                  font-weight: 400;
+                  color: #000000;
+                }
               }
             }
           }
@@ -210,46 +216,182 @@
           <div class="store-item-list-right">
             <div class="store-item-list-right-list">
               <div class="store-item-list-right-item">
-                <a href="#/store_inner"><div class="store-item-list-right-item-text">杭州临平店</div></a>
-                <div class="store-item-list-right-item-text">杭州城西店</div>
-                <div class="store-item-list-right-item-text">杭州富阳店</div>
-                <div class="store-item-list-right-item-text">杭州庆春店</div>
-                <div class="store-item-list-right-item-text">杭州武林店</div>
-                <div class="store-item-list-right-item-text">杭州下沙店</div>
-                <div class="store-item-list-right-item-text">文化广场店</div>
-                <div class="store-item-list-right-item-text">西湖银泰城</div>
-                <div class="store-item-list-right-item-text">中大银泰城</div>
-                <div class="store-item-list-right-item-text">湖州银泰城</div>
-                <div class="store-item-list-right-item-text">慈溪银泰城</div>
-                <div class="store-item-list-right-item-text">海宁银泰城</div>
+                <a href="#/store_inner"
+                  ><div class="store-item-list-right-item-text">
+                    杭州临平店
+                  </div></a
+                >
+                <a href="#/store_inner"
+                  ><div class="store-item-list-right-item-text">
+                    杭州城西店
+                  </div></a
+                >
+                <a href="#/store_inner"
+                  ><div class="store-item-list-right-item-text">
+                    杭州富阳店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    杭州庆春店
+                  </div></a
+                >
+                <a href="#/store_inner"
+                  ><div class="store-item-list-right-item-text">
+                    杭州武林店
+                  </div></a
+                >
+                <a href="#/store_inner"
+                  ><div class="store-item-list-right-item-text">
+                    杭州下沙店
+                  </div></a
+                >
+                <a href="#/store_inner"
+                  ><div class="store-item-list-right-item-text">
+                    文化广场店
+                  </div></a
+                >
+                <a href="#/store_inner"
+                  ><div class="store-item-list-right-item-text">
+                    西湖银泰城
+                  </div></a
+                >
+                <a href="#/store_inner"
+                  ><div class="store-item-list-right-item-text">
+                    中大银泰城
+                  </div></a
+                >
+                <a href="#/store_inner"
+                  ><div class="store-item-list-right-item-text">
+                    湖州银泰城
+                  </div></a
+                >
+                <a href="#/store_inner"
+                  ><div class="store-item-list-right-item-text">
+                    慈溪银泰城
+                  </div></a
+                >
+                <a href="#/store_inner"
+                  ><div class="store-item-list-right-item-text">
+                    海宁银泰城
+                  </div></a
+                >
               </div>
 
               <div class="store-item-list-right-item">
-                <div class="store-item-list-right-item-text">环球银泰城</div>
-                <div class="store-item-list-right-item-text">宁波东门店</div>
-                <div class="store-item-list-right-item-text">宁波江东店</div>
-                <div class="store-item-list-right-item-text">宁波天一店</div>
-                <div class="store-item-list-right-item-text">宁波鄞州店</div>
-                <div class="store-item-list-right-item-text">绍兴银泰城</div>
-                <div class="store-item-list-right-item-text">舟山临城店</div>
-                <div class="store-item-list-right-item-text">绍兴柯桥店</div>
-                <div class="store-item-list-right-item-text">嘉善托管项目</div>
-                <div class="store-item-list-right-item-text">镇海托管项目</div>
-                <div class="store-item-list-right-item-text">滨湖银泰城</div>
-                <div class="store-item-list-right-item-text">温州世贸店</div>
+                <a href="#/store_inner"
+                  ><div class="store-item-list-right-item-text">
+                    环球银泰城
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    宁波东门店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    宁波江东店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    宁波天一店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    宁波鄞州店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    绍兴银泰城
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    舟山临城店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    绍兴柯桥店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    嘉善托管项目
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    镇海托管项目
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    滨湖银泰城
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    温州世贸店
+                  </div></a
+                >
               </div>
 
               <div class="store-item-list-right-item">
-                <div class="store-item-list-right-item-text">温州乐清店</div>
-                <div class="store-item-list-right-item-text">温州瓯海店</div>
-                <div class="store-item-list-right-item-text">金华银泰城</div>
-                <div class="store-item-list-right-item-text">金华江南店</div>
-                <div class="store-item-list-right-item-text">临海银泰城</div>
-                <div class="store-item-list-right-item-text">温岭银泰城</div>
-                <div class="store-item-list-right-item-text">杭州之江店</div>
-                <div class="store-item-list-right-item-text">杭州新塘项目</div>
-                <div class="store-item-list-right-item-text">滨江银泰城</div>
-                <div class="store-item-list-right-item-text">海宁鹃湖店</div>
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    温州乐清店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    温州瓯海店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    金华银泰城
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    金华江南店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    临海银泰城
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    温岭银泰城
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    杭州之江店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    杭州新塘项目
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    滨江银泰城
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    海宁鹃湖店
+                  </div></a
+                >
               </div>
             </div>
           </div>
@@ -267,12 +409,36 @@
           <div class="store-item-list-right">
             <div class="store-item-list-right-list">
               <div class="store-item-list-right-item">
-                <div class="store-item-list-right-item-text">蚌埠银泰城</div>
-                <div class="store-item-list-right-item-text">高新银泰城</div>
-                <div class="store-item-list-right-item-text">合肥银泰城</div>
-                <div class="store-item-list-right-item-text">合肥银泰中心</div>
-                <div class="store-item-list-right-item-text">芜湖银泰城</div>
-                <div class="store-item-list-right-item-text">金华之心店</div>
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    蚌埠银泰城
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    高新银泰城
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    合肥银泰城
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    合肥银泰中心
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    芜湖银泰城
+                  </div></a
+                >
+                <a href="#/store_inner"
+                  ><div class="store-item-list-right-item-text">
+                    金华之心店
+                  </div></a
+                >
               </div>
             </div>
           </div>
@@ -290,15 +456,51 @@
           <div class="store-item-list-right">
             <div class="store-item-list-right-list">
               <div class="store-item-list-right-item">
-                <div class="store-item-list-right-item-text">开元安康店</div>
-                <div class="store-item-list-right-item-text">开元宝鸡店</div>
-                <div class="store-item-list-right-item-text">开元西旺店</div>
-                <div class="store-item-list-right-item-text">开元钟楼店</div>
-                <div class="store-item-list-right-item-text">开元咸阳店</div>
-                <div class="store-item-list-right-item-text">宝鸡银泰城</div>
-                <div class="store-item-list-right-item-text">西安小寨店</div>
-                <div class="store-item-list-right-item-text">西安钟楼店</div>
-                <div class="store-item-list-right-item-text">曲江银泰城</div>
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    开元安康店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    开元宝鸡店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    开元西旺店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    开元钟楼店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    开元咸阳店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    宝鸡银泰城
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    西安小寨店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    西安钟楼店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    曲江银泰城
+                  </div></a
+                >
               </div>
             </div>
           </div>
@@ -316,16 +518,46 @@
           <div class="store-item-list-right">
             <div class="store-item-list-right-list">
               <div class="store-item-list-right-item">
-                <div class="store-item-list-right-item-text">武汉银泰城</div>
-                <div class="store-item-list-right-item-text">鄂州国贸店</div>
-                <div class="store-item-list-right-item-text">荆门银泰城</div>
-                <div class="store-item-list-right-item-text">咸宁咸安店</div>
-                <div class="store-item-list-right-item-text">孝感银泰城</div>
-                <div class="store-item-list-right-item-text">随州新世纪</div>
-                <div class="store-item-list-right-item-text">
-                  随州新世纪水西门店
-                </div>
-                <div class="store-item-list-right-item-text">湖北仙桃商厦</div>
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    武汉银泰城
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    鄂州国贸店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    荆门银泰城
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    咸宁咸安店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    孝感银泰城
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    随州新世纪
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    随州新世纪水西门店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    湖北仙桃商厦
+                  </div></a
+                >
               </div>
             </div>
           </div>
@@ -343,10 +575,16 @@
           <div class="store-item-list-right">
             <div class="store-item-list-right-list">
               <div class="store-item-list-right-item">
-                <div class="store-item-list-right-item-text">厦门集美店</div>
-                <div class="store-item-list-right-item-text">
-                  厦门国贸中心店
-                </div>
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    厦门集美店
+                  </div></a
+                >
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    厦门国贸中心店
+                  </div></a
+                >
               </div>
             </div>
           </div>
@@ -364,7 +602,11 @@
           <div class="store-item-list-right">
             <div class="store-item-list-right-list">
               <div class="store-item-list-right-item">
-                <div class="store-item-list-right-item-text">北京大红门店</div>
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    北京大红门店
+                  </div></a
+                >
               </div>
             </div>
           </div>
@@ -382,7 +624,11 @@
           <div class="store-item-list-right">
             <div class="store-item-list-right-list">
               <div class="store-item-list-right-item">
-                <div class="store-item-list-right-item-text">唐山银泰城</div>
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    唐山银泰城
+                  </div></a
+                >
               </div>
             </div>
           </div>
@@ -400,7 +646,11 @@
           <div class="store-item-list-right">
             <div class="store-item-list-right-list">
               <div class="store-item-list-right-item">
-                <div class="store-item-list-right-item-text">柳州银泰城</div>
+                <a href="#/store_inner">
+                  <div class="store-item-list-right-item-text">
+                    柳州银泰城
+                  </div></a
+                >
               </div>
             </div>
           </div>

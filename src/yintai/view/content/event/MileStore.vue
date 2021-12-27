@@ -111,13 +111,13 @@
             }
           }
           &:nth-child(2) {
-            margin-top: 5rem;
+            margin-top: -3rem;
           }
           &:nth-child(3) {
-            margin-top: 5rem;
+            margin-top: -3rem;
           }
           &:nth-child(4) {
-            margin-top: 5rem;
+            margin-top: -3rem;
           }
         }
         .left-block:first-child {
@@ -129,7 +129,7 @@
       }
       .line {
         width: 5px;
-        height: 2000px;
+        height: 1700px;
         background: #e5004f;
       }
       .right {
@@ -206,14 +206,17 @@
             margin-top: 0rem;
           }
           &:nth-child(2) {
-            margin-top: 5rem;
+            margin-top: -3rem;
           }
           &:nth-child(3) {
+            margin-top: -3rem;
+          }
+          &:nth-child(4) {
             margin-top: 5rem;
           }
         }
         .right-block:first-child {
-          margin-top: 14rem;
+          margin-top: 11rem;
         }
       }
     }
@@ -323,13 +326,16 @@
             }
           }
           &:nth-child(2) {
-            margin-top: -2rem;
+            margin-top: -8rem;
           }
           &:nth-child(3) {
-            margin-top: -2rem;
+            margin-top: -8rem;
           }
           &:nth-child(4) {
-            margin-top: -2rem;
+            margin-top: -8rem;
+          }
+          &:nth-child(5) {
+            margin-top: 16rem;
           }
         }
         .left-block:first-child {
@@ -341,8 +347,8 @@
       }
       .line {
         width: 3px;
-        height: 1000px;
-        
+        height: 940px;
+
         background: #e5004f;
       }
       .right {
@@ -420,17 +426,17 @@
             margin-top: 0rem;
           }
           &:nth-child(2) {
-            margin-top: -2rem;
+            margin-top: -8rem;
           }
           &:nth-child(3) {
-            margin-top: -2rem;
+            margin-top: -8rem;
           }
           &:nth-child(4) {
-            margin-top: -2rem;
+            margin-top: 4rem;
           }
         }
         .right-block:first-child {
-          margin-top: 8rem;
+          margin-top: 5rem;
         }
       }
     }

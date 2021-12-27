@@ -213,7 +213,7 @@
             <span> 银泰百货，专柜直供</span>
             <span> 一线大牌，奢侈不停，好货一站购</span>
           </div>
-          <a href="#/store"
+          <a href="#/membershipStore"
             ><ButtonRight style="margin-left: 2rem"></ButtonRight
           ></a>
         </div>
