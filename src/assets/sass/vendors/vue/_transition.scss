@@ -25,6 +25,33 @@
   animation-name: fadeInUp;
 }
 
+@keyframes fadeInUp2 {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.fade-in-up2-leave-to {
+  opacity: 0;
+  /*transition: opacity 0.3s;*/
+}
+
+.fade-in-up2-enter {
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+}
+
+.fade-in-up2-enter-to {
+  opacity: 0;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-name: fadeInUp;
+}
+
 
 
 @keyframes fadeInRight {

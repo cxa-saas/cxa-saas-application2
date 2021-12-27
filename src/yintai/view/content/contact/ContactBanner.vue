@@ -123,7 +123,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      .title {
+      .contact-title {
         h1 {
           font-family: "SourceHanSansCN-Heavy", "Lato", Helvetica, Arial, Lucida;
           font-weight: 900 !important;

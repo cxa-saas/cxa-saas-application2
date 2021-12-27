@@ -19,8 +19,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 12.5%;
-    padding-bottom: 12.5%;
+    padding-top: 8.5%;
+    padding-bottom: 16.5%;
 
     .context {
       max-width: 1080px;
@@ -114,7 +114,7 @@
       .membershipstorebanner-title {
         h1 {
           font-size: 3rem;
-          font-family: Source Han Sans SC;
+          font-family: SourceHanSansSC-Heavy;
           font-weight: 800;
           color: #ffffff;
           text-shadow: 0px 1px 1px rgba(4, 0, 0, 0.93);
@@ -178,8 +178,9 @@
   <div class="membershipstorebanner" ref="membershipbanner">
     <transition name="fade-in-up">
       <div v-show="this.active" class="context">
-        <div class="membershipstorebanner-title"><h1>INTIME365会员</h1></div>
+        <div class="membershipstorebanner-title"><h1>云店</h1></div>
         <div class="membershipstorebanner-title"><h1>玩转新零售</h1></div>
+        <div class="membershipstorebanner-title"><h1>INTIME365会员</h1></div>
         <div class="sub-title"><h3>银泰百货·专柜直供</h3></div>
         <div class="sub-title"><h3>一线大牌｜奢侈不停｜好货一站购</h3></div>
       </div>

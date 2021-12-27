@@ -47,66 +47,67 @@
         .left-block {
           width: 100%;
           height: 25rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: flex-end;
-          width: 100%;
           margin-top: 10rem;
-          .left-block-top {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            .year {
-              font-size: 3rem;
-              font-family: SourceHanSansCN-Heavy;
-              font-weight: bold;
-              color: #000000;
-              opacity: 0.96;
-              background: linear-gradient(0deg, #e5004f 0%, #453a94 100%);
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-            }
-            .year-line {
-              width: 122px;
-              height: 5px;
-              background: #e5004f;
-              border-radius: 3px;
-              margin-left: 1rem;
-              margin-right: -2px;
-            }
-            .year-point {
-              width: 20px;
-              height: 20px;
-              background: #e5004f;
-              border-radius: 50%;
-              margin-right: -1rem;
-            }
-          }
-          .left-block-event-list {
+          .left-block-container {
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            justify-content: flex-start;
             align-items: flex-end;
-            margin-right: 9rem;
-            .left-block-event-item {
+            .left-block-top {
               display: flex;
               flex-direction: row;
-              align-items: flex-start;
-              font-size: 1.5625rem;
-              font-family: SourceHanSansSC-Heavy;
-              font-weight: 800;
-              color: #4a4a4a;
-              line-height: 3.125rem;
-              white-space: nowrap;
-              .left-point {
-                margin-top: 1rem;
-                margin-right: 1rem;
+              align-items: center;
+              .year {
+                font-size: 3rem;
+                font-family: SourceHanSansCN-Heavy;
+                font-weight: bold;
+                color: #000000;
+                opacity: 0.96;
+                background: linear-gradient(0deg, #e5004f 0%, #453a94 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+              }
+              .year-line {
+                width: 122px;
+                height: 5px;
+                background: #e5004f;
+                border-radius: 3px;
                 margin-left: 1rem;
-                width: 1rem;
-                height: 1rem;
-                background-color: #e5004f;
+                margin-right: -2px;
+              }
+              .year-point {
+                width: 20px;
+                height: 20px;
+                background: #e5004f;
                 border-radius: 50%;
+                margin-right: -1rem;
+              }
+            }
+            .left-block-event-list {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-end;
+              align-items: flex-end;
+              margin-right: 9rem;
+              .left-block-event-item {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                font-size: 1.5625rem;
+                font-family: SourceHanSansSC-Heavy;
+                font-weight: 800;
+                color: #4a4a4a;
+                line-height: 3.125rem;
+                white-space: nowrap;
+                .left-point {
+                  margin-top: 1rem;
+                  margin-right: 1rem;
+                  margin-left: 1rem;
+                  width: 1rem;
+                  height: 1rem;
+                  background-color: #e5004f;
+                  border-radius: 50%;
+                }
               }
             }
           }
@@ -141,64 +142,66 @@
         // background-color: brown;
         .right-block {
           height: 25rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: flex-start;
+
           width: 100%;
           margin-top: 10rem;
-
-          .right-block-top {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            .year {
-              font-size: 3rem;
-              font-family: SourceHanSansCN-Heavy;
-              font-weight: bold;
-              color: #000000;
-              opacity: 0.96;
-              background: linear-gradient(0deg, #e5004f 0%, #453a94 100%);
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-            }
-            .year-line {
-              width: 122px;
-              height: 5px;
-              background: #e5004f;
-              border-radius: 3px;
-              margin-left: -1rem;
-            }
-            .year-point {
-              width: 22px;
-              height: 22px;
-              background: #e5004f;
-              border-radius: 50%;
-              margin-left: -1rem;
-            }
-          }
-          .right-block-event-list {
+          .right-block-container {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            margin-left: 9rem;
-            .right-block-event-item {
+            align-items: flex-start;
+            .right-block-top {
               display: flex;
               flex-direction: row;
               align-items: center;
-              font-size: 1.5625rem;
-              font-family: SourceHanSansSC-Heavy;
-              font-weight: 800;
-              color: #4a4a4a;
-              line-height: 3.125rem;
-              white-space: nowrap;
-              .point {
-                margin-left: 1rem;
-                margin-right: 1rem;
-                width: 1rem;
-                height: 1rem;
+              .year {
+                font-size: 3rem;
+                font-family: SourceHanSansCN-Heavy;
+                font-weight: bold;
+                color: #000000;
+                opacity: 0.96;
+                background: linear-gradient(0deg, #e5004f 0%, #453a94 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+              }
+              .year-line {
+                width: 122px;
+                height: 5px;
+                background: #e5004f;
+                border-radius: 3px;
+                margin-left: -1rem;
+              }
+              .year-point {
+                width: 22px;
+                height: 22px;
                 background: #e5004f;
                 border-radius: 50%;
+                margin-left: -1rem;
+              }
+            }
+            .right-block-event-list {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              margin-left: 9rem;
+              .right-block-event-item {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                font-size: 1.5625rem;
+                font-family: SourceHanSansSC-Heavy;
+                font-weight: 800;
+                color: #4a4a4a;
+                line-height: 3.125rem;
+                white-space: nowrap;
+                .point {
+                  margin-left: 1rem;
+                  margin-right: 1rem;
+                  width: 1rem;
+                  height: 1rem;
+                  background: #e5004f;
+                  border-radius: 50%;
+                }
               }
             }
           }
@@ -450,162 +453,202 @@
     <div class="milestore-title">银泰大事件</div>
     <div class="content">
       <div class="left">
-        <div class="left-block">
-          <div class="left-block-top">
-            <div class="year">1998年</div>
-            <div class="year-line"></div>
-            <div class="year-point"></div>
-          </div>
-          <div class="left-block-event-list">
-            <div class="left-block-event-item">
-              初创 第一家店杭州武林银泰开业
-              <div class="left-point"></div>
+        <div ref="left_1" class="left-block">
+          <transition name="fade-in-up2">
+            <div v-show="this.active_left_1" class="left-block-container">
+              <div class="left-block-top">
+                <div class="year">1998年</div>
+                <div class="year-line"></div>
+                <div class="year-point"></div>
+              </div>
+              <div key="2" class="left-block-event-list">
+                <div class="left-block-event-item">
+                  初创 第一家店杭州武林银泰开业
+                  <div class="left-point"></div>
+                </div>
+              </div>
             </div>
-          </div>
+          </transition>
         </div>
 
-        <div class="left-block">
-          <div class="left-block-top">
-            <div class="year">2007年</div>
-            <div class="year-line"></div>
-            <div class="year-point"></div>
-          </div>
-          <div class="left-block-event-list">
-            <div class="left-block-event-item">
-              港股上市
-              <div class="left-point"></div>
+        <div ref="left_2" class="left-block">
+          <transition name="fade-in-up2">
+            <div v-show="this.active_left_2" class="left-block-container">
+              <div class="left-block-top">
+                <div class="year">2007年</div>
+                <div class="year-line"></div>
+                <div class="year-point"></div>
+              </div>
+              <div class="left-block-event-list">
+                <div class="left-block-event-item">
+                  港股上市
+                  <div class="left-point"></div>
+                </div>
+              </div>
             </div>
-          </div>
+          </transition>
         </div>
 
-        <div class="left-block">
-          <div class="left-block-top">
-            <div class="year">2014-2015年</div>
-            <div class="year-line"></div>
-            <div class="year-point"></div>
-          </div>
-          <div class="left-block-event-list">
-            <div class="left-block-event-item">
-              阿里战略投资
-              <div class="left-point"></div>
+        <div ref="left_3" class="left-block">
+          <transition name="fade-in-up2">
+            <div v-show="this.active_left_3" class="left-block-container">
+              <div class="left-block-top">
+                <div class="year">2014-2015年</div>
+                <div class="year-line"></div>
+                <div class="year-point"></div>
+              </div>
+              <div class="left-block-event-list">
+                <div class="left-block-event-item">
+                  阿里战略投资
+                  <div class="left-point"></div>
+                </div>
+              </div>
             </div>
-          </div>
+          </transition>
         </div>
 
-        <div class="left-block">
-          <div class="left-block-top">
-            <div class="year">2019年</div>
-            <div class="year-line"></div>
-            <div class="year-point"></div>
-          </div>
-          <div class="left-block-event-list">
-            <div class="left-block-event-item">
-              启动私有化，探索新商业体系建设
-              <div class="left-point"></div>
+        <div ref="left_4" class="left-block">
+          <transition name="fade-in-up2">
+            <div v-show="this.active_left_3" class="left-block-container">
+              <div class="left-block-top">
+                <div class="year">2019年</div>
+                <div class="year-line"></div>
+                <div class="year-point"></div>
+              </div>
+              <div class="left-block-event-list">
+                <div class="left-block-event-item">
+                  启动私有化，探索新商业体系建设
+                  <div class="left-point"></div>
+                </div>
+                <div class="left-block-event-item">
+                  中国连锁百强
+                  <div class="left-point"></div>
+                </div>
+                <div class="left-block-event-item">
+                  中国服务业企业500强
+                  <div class="left-point"></div>
+                </div>
+                <div class="left-block-event-item">
+                  联合国工业发展组织全球科技创新大会战略合作伙伴
+                  <div class="left-point"></div>
+                </div>
+                <div class="left-block-event-item">
+                  蝉联中国连锁业员工最喜爱公司
+                  <div class="left-point"></div>
+                </div>
+              </div>
             </div>
-            <div class="left-block-event-item">
-              中国连锁百强
-              <div class="left-point"></div>
-            </div>
-            <div class="left-block-event-item">
-              中国服务业企业500强
-              <div class="left-point"></div>
-            </div>
-            <div class="left-block-event-item">
-              联合国工业发展组织全球科技创新大会战略合作伙伴
-              <div class="left-point"></div>
-            </div>
-            <div class="left-block-event-item">
-              蝉联中国连锁业员工最喜爱公司
-              <div class="left-point"></div>
-            </div>
-          </div>
+          </transition>
         </div>
 
-        <div class="left-block">
-          <div class="left-block-top">
-            <div class="year">2021年</div>
-            <div class="year-line"></div>
-            <div class="year-point"></div>
-          </div>
-          <div class="left-block-event-list">
-            <div class="left-block-event-item">
-              武林银泰诞生31个美妆“全国第一柜”
-              <div class="left-point"></div>
+        <div ref="left_5" class="left-block">
+          <transition name="fade-in-up2">
+            <div v-show="this.active_left_5" class="left-block-container">
+              <div class="left-block-top">
+                <div class="year">2021年</div>
+                <div class="year-line"></div>
+                <div class="year-point"></div>
+              </div>
+              <div class="left-block-event-list">
+                <div class="left-block-event-item">
+                  武林银泰诞生31个美妆“全国第一柜”
+                  <div class="left-point"></div>
+                </div>
+                <div class="left-block-event-item">
+                  蝉联“中国卓越管理公司”大奖
+                  <div class="left-point"></div>
+                </div>
+              </div>
             </div>
-            <div class="left-block-event-item">
-              蝉联“中国卓越管理公司”大奖
-              <div class="left-point"></div>
-            </div>
-          </div>
+          </transition>
         </div>
-        <div class="left-block">
-          <div class="left-block-top">
-            <div class="year-point"></div>
-          </div>
+        <div ref="left_6" class="left-block">
+          <transition name="fade-in-up2">
+            <div v-show="this.active_left_6" class="left-block-container">
+              <div v-show="this.active_left_6" class="left-block-top">
+                <div class="year-point"></div>
+              </div>
+            </div>
+          </transition>
         </div>
       </div>
       <div class="line"></div>
       <div class="right">
-        <div class="right-block">
-          <div class="right-block-top">
-            <div class="year-point"></div>
-            <div class="year-line"></div>
-            <div class="year">2000-2006年</div>
-          </div>
-          <div class="right-block-event-list">
-            <div class="right-block-event-item">
-              <span class="point"></span>密布浙江发展战略
+        <div ref="right_1" class="right-block">
+          <transition name="fade-in-up2">
+            <div v-show="this.active_right_1" class="right-block-container">
+              <div class="right-block-top">
+                <div class="year-point"></div>
+                <div class="year-line"></div>
+                <div class="year">2000-2006年</div>
+              </div>
+              <div class="right-block-event-list">
+                <div class="right-block-event-item">
+                  <span class="point"></span>密布浙江发展战略
+                </div>
+              </div>
             </div>
-          </div>
+          </transition>
         </div>
 
-        <div class="right-block">
-          <div class="right-block-top">
-            <div class="year-point"></div>
-            <div class="year-line"></div>
-            <div class="year">2010-2013年</div>
-          </div>
-          <div class="right-block-event-list">
-            <div class="right-block-event-item">
-              <span class="point"></span>全国布局
+        <div ref="right_2" class="right-block">
+          <transition name="fade-in-up2">
+            <div v-show="this.active_right_2" class="right-block-container">
+              <div class="right-block-top">
+                <div class="year-point"></div>
+                <div class="year-line"></div>
+                <div class="year">2010-2013年</div>
+              </div>
+              <div class="right-block-event-list">
+                <div class="right-block-event-item">
+                  <span class="point"></span>全国布局
+                </div>
+              </div>
             </div>
-          </div>
+          </transition>
         </div>
 
-        <div class="right-block">
-          <div class="right-block-top">
-            <div class="year-point"></div>
-            <div class="year-line"></div>
-            <div class="year">2017年</div>
-          </div>
-          <div class="right-block-event-list">
-            <div class="right-block-event-item">
-              <span class="point"></span>启动私有化，探索新商业体系建设
+        <div ref="right_3" class="right-block">
+          <transition name="fade-in-up2">
+            <div v-show="this.active_right_3" class="right-block-container">
+              <div class="right-block-top">
+                <div class="year-point"></div>
+                <div class="year-line"></div>
+                <div class="year">2017年</div>
+              </div>
+              <div class="right-block-event-list">
+                <div class="right-block-event-item">
+                  <span class="point"></span>启动私有化，探索新商业体系建设
+                </div>
+              </div>
             </div>
-          </div>
+          </transition>
         </div>
 
-        <div class="right-block">
-          <div class="right-block-top">
-            <div class="year-point"></div>
-            <div class="year-line"></div>
-            <div class="year">2020年</div>
-          </div>
-          <div class="right-block-event-list">
-            <div class="right-block-event-item">
-              <span class="point"></span>疫情下率先复苏恢复增长
+        <div ref="right_4" class="right-block">
+          <transition name="fade-in-up2">
+            <div v-show="this.active_right_4" class="right-block-container">
+              <div class="right-block-top">
+                <div class="year-point"></div>
+                <div class="year-line"></div>
+                <div class="year">2020年</div>
+              </div>
+              <div class="right-block-event-list">
+                <div class="right-block-event-item">
+                  <span class="point"></span>疫情下率先复苏恢复增长
+                </div>
+                <div class="right-block-event-item">
+                  <span class="point"></span>长三角服务企业100强
+                </div>
+                <div class="right-block-event-item">
+                  <span class="point"></span>浙江省成长性最快百强企业
+                </div>
+                <div class="right-block-event-item">
+                  <span class="point"></span>浙江省服务业百强企业
+                </div>
+              </div>
             </div>
-            <div class="right-block-event-item">
-              <span class="point"></span>长三角服务企业100强
-            </div>
-            <div class="right-block-event-item">
-              <span class="point"></span>浙江省成长性最快百强企业
-            </div>
-            <div class="right-block-event-item">
-              <span class="point"></span>浙江省服务业百强企业
-            </div>
-          </div>
+          </transition>
         </div>
       </div>
     </div>
@@ -617,9 +660,184 @@ export default {
   name: "milestore",
   components: {},
   data() {
-    return {};
+    return {
+      active_left_1: false,
+      active_left_2: false,
+      active_left_3: false,
+      active_left_4: false,
+      active_left_5: false,
+      active_left_6: false,
+      active_right_1: false,
+      active_right_2: false,
+      active_right_3: false,
+      active_right_4: false,
+    };
   },
-  mounted() {},
-  methods: {},
+  mounted() {
+    window.addEventListener("scroll", this.getDistance); //绑定页面滚动事件
+
+    this.distance_left_1 =
+      this.$refs.left_1.getBoundingClientRect().top - window.innerHeight;
+    if (this.distance_left_1 < 0 && this.active_left_1 == false) {
+      this.active_left_1 = true;
+    }
+
+    this.distance_left_2 =
+      this.$refs.left_2.getBoundingClientRect().top - window.innerHeight;
+    if (this.distance_left_2 < 0 && this.active_left_2 == false) {
+      this.active_left_2 = true;
+    }
+
+    this.distance_left_3 =
+      this.$refs.left_3.getBoundingClientRect().top - window.innerHeight;
+    if (this.distance_left_3 < 0 && this.active_left_3 == false) {
+      this.active_left_3 = true;
+    }
+
+    this.distance_left_4 =
+      this.$refs.left_4.getBoundingClientRect().top - window.innerHeight;
+    if (this.distance_left_4 < 0 && this.active_left_4 == false) {
+      this.active_left_4 = true;
+    }
+
+    this.distance_left_5 =
+      this.$refs.left_5.getBoundingClientRect().top - window.innerHeight;
+    if (this.distance_left_5 < 0 && this.active_left_5 == false) {
+      this.active_left_5 = true;
+    }
+
+    this.distance_left_6 =
+      this.$refs.left_6.getBoundingClientRect().top - window.innerHeight;
+    if (this.distance_left_6 < 0 && this.active_left_6 == false) {
+      this.active_left_6 = true;
+    }
+
+    this.distance_right_1 =
+      this.$refs.right_1.getBoundingClientRect().top - window.innerHeight;
+    if (this.distance_right_1 < 0 && this.active_right_1 == false) {
+      this.active_right_1 = true;
+    }
+
+    this.distance_right_2 =
+      this.$refs.right_2.getBoundingClientRect().top - window.innerHeight;
+    if (this.distance_right_2 < 0 && this.active_right_2 == false) {
+      this.active_right_2 = true;
+    }
+
+    this.distance_right_3 =
+      this.$refs.right_3.getBoundingClientRect().top - window.innerHeight;
+    if (this.distance_right_3 < 0 && this.active_right_3 == false) {
+      this.active_right_3 = true;
+    }
+
+    this.distance_right_4 =
+      this.$refs.right_4.getBoundingClientRect().top - window.innerHeight;
+    if (this.distance_right_4 < 0 && this.active_right_4 == false) {
+      this.active_right_4 = true;
+    }
+  },
+  methods: {
+    getDistance() {
+      this.distance_left_1 =
+        this.$refs.left_1.getBoundingClientRect().top - window.innerHeight;
+
+      if (this.distance_left_1 < 0 && this.active_left_1 == false) {
+        this.active_left_1 = true;
+      }
+      if (this.distance_left_1 > 0 && this.active_left_1 == true) {
+        this.active_left_1 = false;
+      }
+
+      this.distance_left_2 =
+        this.$refs.left_2.getBoundingClientRect().top - window.innerHeight;
+
+      if (this.distance_left_2 < 0 && this.active_left_2 == false) {
+        this.active_left_2 = true;
+      }
+      if (this.distance_left_2 > 0 && this.active_left_2 == true) {
+        this.active_left_2 = false;
+      }
+
+      this.distance_left_3 =
+        this.$refs.left_3.getBoundingClientRect().top - window.innerHeight;
+
+      if (this.distance_left_3 < 0 && this.active_left_3 == false) {
+        this.active_left_3 = true;
+      }
+      if (this.distance_left_3 > 0 && this.active_left_3 == true) {
+        this.active_left_3 = false;
+      }
+
+      this.distance_left_4 =
+        this.$refs.left_4.getBoundingClientRect().top - window.innerHeight;
+
+      if (this.distance_left_4 < 0 && this.active_left_4 == false) {
+        this.active_left_4 = true;
+      }
+      if (this.distance_left_4 > 0 && this.active_left_4 == true) {
+        this.active_left_4 = false;
+      }
+
+      this.distance_left_5 =
+        this.$refs.left_5.getBoundingClientRect().top - window.innerHeight;
+
+      if (this.distance_left_5 < 0 && this.active_left_5 == false) {
+        this.active_left_5 = true;
+      }
+      if (this.distance_left_5 > 0 && this.active_left_5 == true) {
+        this.active_left_5 = false;
+      }
+
+      this.distance_left_6 =
+        this.$refs.left_6.getBoundingClientRect().top - window.innerHeight;
+
+      if (this.distance_left_6 < 0 && this.active_left_6 == false) {
+        this.active_left_6 = true;
+      }
+      if (this.distance_left_6 > 0 && this.active_left_6 == true) {
+        this.active_left_6 = false;
+      }
+
+      this.distance_right_1 =
+        this.$refs.right_1.getBoundingClientRect().top - window.innerHeight;
+
+      if (this.distance_right_1 < 0 && this.active_right_1 == false) {
+        this.active_right_1 = true;
+      }
+      if (this.distance_right_1 > 0 && this.active_right_1 == true) {
+        this.active_right_1 = false;
+      }
+
+      this.distance_right_2 =
+        this.$refs.right_2.getBoundingClientRect().top - window.innerHeight;
+
+      if (this.distance_right_2 < 0 && this.active_right_2 == false) {
+        this.active_right_2 = true;
+      }
+      if (this.distance_right_2 > 0 && this.active_right_2 == true) {
+        this.active_right_2 = false;
+      }
+
+      this.distance_right_3 =
+        this.$refs.right_3.getBoundingClientRect().top - window.innerHeight;
+
+      if (this.distance_right_3 < 0 && this.active_right_3 == false) {
+        this.active_right_3 = true;
+      }
+      if (this.distance_right_3 > 0 && this.active_right_3 == true) {
+        this.active_right_3 = false;
+      }
+
+      this.distance_right_4 =
+        this.$refs.right_4.getBoundingClientRect().top - window.innerHeight;
+
+      if (this.distance_right_4 < 0 && this.active_right_4 == false) {
+        this.active_right_4 = true;
+      }
+      if (this.distance_right_4 > 0 && this.active_right_4 == true) {
+        this.active_right_4 = false;
+      }
+    },
+  },
 };
 </script>

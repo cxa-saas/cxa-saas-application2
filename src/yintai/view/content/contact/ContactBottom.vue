@@ -449,11 +449,11 @@
         </div>
         <div class="contactBottomContainer-list-item-block">
           <div class="contactBottomContainer-list-item-block-email">
-            <div class="email-icon"></div>
+            <div class="email-icon" style="background-image:url('/media/yintai/qrcode1.png')"></div>
             <div class="email-title">银泰百货</div>
           </div>
           <div class="contactBottomContainer-list-item-block-report">
-            <div class="report-icon"></div>
+            <div class="report-icon" style="background-image:url('/media/yintai/qrcode2.png')"></div>
             <div class="report-title">银泰百货</div>
           </div>
         </div>

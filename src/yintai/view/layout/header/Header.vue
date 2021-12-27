@@ -326,7 +326,7 @@
               ><div class="nav-service-item">INTIME365</div></a
             >
             <a href="#/membershipStore"
-              ><div class="nav-service-item">INTIME365 Store</div></a
+              ><div class="nav-service-item">云店</div></a
             >
             <a href="#/store"><div class="nav-service-item">全门店导览</div></a>
           </div>
