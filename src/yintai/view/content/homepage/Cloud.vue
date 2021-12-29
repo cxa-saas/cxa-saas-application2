@@ -131,7 +131,7 @@
       display: flex;
       justify-content: space-around;
       height: auto;
-      flex-direction: column;
+      flex-direction: column-reverse;
       align-items: flex-end;
       .cloud-text-container {
         width: 80%;

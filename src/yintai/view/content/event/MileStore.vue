@@ -272,6 +272,7 @@
             display: flex;
             flex-direction: row;
             align-items: center;
+            justify-content: flex-end;
             .year {
               font-size: 1.4rem;
               font-family: SourceHanSansCN-Heavy;

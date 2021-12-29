@@ -1,20 +1,37 @@
 <style lang="scss">
-.CloudPictureContent {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  min-height: 50rem;
-  .CloudPictureContent-list {
-    width: 80%;
-    max-width: 1080px;
+@media screen and (min-width: 55rem) {
+  .CloudPictureContent {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    height: auto;
+    justify-content: center;
+    min-height: 50rem;
+    .CloudPictureContent-list {
+      width: 80%;
+      max-width: 1080px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      height: auto;
+    }
   }
 }
-
+@media screen and (max-width: 55rem) {
+  .CloudPictureContent {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 50rem;
+    .CloudPictureContent-list {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      height: auto;
+    }
+  }
+}
 </style>
 
 <template>
@@ -85,31 +102,32 @@ export default {
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
-         {
+        {
           src: "/media/yintai/cloudimage-demo10.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
-         {
+        {
           src: "/media/yintai/cloudimage-demo11.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
-         {
+        {
           src: "/media/yintai/cloudimage-demo12.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
-         {
+        {
           src: "/media/yintai/cloudimage-demo13.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
-         {
+        {
           src: "/media/yintai/cloudimage-demo14.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
-        }, {
+        },
+        {
           src: "/media/yintai/cloudimage-demo1.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
@@ -154,32 +172,31 @@ export default {
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
-         {
+        {
           src: "/media/yintai/cloudimage-demo10.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
-         {
+        {
           src: "/media/yintai/cloudimage-demo11.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
-         {
+        {
           src: "/media/yintai/cloudimage-demo12.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
-         {
+        {
           src: "/media/yintai/cloudimage-demo13.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
-         {
+        {
           src: "/media/yintai/cloudimage-demo14.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
-        
       ],
       group: 0, // request param
     };
@@ -206,7 +223,7 @@ export default {
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
-         {
+        {
           src: "/media/yintai/cloudimage-demo1.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
@@ -251,27 +268,27 @@ export default {
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
-         {
+        {
           src: "/media/yintai/cloudimage-demo10.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
-         {
+        {
           src: "/media/yintai/cloudimage-demo11.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
-         {
+        {
           src: "/media/yintai/cloudimage-demo12.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
-         {
+        {
           src: "/media/yintai/cloudimage-demo13.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",
         },
-         {
+        {
           src: "/media/yintai/cloudimage-demo14.png",
           href: "https://www.baidu.com",
           info: "一些图片描述文字",

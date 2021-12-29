@@ -123,6 +123,7 @@
         }
       }
       .nav-container {
+        margin-left: 3rem;
         width: 50%;
         height: 50%;
         display: flex;
@@ -139,12 +140,14 @@
           .nav-list-item {
             line-height: 1rem;
             font-size: 2rem;
+              white-space: nowrap;
 
             a {
               display: inline-block;
               color: white;
               font-size: 1rem;
               font-weight: 800;
+              margin-left: -1rem;
             }
           }
         }

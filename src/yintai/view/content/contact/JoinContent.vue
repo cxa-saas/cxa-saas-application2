@@ -154,11 +154,25 @@
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          .qrcode {
-            width: 16rem;
-            height: 16rem;
-            background-image: url("/media/yintai/contact-qrcode.png");
-            background-size: 100% 100%;
+          .new-contact-4-top {
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            .qrcode {
+              width: 16rem;
+              height: 16rem;
+              background-image: url("/media/yintai/qrcode4.png");
+              background-size: 100% 100%;
+            }
+          }
+          .new-contact-4-bottom {
+            width: 80%;
+            font-size: 1rem;
+            font-family: SourceHanSansSC-Regular;
+            font-weight: 400;
+            color: #7f7f7f;
           }
         }
       }
@@ -265,18 +279,37 @@
         .new-contact-4 {
           margin-top: 1rem;
           width: 100%;
-          height: 20rem;
+          height: 25rem;
           border-radius: 1.2rem;
           box-shadow: 0px 3px 5px #cdcacabe;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          .qrcode {
-            width: 16rem;
-            height: 16rem;
-            background-image: url("/media/yintai/contact-qrcode.png");
-            background-size: 100% 100%;
+          .new-contact-4-top {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .qrcode {
+              width: 16rem;
+              height: 16rem;
+              background-image: url("/media/yintai/qrcode4.png");
+              background-size: 100% 100%;
+            }
+            .button-right{
+              margin-top: 1rem;
+              margin-bottom: 1rem;
+
+            }
+          }
+          .new-contact-4-bottom {
+            width: 80%;
+            font-size: 1rem;
+            font-family: SourceHanSansSC-Regular;
+            font-weight: 400;
+            color: #7f7f7f;
           }
         }
       }
@@ -347,7 +380,15 @@
           </div>
         </div>
         <div class="new-contact-4">
-          <div class="qrcode"></div>
+          <div class="new-contact-4-top">
+            <div class="qrcode"></div>
+            <a href="#/school"
+              ><ButtonRight class="button-right"></ButtonRight>
+            </a>
+          </div>
+          <div class="new-contact-4-bottom">
+            地址:北京市朝阳区建国门外大街2号院3号楼47层4701单元
+          </div>
         </div>
       </div>
     </div>
@@ -355,9 +396,11 @@
 </template>
 
 <script>
+import ButtonRight from "@/yintai/view/component/ButtonRight";
+
 export default {
   name: "newsContent",
-  components: {},
+  components: { ButtonRight },
   data() {
     return {};
   },

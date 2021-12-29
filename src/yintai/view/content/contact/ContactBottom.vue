@@ -125,7 +125,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        width: 30%;
+        width: 45%;
         align-items: center;
 
         .contactBottomContainer-list-item-title {
@@ -238,7 +238,7 @@
 
         .contactBottomContainer-list-item-title {
           font-size: 1.8rem;
-          font-family:SourceHanSansSC-Bold;
+          font-family: SourceHanSansSC-Bold;
           font-weight: bold;
           color: #353535;
           text-align: center;
@@ -306,7 +306,7 @@
             }
             .report-title {
               font-size: 1rem;
-              font-family:SourceHanSansSC-Medium;
+              font-family: SourceHanSansSC-Medium;
               font-weight: 500;
               color: #333333;
             }
@@ -398,7 +398,7 @@
             }
             .report-title {
               font-size: 1rem;
-              font-family:SourceHanSansSC-Medium;
+              font-family: SourceHanSansSC-Medium;
               font-weight: 500;
               color: #333333;
             }
@@ -449,12 +449,32 @@
         </div>
         <div class="contactBottomContainer-list-item-block">
           <div class="contactBottomContainer-list-item-block-email">
-            <div class="email-icon" style="background-image:url('/media/yintai/qrcode1.png')"></div>
-            <div class="email-title">银泰百货</div>
+            <div
+              class="email-icon"
+              style="background-image: url('/media/yintai/qrcode1.png')"
+            ></div>
+            <div class="email-title">微博</div>
           </div>
           <div class="contactBottomContainer-list-item-block-report">
-            <div class="report-icon" style="background-image:url('/media/yintai/qrcode2.png')"></div>
-            <div class="report-title">银泰百货</div>
+            <div
+              class="report-icon"
+              style="background-image: url('/media/yintai/qrcode2.png')"
+            ></div>
+            <div class="report-title">微信</div>
+          </div>
+          <div class="contactBottomContainer-list-item-block-report">
+            <div
+              class="report-icon"
+              style="background-image: url('/media/yintai/qrcode3.png')"
+            ></div>
+            <div class="report-title">抖音</div>
+          </div>
+          <div class="contactBottomContainer-list-item-block-report">
+            <div
+              class="report-icon"
+              style="background-image: url('/media/yintai/qrcode4.png')"
+            ></div>
+            <div class="report-title">小红书</div>
           </div>
         </div>
       </div>
