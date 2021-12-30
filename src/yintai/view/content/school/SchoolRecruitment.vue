@@ -625,7 +625,6 @@
     align-items: center;
     background-color: white;
     margin-top: 5rem;
-
     .schoolrecruitment-top {
       width: 80%;
       max-width: 1080px;
@@ -709,12 +708,13 @@
       .schoolrecruitment-table-product {
         display: flex;
         flex-direction: row;
+        align-items: center;
         width: 100%;
         border-bottom: 0.2rem #000000 solid;
-        height: 55rem;
+        height: auto;
         .schoolrecruitment-table-product-type {
           height: 100%;
-          width: 10%;
+          width: 5%;
           display: flex;
           flex-direction: row;
           justify-content: center;
@@ -728,9 +728,12 @@
           }
         }
         .schoolrecruitment-table-product-position {
+          margin-left: 5%;
           width: 15%;
           height: 100%;
-          flex-direction: row;
+          min-height: 25rem;
+          display: flex;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
           .schoolrecruitment-table-product-position-item-list {
@@ -742,6 +745,7 @@
             .schoolrecruitment-table-product-position-item {
               height: 50%;
               width: 100%;
+              min-height: 25rem;
               display: flex;
               flex-direction: row;
               justify-content: center;
@@ -762,15 +766,18 @@
         .schoolrecruitment-table-product-duty {
           width: 60%;
           height: 100%;
-          flex-direction: row;
+          display: flex;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
           .schoolrecruitment-table-product-duty-list {
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 50%;
             width: 100%;
+            min-height: 28rem;
             &:not(:first-of-type) {
               border-top: 0.1rem #000000 solid;
             }
@@ -798,12 +805,12 @@
       .schoolrecruitment-table-business {
         display: flex;
         flex-direction: row;
+        align-items: center;
         width: 100%;
         border-bottom: 0.2rem #000000 solid;
-        height: 70rem;
         .schoolrecruitment-table-product-type {
           height: 100%;
-          width: 10%;
+          width: 5%;
           display: flex;
           flex-direction: row;
           justify-content: center;
@@ -817,19 +824,22 @@
           }
         }
         .schoolrecruitment-table-product-position {
+          margin-left: 5%;
           width: 15%;
           height: 100%;
-          flex-direction: row;
+          display: flex;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
           .schoolrecruitment-table-product-position-item-list {
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100%;
             width: 100%;
             .schoolrecruitment-table-product-position-item {
-              height: 33.33%;
+              min-height: 22rem;
               width: 100%;
               display: flex;
               flex-direction: row;
@@ -851,14 +861,16 @@
         .schoolrecruitment-table-product-duty {
           width: 60%;
           height: 100%;
-          flex-direction: row;
+          display: flex;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
           .schoolrecruitment-table-product-duty-list {
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 33.33%;
+            min-height: 22rem;
             width: 100%;
             &:not(:first-of-type) {
               border-top: 0.1rem #000000 solid;
@@ -875,6 +887,7 @@
           justify-content: center;
           align-items: center;
           .schoolrecruitment-table-product-city-item-list {
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -884,7 +897,8 @@
               height: 33.33%;
               width: 100%;
               display: flex;
-              flex-direction: row;
+              min-height: 22rem;
+              flex-direction: column;
               justify-content: center;
               align-items: center;
               &:not(:first-of-type) {
@@ -909,7 +923,7 @@
         height: 45rem;
         .schoolrecruitment-table-product-type {
           height: 100%;
-          width: 10%;
+          width: 5%;
           display: flex;
           flex-direction: row;
           justify-content: center;
@@ -923,6 +937,7 @@
           }
         }
         .schoolrecruitment-table-product-position {
+          margin-left: 5;
           width: 15%;
           height: 100%;
           flex-direction: row;
@@ -1008,16 +1023,18 @@
         }
       }
       .schoolrecruitment-table-buy {
+
         display: flex;
         flex-direction: row;
+        align-items: center;
+        justify-content: center;
         width: 100%;
         border-bottom: 0.2rem #000000 solid;
-        height: 23rem;
         .schoolrecruitment-table-product-type {
           height: 100%;
-          width: 10%;
+          width: 5%;
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
           .schoolrecruitment-table-product-type-title {
@@ -1031,10 +1048,12 @@
         .schoolrecruitment-table-product-position {
           width: 15%;
           height: 100%;
-          flex-direction: row;
+          display: flex;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
           .schoolrecruitment-table-product-position-item-list {
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -1063,10 +1082,12 @@
         .schoolrecruitment-table-product-duty {
           width: 60%;
           height: 100%;
+          display: flex;
           flex-direction: row;
           justify-content: center;
           align-items: center;
           .schoolrecruitment-table-product-duty-list {
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -1099,14 +1120,15 @@
       .schoolrecruitment-table-type {
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        align-items: center;
         width: 100%;
         border-bottom: 0.2rem #000000 solid;
-        height: 45rem;
         .schoolrecruitment-table-product-type {
           height: 100%;
           width: 10%;
           display: flex;
-          flex-direction: row;
+          flex-direction:  column;
           justify-content: center;
           align-items: center;
           .schoolrecruitment-table-product-type-title {
@@ -1120,7 +1142,8 @@
         .schoolrecruitment-table-product-position {
           width: 15%;
           height: 100%;
-          flex-direction: row;
+          display: flex;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
           .schoolrecruitment-table-product-position-item-list {

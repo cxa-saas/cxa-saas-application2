@@ -31,11 +31,19 @@
       justify-content: flex-start;
       .membershipstorebanner-title {
         h1 {
-          font-size: 4.8rem;
-          font-family: SourceHanSansSC-Heavy;
-          font-weight: 800;
+          font-family: "SourceHanSansCN-Heavy", "Lato", Helvetica, Arial, Lucida,
+            sans-serif !important;
+          font-weight: 900 !important;
+          text-transform: uppercase !important;
+          font-size: 3rem !important;
+          letter-spacing: 2px !important;
+          line-height: 1.2em !important;
+          text-shadow: 0em 0.1em 0.6em rgba(0, 0, 0, 0.24) !important;
+          // font-size: 4.56rem;
+          // font-family: Source Han Sans SC;
+          // font-weight: 800;
           color: #ffffff;
-          text-shadow: 0px 2px 3px rgba(4, 0, 0, 0.93);
+          // text-shadow: 0px 2px 3px rgba(4, 0, 0, 0.93);
         }
       }
       .sub-title {
@@ -43,10 +51,12 @@
         margin-bottom: 1.187rem;
         h3 {
           font-size: 22px;
-          font-family: SourceHanSansCN-Regular;
-          font-weight: 400;
+          font-family: "SourceHanSansCN-Regular", "Lato", Helvetica, Arial,
+            Lucida, sans-serif !important;
+          font-weight: 500;
           color: #ffffff;
-          text-shadow: 0px 1px 1px rgba(4, 0, 0, 0.93);
+          // text-shadow: 0px 2px 3px rgba(4, 0, 0, 0.93);
+          line-height: 1.187rem;
         }
       }
       .button {

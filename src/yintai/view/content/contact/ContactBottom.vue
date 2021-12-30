@@ -451,28 +451,28 @@
           <div class="contactBottomContainer-list-item-block-email">
             <div
               class="email-icon"
-              style="background-image: url('/media/yintai/qrcode1.png')"
+              style="background-image: url('/media/yintai/qrcode3.png')"
             ></div>
             <div class="email-title">微博</div>
           </div>
           <div class="contactBottomContainer-list-item-block-report">
             <div
               class="report-icon"
-              style="background-image: url('/media/yintai/qrcode2.png')"
+              style="background-image: url('/media/yintai/qrcode4.png')"
             ></div>
             <div class="report-title">微信</div>
           </div>
           <div class="contactBottomContainer-list-item-block-report">
             <div
               class="report-icon"
-              style="background-image: url('/media/yintai/qrcode3.png')"
+              style="background-image: url('/media/yintai/qrcode1.png')"
             ></div>
             <div class="report-title">抖音</div>
           </div>
           <div class="contactBottomContainer-list-item-block-report">
             <div
               class="report-icon"
-              style="background-image: url('/media/yintai/qrcode4.png')"
+              style="background-image: url('/media/yintai/qrcode2.png')"
             ></div>
             <div class="report-title">小红书</div>
           </div>

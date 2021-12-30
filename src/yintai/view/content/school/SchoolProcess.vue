@@ -124,7 +124,6 @@
       justify-content: flex-start;
       align-items: center;
       background-color: white;
-      height: 25rem;
 
       .schoolprocess-top {
         width: 100%;
@@ -163,7 +162,6 @@
         
         align-items: center;
         width: 100%;
-        height: 10rem;
         // background-color: #e5004f;
         .schoolprocess-list-item {
           width: 6rem;

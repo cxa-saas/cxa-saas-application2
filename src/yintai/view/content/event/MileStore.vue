@@ -224,6 +224,33 @@
       }
     }
   }
+
+  .left-block-event-item2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .left-block-event-item2-left {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      font-size: 1.5625rem;
+      font-family: SourceHanSansSC-Heavy;
+      font-weight: 800;
+      color: #4a4a4a;
+      line-height: 3.125rem;
+      white-space: nowrap;
+    }
+
+    .left-block-event-item2-right {
+      margin-right: 1rem;
+      margin-left: 1rem;
+      width: 1rem;
+      height: 1rem;
+      background-color: #e5004f;
+      border-radius: 50%;
+    }
+  }
 }
 @media screen and (max-width: 55rem) {
   .milestore {
@@ -252,7 +279,7 @@
       justify-content: center;
       align-items: start;
       width: 80%;
-      max-width: 1080px;
+      // max-width: 1080px;
       .left {
         display: flex;
         flex-direction: column;
@@ -273,6 +300,8 @@
             flex-direction: row;
             align-items: center;
             justify-content: flex-end;
+            width: 100%;
+
             .year {
               font-size: 1.4rem;
               font-family: SourceHanSansCN-Heavy;
@@ -445,6 +474,32 @@
       }
     }
   }
+  .left-block-event-item2 {
+    width: 100%;
+    float: left;
+
+    .left-block-event-item2-left {
+      width: 100%;
+      float: left;
+      font-size: 0.8rem;
+      font-family: SourceHanSansSC-Heavy;
+      font-weight: 800;
+      color: #4a4a4a;
+      line-height: 1.5rem;
+    }
+
+    .left-block-event-item2-right {
+      float: right;
+      flex-shrink: 0;
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
+      margin-top: -1rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      background-color: #e5004f;
+      border-radius: 50%;
+    }
+  }
 }
 </style>
 
@@ -521,9 +576,10 @@
                   启动私有化，探索新商业体系建设
                   <div class="left-point"></div>
                 </div>
-                <div class="left-block-event-item">
-                  中国连锁百强
-                  <div class="left-point"></div>
+                <div class="left-block-event-item2">
+                  <div class="left-block-event-item2-left">中国连锁百强</div>
+
+                  <div class="left-block-event-item2-right"></div>
                 </div>
                 <div class="left-block-event-item">
                   中国服务业企业500强
